@@ -1,0 +1,154 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - AliPlayerPartSDK_iOS (4.7.3):
+    - AliPlayerPartSDK_iOS/AliPlayerPartSDK (= 4.7.3)
+  - AliPlayerPartSDK_iOS/AliPlayerPartSDK (4.7.3)
+  - AlivcCommon (0.1.0):
+    - AFNetworking
+    - FMDB
+    - JSONModel
+    - MBProgressHUD
+    - SDWebImage
+    - ZipArchive
+  - AlivcConan (1.0.2.12451054)
+  - AlivcCore (0.1.0):
+    - AlivcCommon
+    - AlivcConan (= 1.0.2.12451054)
+    - AliyunVideoSDKPro (= 3.14.0.12452510)
+    - QuCore-ThirdParty (= 3.14.0.12445263)
+    - VODUpload
+  - AlivcCrop (0.1.0):
+    - AlivcCore
+  - AlivcEdit (0.1.0):
+    - AlivcCore
+  - AlivcRecord (0.1.0):
+    - AlivcCore
+    - AliyunRace (= 1.0.0.12295169)
+    - Nama-lite (~> 5.9.0)
+  - AlivcSmartVideo (0.1.0):
+    - AliPlayerPartSDK_iOS
+    - AlivcCommon
+    - AlivcCore
+    - AlivcCrop
+    - AlivcEdit
+    - AlivcRecord
+    - MJRefresh
+  - AliyunOSSiOS (2.10.7)
+  - AliyunRace (1.0.0.12295169)
+  - AliyunVideoSDKPro (3.14.0.12452510)
+  - FMDB (3.0.0.2):
+    - SQLCipher (~> 4.0)
+  - JSONModel (1.7.0)
+  - MBProgressHUD (1.1.0)
+  - MJRefresh (3.2.1.1)
+  - Nama-lite (5.9.0)
+  - QuCore-ThirdParty (3.14.0.12445263)
+  - SDWebImage (5.0.0.1):
+    - SDWebImage/Core (= 5.0.0.1)
+  - SDWebImage/Core (5.0.0.1)
+  - SQLCipher (4.0.1):
+    - SQLCipher/standard (= 4.0.1)
+  - SQLCipher/common (4.0.1)
+  - SQLCipher/standard (4.0.1):
+    - SQLCipher/common
+  - VODUpload (1.5.3):
+    - AliyunOSSiOS
+  - ZipArchive (1.4.0)
+
+DEPENDENCIES:
+  - AliPlayerPartSDK_iOS (from `https://github.com/aliyunvideo/AliPlayerSDK.git`, tag `4.7.3`)
+  - AlivcCommon (from `../../AlivcCommon/`)
+  - AlivcCore (from `../../AlivcCore/`)
+  - AlivcCrop (from `../../AlivcCrop/`)
+  - AlivcEdit (from `../../AlivcEdit/`)
+  - AlivcRecord (from `../../AlivcRecord/`)
+  - AlivcSmartVideo (from `../`)
+  - VODUpload (from `https://github.com/aliyunvideo/VODUpload.git`, tag `1.5.3`)
+
+SPEC REPOS:
+  "podspec@podspec.alibaba-inc.com:alibaba-specs-mirror/":
+    - AliyunOSSiOS
+    - JSONModel
+    - MBProgressHUD
+    - Nama-lite
+    - SQLCipher
+    - ZipArchive
+  "podspec@podspec.alibaba-inc.com:alibaba-specs/":
+    - AFNetworking
+    - AlivcConan
+    - AliyunRace
+    - AliyunVideoSDKPro
+    - FMDB
+    - MJRefresh
+    - QuCore-ThirdParty
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  AliPlayerPartSDK_iOS:
+    :git: https://github.com/aliyunvideo/AliPlayerSDK.git
+    :tag: 4.7.3
+  AlivcCommon:
+    :path: "../../AlivcCommon/"
+  AlivcCore:
+    :path: "../../AlivcCore/"
+  AlivcCrop:
+    :path: "../../AlivcCrop/"
+  AlivcEdit:
+    :path: "../../AlivcEdit/"
+  AlivcRecord:
+    :path: "../../AlivcRecord/"
+  AlivcSmartVideo:
+    :path: "../"
+  VODUpload:
+    :git: https://github.com/aliyunvideo/VODUpload.git
+    :tag: 1.5.3
+
+CHECKOUT OPTIONS:
+  AliPlayerPartSDK_iOS:
+    :git: https://github.com/aliyunvideo/AliPlayerSDK.git
+    :tag: 4.7.3
+  VODUpload:
+    :git: https://github.com/aliyunvideo/VODUpload.git
+    :tag: 1.5.3
+
+SPEC CHECKSUMS:
+  AFNetworking: 3d51df1f091efe351758df27491098d1a9d5ac11
+  AliPlayerPartSDK_iOS: bcaf7c45e25ebec0eac6659813faa19b7a459f03
+  AlivcCommon: 8a68273bd1df4cce2a1690e8f493a69fd1e732aa
+  AlivcConan: 8634698c01cbf7b24bcdd63ab6267227f1665861
+  AlivcCore: adeeeeb5311f68180ab8358e672b9fe3620c739a
+  AlivcCrop: 3f5d8233783ea4dfb1ffc293a754b0599940b42c
+  AlivcEdit: 3d3c640116804572e9d30e16681b60802e5f73f7
+  AlivcRecord: 70e3af73f1d2ec6e6296fcd7ec30938936a55ae7
+  AlivcSmartVideo: a4df14622d55c2cf0f94f6ff9418bb74317db4cb
+  AliyunOSSiOS: af12883c8f2834de4b5144c58e912b9df0693ad2
+  AliyunRace: 03ada7379b14dde0a36837434a8ec3f881083b44
+  AliyunVideoSDKPro: b01880c4fa7041eec2b8a42a9890b15c904d52ee
+  FMDB: fcb01fd09b62ec1b9df6b2329abbc53d9d965eaa
+  JSONModel: a3b9097543a777e2a4041a0bb1b80252af9ed566
+  MBProgressHUD: e4bfee13f0d2b4c3bc6bdcd94769cb3ed2d23a5e
+  MJRefresh: dbc8a03484620a113a8fca69fd4bf2f91f3527c2
+  Nama-lite: f046ff8b9c53a0d6f5bf344ee78850af3d7bf24b
+  QuCore-ThirdParty: d6ea86e22ab8bdd77361fffe0c6147adcc126549
+  SDWebImage: 52cf9709d12ec18666b8923e49c8a6ce02a35e7d
+  SQLCipher: 075c1c63093bcf58107cfbceff6e9913af4f3f6e
+  VODUpload: a76d07081e4faf9bd9e7535265901cde2cea507f
+  ZipArchive: 94e007035ff8394ac7d87179129909795e7595b0
+
+PODFILE CHECKSUM: 6144f08b5bcc66b36e4e4cd542fe03cc58f2594a
+
+COCOAPODS: 1.5.0

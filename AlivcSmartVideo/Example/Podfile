@@ -1,0 +1,22 @@
+use_frameworks!
+
+ali_source 'alibaba-specs' #集团内部仓库
+
+ali_source 'alibaba-specs-mirror' #官方镜像仓库
+
+platform :ios, '9.0'
+
+target 'AlivcSmartVideo_Example' do
+
+  pod 'AlivcSmartVideo', :path => '../'
+
+  pod 'AlivcCore', :path => '../../AlivcCore/'
+  pod 'AlivcCommon', :path => '../../AlivcCommon/'
+  pod 'AlivcRecord', :path => '../../AlivcRecord/'
+  pod 'AlivcEdit', :path => '../../AlivcEdit/'
+  pod 'AlivcCrop', :path => '../../AlivcCrop/'
+  
+  pod 'VODUpload', :git => 'https://github.com/aliyunvideo/VODUpload.git',:tag => '1.5.3'
+  pod 'AliPlayerPartSDK_iOS',:git => 'https://github.com/aliyunvideo/AliPlayerSDK.git',:tag => '4.7.3'
+  
+end

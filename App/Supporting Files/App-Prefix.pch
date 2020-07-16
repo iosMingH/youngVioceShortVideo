@@ -1,0 +1,62 @@
+//
+//  App-Prefix.pch
+//  App
+//
+//  Created by mac on 2017/11/16.
+//  Copyright © 2017年 HuanMingLi. All rights reserved.
+//
+
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "MJRefresh.h"
+#import "UIImageView+WebCache.h"
+#import "SKMacro.h"
+#import "Masonry.h"
+#import "SVProgressHUD.h"
+#import "UIColor+HexColor.h"
+#import "AppDelegate.h"
+#import "UIImage+Tools.h"
+#import "NSString+Tools.h"
+#import "IQKeyboardReturnKeyHandler.h"
+#import "UIButton+FillColor.h"
+#import "FUCacheManager.h"
+
+#import "UITextView+Placeholder.h"
+#import "MMPopupView.h"
+#import "HYBHelperKit.h"
+#import "HYBLoopScrollView.h"
+#import "HYBImageCliped.h"
+#import "NSObject+Addtion.h"
+#import "UIView+addition.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+#import "MMEditView.h"
+#import "SearchView.h"
+#import "NavSearchView.h"
+#import "HWPopTool.h"
+//  提示框
+#import "FUProgressHUD.h"
+// 基类
+#import "CEBaseHeader.h"
+#import "UIViewController+MHDrawVC.h"
+#import "MHDrawViewController.h"
+//阿里云用
+#import "AlivcMacro.h"
+#import "AlivcImage.h"
+
+//微信h授权 支付用
+#import "MHPayManager.h"
+
+//一般在pch文件里除了写一些公共的文件，还自定义Log
+
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+
+#endif
+
