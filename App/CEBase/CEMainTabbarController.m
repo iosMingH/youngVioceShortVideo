@@ -23,8 +23,6 @@
     // Do any additional setup after loading the view.
     self.mTitles = @[@"首页",@"消息",@"其他",@"我的"];
     
-    //测试用的哈哈哈哈哈
-    
 //    [self chile:[[SCHomeController alloc]init] index:0];
 //    [self chile:[[SCMessageController alloc]init] index:1];
 //    [self chile:[[MHHomeVideoViewController alloc]init] index:2];

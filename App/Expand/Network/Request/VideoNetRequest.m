@@ -46,14 +46,15 @@
 
 @end
 
-//GET /GET /app/testsdk/createAuditResponse  审核视频
+//Post   /video/api/submitAliVideoPersonAudit  审核视频
 
-@implementation SkNetAppTestsdkCreateAuditRequest
+@implementation SkNetSubmitAliVideoPersonAuditRequest
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.method = @"app/testsdk/createAuditResponse";
+        self.method = @"video/api/submitAliVideoPersonAudit";
+        self.httpMethod = @"POST";
     }
     return self;
 }

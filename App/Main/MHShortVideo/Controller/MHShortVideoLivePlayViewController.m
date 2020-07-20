@@ -199,7 +199,7 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
      [self addPublishVideoNotification];
     [self addNetWorkingNotification];
     [self loadData];
-    self.reHasMore = YES;
+//    self.reHasMore = YES;
     
     //设置log等级
 #if __has_include(<AliyunVideoSDKPro/AliyunVideoSDKInfo.h>)
@@ -424,7 +424,7 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
 #pragma mark - NETWORK
 - (void)loadData {
     self.pageNum = 1;
-    self.reHasMore = YES;
+//    self.reHasMore = YES;
     [self fetchSTS];
 }
 
@@ -529,6 +529,8 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
            [weakSelf dealWithData:videoList countNum:allVideoCount lastVideoId:weakSelf.lastVid];
            if (self.pageNum*VIDEOPAGESIZE > allVideoCount) {
                weakSelf.reHasMore = NO;
+           }else{
+               weakSelf.reHasMore = YES;
            }
          } failure:^(NSString * _Nonnull errorString) {
            weakSelf.isLoading = NO;
@@ -1040,20 +1042,47 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
 //发布视频-------
 - (void)publishToAppServerWithDic:(NSDictionary *)paramDic{
 
-        [MHShortVideoServerManager dayeServerVideoPublishWithDic:paramDic success:^{
-        NSLog(@"插入appserver数据库成功");
-        [self.uploadProgress setShowText:NSLocalizedString(@"发布成功" , nil)];
-        [MBProgressHUD showMessage:NSLocalizedString(@"发布成功，已进入审核通道" , nil) inView:self.view];
-        [[NSNotificationCenter defaultCenter]postNotificationName:AlivcNotificationVideoPublishSuccess object:nil];
-        [[MHShortVideoPublishManager shared]endPublishFlow];
-        _publishParamDic = nil;
-        [FUCacheManager remove:COMMON_VIDEO_FILENAME];
-        [FUCacheManager remove:COMMON_VIDEO_FILEID];
+//        [MHShortVideoServerManager dayeServerVideoPublishWithDic:paramDic success:^{
+//        NSLog(@"插入appserver数据库成功");
+//        [self.uploadProgress setShowText:NSLocalizedString(@"发布成功" , nil)];
+//        [MBProgressHUD showMessage:NSLocalizedString(@"发布成功，已进入审核通道" , nil) inView:self.view];
+//        [[NSNotificationCenter defaultCenter]postNotificationName:AlivcNotificationVideoPublishSuccess object:nil];
+//        [[MHShortVideoPublishManager shared]endPublishFlow];
+//        _publishParamDic = nil;
+//        [FUCacheManager remove:COMMON_VIDEO_FILENAME];
+//        [FUCacheManager remove:COMMON_VIDEO_FILEID];
+//
+//    } failure:^(NSString * _Nonnull errorString) {
+//        [self showErrorAlertViewWithString:NSLocalizedString(@"网络错误，发布失败" , nil)];
+//        [self.uploadProgress setShowText:NSLocalizedString(@"发布失败" , nil)];
+//        NSLog(@"插入appserver数据库失败:%@",errorString);
+//    }];
+    
+    [self.uploadProgress setShowText:NSLocalizedString(@"发布成功" , nil)];
+    [MBProgressHUD showMessage:NSLocalizedString(@"发布成功，已进入审核通道" , nil) inView:self.view];
+    [[NSNotificationCenter defaultCenter]postNotificationName:AlivcNotificationVideoPublishSuccess object:nil];
+    [[MHShortVideoPublishManager shared]endPublishFlow];
+    _publishParamDic = nil;
+    [FUCacheManager remove:COMMON_VIDEO_FILENAME];
+    [FUCacheManager remove:COMMON_VIDEO_FILEID];
+    
+    kGCDAfter(1, ^{
+            [self SkNetSubmitAliVideoPersonAuditRequest];
+       });
+
+    
+}
+
+//测试审核视频 *************** 到时候要删掉
+- (void)SkNetSubmitAliVideoPersonAuditRequest{
+    
+    SkNetSubmitAliVideoPersonAuditRequest *request = [[SkNetSubmitAliVideoPersonAuditRequest alloc]init];
+    request.videoId = self.getVideoID;
+    request.videoStatus = @"Normal";
+    [SkNetApi request:request success:^(NSDictionary *pDic) {
+        TOAST(@"审核成功");
+    } failure:^(NSError *pError) {
         
-    } failure:^(NSString * _Nonnull errorString) {
-        [self showErrorAlertViewWithString:NSLocalizedString(@"网络错误，发布失败" , nil)];
-        [self.uploadProgress setShowText:NSLocalizedString(@"发布失败" , nil)];
-        NSLog(@"插入appserver数据库失败:%@",errorString);
     }];
 }
 
@@ -1095,10 +1124,10 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
     if (alertView.tag == 106 && buttonIndex == 1) {
         NSString *token = self.userToken;
         
-        NSString *videoId =[self.playerManager playingVideo].ID;
+        NSString *videoId =[self.playerManager playingVideo].videoId;
 //        NSString *userId = [AliVideoClientUser shared].userID;
         __weak typeof(self) weakSelf = self;
-        if (token && videoId) {
+        if (videoId) {
             [MHShortVideoServerManager dayeServerDeletePersonalVideoWithToken:token videoId:videoId userId:@"" success:^{
                 NSLog(@"删除视频成功");
                 NSDictionary *dic = @{MHNotificationDeleveVideoSuccess:[self.playerManager playingVideo]};

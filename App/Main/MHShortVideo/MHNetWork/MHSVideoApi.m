@@ -15,33 +15,34 @@
 //大叶网  -------------======== 获取图片凭证
 
 + (void)dayeGetImageUploadAuthWithToken:(NSString *)tokenString title:(NSString *)title filePath:(NSString *)filePath tags:(NSString *)tags handler:(void (^)(NSString * _Nullable, NSString * _Nullable, NSString * _Nullable, NSString * _Nullable, NSError * _Nullable))handler{
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params addEntriesFromDictionary:@{
-                                       @"imageType":@"cover",
-                                       @"imageExt":filePath.lastPathComponent.pathExtension
-                                       }];
-    if (title) {
-        [params addEntriesFromDictionary:@{@"title":title}];
-    }
-    if (tags) {
-        [params addEntriesFromDictionary:@{@"tags":tags}];
-    }
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    [params addEntriesFromDictionary:@{
+//                                       @"imageType":@"cover",
+//                                       @"imageExt":filePath.lastPathComponent.pathExtension
+//                                       }];
+//    if (title) {
+//        [params addEntriesFromDictionary:@{@"title":title}];
+//    }
+//    if (tags) {
+//        [params addEntriesFromDictionary:@{@"tags":tags}];
+//    }
     
     
-    NSString *getUrl = @"/app/getImageUploadAuth";
+//    NSString *getUrl = @"/app/getImageUploadAuth";
+    NSString *getUrl = @"/video/api/getImageUploadAuth";
     AlivcOutputProductType type = kAlivcProductType;
     if (type == AlivcOutputProductTypeSmartVideo) {
-        getUrl = @"/app/getImageUploadAuth";
-        if (tokenString) {
-            [params addEntriesFromDictionary:@{@"token":tokenString}];
-        }
+        getUrl = @"/video/api/getImageUploadAuth";
+//        if (tokenString) {
+//            [params addEntriesFromDictionary:@{@"token":tokenString}];
+//        }
     }
  
-    NSLog(@"============getUrl=%@============",getUrl);
-       
-         NSLog(@"============params=%@============",params);
+//    NSLog(@"============getUrl=%@============",getUrl);
+//
+//         NSLog(@"============params=%@============",params);
     
-    [self dayeGetWithPath:getUrl params:params completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+    [self dayeGetWithPath:getUrl params:nil completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
          NSLog(@"============responseObject=%@============",responseObject);
         if (error) {
             handler(nil, nil, nil, nil, error);
@@ -73,10 +74,11 @@
         [params addEntriesFromDictionary:@{@"tags":tags}];
     }
    
-    NSString *getUrl = @"/app/getVideoUploadAuth";
+//    NSString *getUrl = @"/app/getVideoUploadAuth";
+      NSString *getUrl = @"/video/api/getAliVideoUploadAuth";
     AlivcOutputProductType type = kAlivcProductType;
     if (type == AlivcOutputProductTypeSmartVideo) {
-        getUrl = @"/app/getVideoUploadAuth";
+        getUrl = @"/video/api/getAliVideoUploadAuth";
         if (tokenString) {
             [params addEntriesFromDictionary:@{@"token":tokenString}];
         }
@@ -93,8 +95,11 @@
             NSString *uploadAddress = [responseObject objectForKey:@"uploadAddress"];
             NSString *uploadAuth = [responseObject objectForKey:@"uploadAuth"];
             NSString *videoId = [responseObject objectForKey:@"videoId"];
-            NSString *fileId = [responseObject objectForKey:@"id"];
-            [FUCacheManager write:COMMON_VIDEO_FILEID value:fileId];
+            if ([responseObject objectForKey:@"id"]) {
+                 NSString *fileId = [responseObject objectForKey:@"id"];
+                 [FUCacheManager write:COMMON_VIDEO_FILEID value:fileId];
+            }
+           
             [FUCacheManager write:COMMON_VIDEO_FILENAME value:filePath.lastPathComponent];
             handler(uploadAddress, uploadAuth, videoId, nil);
         }
@@ -109,7 +114,7 @@
     }
     
     
-    NSString *getUrl = @"/demo/refreshVideoUploadAuth";
+    NSString *getUrl = @"/video/api/refreshAliVideoUploadAuth";
     AlivcOutputProductType type = kAlivcProductType;
     if (type == AlivcOutputProductTypeSmartVideo) {
         getUrl = @"/vod/refreshVideoUploadAuth";
@@ -284,7 +289,7 @@
                    }
                    
                    NSInteger code = [[jsonObj objectForKey:@"code"] integerValue];
-                   if (code != 1) {
+                   if (code != 0) {
                        NSError *error = [NSError errorWithDomain:@"AliyunSVideoApi" code:code userInfo:jsonObj];
                        if (completionHandler) {
                            completionHandler(response, nil, error);

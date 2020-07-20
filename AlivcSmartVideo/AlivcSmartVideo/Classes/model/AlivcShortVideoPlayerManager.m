@@ -152,7 +152,7 @@
 //            NSLog(@"video.videoId-----%@------,video.ID-------%@------",video.videoId,video.ID);
             
      
-              self.vId = [NSString stringWithFormat:@"%@",video.ID];
+              self.vId = [NSString stringWithFormat:@"%@",video.rid];
 
             //播放视频方法
            [self.listPlayer addVidSource:video.videoId uid:self.vId];
@@ -170,7 +170,7 @@
 //        self.playView.hidden = NO;
         AlivcShortVideoBasicVideoModel *video = self.videos[index];
 
-        self.vId = [NSString stringWithFormat:@"%@",video.ID];
+        self.vId = [NSString stringWithFormat:@"%@",video.rid];
         if ([video isKindOfClass:[AlivcQuVideoModel class]]) {
             self.currentIndex = index;
             [self.listPlayer moveTo:self.vId accId:self.accessKeyId

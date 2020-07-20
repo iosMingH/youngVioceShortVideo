@@ -29,6 +29,8 @@
 @synthesize belongUserAvatarUrl = _belongUserAvatarUrl;
 @synthesize collection = _collection;
 
+@synthesize rid = _rid;//后面添加
+
 - (instancetype)initWithDic:(NSDictionary *)dic{
     self = [super init];
     if (self) {
@@ -59,7 +61,7 @@
         _censorStatusString = dic[@"censorStatus"];
         _narrowTranscodeStatusString = dic[@"narrowTranscodeStatus"];
         _collection = dic[@"collection"];
-       
+        _rid = dic[@"rid"];
         [self handleOriginalData];
     
     }

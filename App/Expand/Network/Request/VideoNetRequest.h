@@ -27,9 +27,9 @@ NS_ASSUME_NONNULL_END
 @property (nonatomic, strong) NSString *pageNumber;
 @end
 
-//GET /GET /app/testsdk/createAuditResponse  审核视频
-@interface SkNetAppTestsdkCreateAuditRequest : VideoNetRequest
-@property (nonatomic, strong) NSString *token;
+//Post/video/api/submitAliVideoPersonAudit  审核视频
+@interface SkNetSubmitAliVideoPersonAuditRequest : VideoNetRequest
+@property (nonatomic, strong) NSString *videoStatus;
 @property (nonatomic, strong) NSString *videoId;
 @end
 

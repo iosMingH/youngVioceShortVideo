@@ -318,9 +318,10 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
     }
     
     //描述
-    if (model.videoDescription) {
+//    model.videoDescription
+    if (model.title) {
         self.desLabel.hidden = NO;
-        self.desLabel.text = model.videoDescription;
+        self.desLabel.text = model.title;
         [self.desLabel sizeToFit];
         self.desLabel.center = CGPointMake(beside + self.desLabel.frame.size.width / 2, CGRectGetMaxY(self.avatarImageView.frame) + beside + self.desLabel.frame.size.height / 2);
     }else{

@@ -16,6 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
+//评论弹出框
+@interface MHPopCourseCommentView :CEBaseView
+-(void)show;
+-(void)close;
+@property (nonatomic ,strong)UIButton *navPopViw;
+
+@end
+
+
 //评论试图
 @interface MHCourseCommentView : CEBaseView
 

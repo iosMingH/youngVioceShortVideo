@@ -196,10 +196,10 @@
        make.height.mas_equalTo(AUTO(50));
     } touchUp:^(UIButton *sender) {
         TOAST(@"登录成功");
-        [this Net_Login];
+//        [this Net_Login];
         
-//        MHDrawViewController *drawVc = [self loadNavigationController];
-//        [self.view.window setRootViewController:drawVc];
+        MHDrawViewController *drawVc = [self loadNavigationController];
+        [self.view.window setRootViewController:drawVc];
     }];
      loginB.titleLabel.font = NFONT;
      loginB.layer.cornerRadius = AUTO(25);

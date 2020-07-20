@@ -203,7 +203,6 @@ static AliyunVodPublishManager *_uploadManager = nil;
             return;
         }
         self.videoId = videoId;
-        NSLog(@"videoId=%@,uploadAddress=%@,uploadAuth=%@,self.videoPath=%@",videoId,uploadAddress,uploadAuth,self.videoPath);
         [_uploadManager uploadVideoWithPath:self.videoPath uploadAddress:uploadAddress uploadAuth:uploadAuth];
     }];
 }

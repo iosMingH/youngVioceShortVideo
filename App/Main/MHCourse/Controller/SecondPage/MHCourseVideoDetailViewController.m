@@ -125,8 +125,8 @@
                 case 200:
             {
                 TOAST(@"客服");
-                CommentsPopView *popView = [[CommentsPopView alloc] initWithAwemeId:@""];
-                [popView show];
+//                CommentsPopView *popView = [[CommentsPopView alloc] initWithAwemeId:@""];
+//                [popView show];
             }
                 break;
 //            购买

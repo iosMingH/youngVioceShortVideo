@@ -188,12 +188,19 @@ UITableViewDataSource
                 case 200:
             {
                
-                MHPopContentView *popView = [[MHPopContentView alloc]initWithHeight:AUTO(300) withRoundSize:CGSizeMake(0, 0)];
+//                MHPopContentView *popView = [[MHPopContentView alloc]initWithHeight:AUTO(300) withRoundSize:CGSizeMake(0, 0)];
+//
+//                MHCourseCommentView *view = [[MHCourseCommentView alloc]initWithFrame:CGRectMake(0, AUTO(-20), popView.contentV.width, popView.contentV.height+AUTO(20))];
+//                [popView.contentV addSubview:view];
+//                [popView show];
+//                self.commentView = popView;
                 
-                MHCourseCommentView *view = [[MHCourseCommentView alloc]initWithFrame:CGRectMake(0, AUTO(-20), popView.contentV.width, popView.contentV.height+AUTO(20))];
-                [popView.contentV addSubview:view];
+                MHPopCourseCommentView *popView = [MHPopCourseCommentView new];
                 [popView show];
-                self.commentView = popView;
+                
+
+                
+                
             
             }
                 break;

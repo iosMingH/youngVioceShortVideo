@@ -55,7 +55,7 @@
     // 添加titleView
     NSArray *titlesArr = @[@"同城",@"关注",@"推荐"];
     
-    MHPageTitleView *titleView = [[MHPageTitleView alloc] initWithFrame:CGRectMake(0, 0, AUTO(250), 44) titles:titlesArr index:1];
+    MHPageTitleView *titleView = [[MHPageTitleView alloc] initWithFrame:CGRectMake(0, 0, AUTO(250), 44) titles:titlesArr index:2];
     titleView.delegate = self;
     self.navigationItem.titleView = titleView;
     self.titleView = titleView;
@@ -81,7 +81,7 @@
     
  
     
-    MHPageContentView *pageContentView = [[MHPageContentView alloc] initWithFrame:contentViewFrame childVcs:self.childVcs parentViewController:self index:1];
+    MHPageContentView *pageContentView = [[MHPageContentView alloc] initWithFrame:contentViewFrame childVcs:self.childVcs parentViewController:self index:2];
     pageContentView.pageCount= 3; //设置左右滚动页面的页数
     pageContentView.delegate = self;
     self.pageContentView = pageContentView;

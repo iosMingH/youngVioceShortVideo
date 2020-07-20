@@ -84,7 +84,7 @@
 
 //获获取播放的sts校验数据  大叶网=========================
 + (void)dayeServerGetSTSWithToken:(NSString *)token success:(void (^)(NSString * _Nonnull, NSString * _Nonnull, NSString * _Nonnull))success failure:(void (^)(NSString * _Nonnull))failure{
-    NSString *urlString = @"/app/getSts";
+    NSString *urlString = @"/video/api/getAliVideoStsAuth";
      NSString *allUrlString = [NSString stringWithFormat:@"%@%@?token=%@",URL_BASIC,urlString,token];
     NSLog(@"allUrlString=%@",allUrlString);
     [self daye_getWithUrlString:allUrlString success:^(id data) {
@@ -112,7 +112,8 @@
 
 //推荐的视频列表  大叶网==================
 + (void)dayeServerGetRecommendVideoListWithToken:(NSString *)token pageIndex:(NSInteger)index pageSize:(NSInteger)count lastEndVideoId:(NSString *)videoId success:(void (^)(NSArray<AlivcQuVideoModel *> * _Nonnull,NSInteger))success failure:(void (^)(NSString * _Nonnull))failure{
-    NSString *urlString = @"/app/videolist";
+//    NSString *urlString = @"/app/videolist";
+    NSString *urlString = @"/video/api/getAliShortVideoList";
     [self dayeServerVideoListWithUrlString:urlString token:token pageIndex:index pageSize:count lastEndVideoId:videoId success:success failure:failure];
 }
 
@@ -155,7 +156,8 @@
     NSString *indexString = [NSString stringWithFormat:@"%ld",(long)index];
     NSString *countString = [NSString stringWithFormat:@"%ld",(long)count];
     
-    NSDictionary *paramDic = @{@"token":token,@"pageNumber":indexString,@"pageSize":countString};
+//    NSDictionary *paramDic = @{@"token":token,@"pageNumber":indexString,@"pageSize":countString};
+     NSDictionary *paramDic = @{@"videoStatus":@"Normal",@"pageNumber":indexString,@"pageSize":countString};
     
 //    NSDictionary *paramDic = @{@"token":token,@"pageNumber":indexString};
     
@@ -166,10 +168,11 @@
     
     NSString *resultUrlString = [self p_creatUrlGetStringWithOriginalUrlString:allUrlString param:mDic];
     [self daye_getWithUrlString:resultUrlString success:^(id data) {
+        NSLog(@"data=%@",data);
         if ([data isKindOfClass:[NSDictionary class]]) {
             //
             NSDictionary *dataDic = (NSDictionary *)data;
-            NSArray *dics = dataDic[@"videoList"];
+            NSArray *dics = dataDic[@"list"];
             NSInteger totalCount = [dataDic[@"total"]integerValue];
             if (dics.count) {
                 NSMutableArray *tempMArray = [[NSMutableArray alloc]initWithCapacity:dics.count];
@@ -196,9 +199,10 @@
 
 //删除个人视频
 + (void)dayeServerDeletePersonalVideoWithToken:(NSString *)token videoId:(NSString *)videId userId:(NSString *)userId success:(void (^)(void))success failure:(void (^)(NSString * _Nonnull))failure{
-    NSString *urlString = @"/app/user/userDelVideo";
+//    NSString *urlString = @"/app/user/userDelVideo";
+     NSString *urlString = @"/video/api/deleteAliVideo";
     NSString *allUrlString = [NSString stringWithFormat:@"%@%@",URL_BASIC,urlString];
-     NSDictionary *paramDic = @{@"token":token,@"id":videId};
+     NSDictionary *paramDic = @{@"token":token,@"videoIds":videId};
     NSString *resultUrlString = [self p_creatUrlGetStringWithOriginalUrlString:allUrlString param:paramDic];
         NSLog(@"resultUrlString=%@",resultUrlString);
     [self daye_getWithUrlString:resultUrlString success:^(id data) {

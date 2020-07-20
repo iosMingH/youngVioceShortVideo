@@ -440,12 +440,13 @@ AliyunEffectTransitionViewDelegate, AlivcSpecialEffectViewDelegate ,AlivcAudioEf
 //    self.currentTimeLabel.center = CGPointMake(ScreenWidth / 2,self.currentTimelineView.frame.origin.y + CGRectGetHeight(self.currentTimelineView.bounds) + 6);
     [self.view addSubview:self.currentTimeLabel];
     
-    NSArray *editModels = [AlivcEditItemManager defaultModelsWithUIConfig:_uiConfig];
-    self.editButtonsView = [[AliyunEditButtonsView alloc] initWithModels:editModels];
-    self.editButtonsView.frame =
-    CGRectMake(0, ScreenHeight - 70 - SafeBottom, ScreenWidth, 70);
-    [self.view addSubview:self.editButtonsView];
-    self.editButtonsView.delegate = (id)self;
+    //============ 先关掉一些功能 HM
+//    NSArray *editModels = [AlivcEditItemManager defaultModelsWithUIConfig:_uiConfig];
+//    self.editButtonsView = [[AliyunEditButtonsView alloc] initWithModels:editModels];
+//    self.editButtonsView.frame =
+//    CGRectMake(0, ScreenHeight - 70 - SafeBottom, ScreenWidth, 70);
+//    [self.view addSubview:self.editButtonsView];
+//    self.editButtonsView.delegate = (id)self;
     [self.view addSubview:self.playButton];
 }
 
