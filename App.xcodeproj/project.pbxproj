@@ -174,6 +174,15 @@
 		7336327A24AC62AA00FD67CF /* MHIntegralModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7336327924AC62AA00FD67CF /* MHIntegralModel.m */; };
 		7338015324B6A7CE00D83297 /* testBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 7338015224B6A7CE00D83297 /* testBg.png */; };
 		7338016724B6AF2700D83297 /* MHCourseIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338016624B6AF2700D83297 /* MHCourseIntroductionView.m */; };
+		73384E3924C5929400737319 /* CGXPickerViewBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 73384E2924C5929300737319 /* CGXPickerViewBundle.bundle */; };
+		73384E3A24C5929400737319 /* CGXPickerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E2B24C5929300737319 /* CGXPickerViewManager.m */; };
+		73384E3B24C5929400737319 /* NSDate+CGXPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3024C5929400737319 /* NSDate+CGXPicker.m */; };
+		73384E3C24C5929400737319 /* CGXAddressPcikerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3124C5929400737319 /* CGXAddressPcikerView.m */; };
+		73384E3D24C5929400737319 /* CGXDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3324C5929400737319 /* CGXDatePickerView.m */; };
+		73384E3E24C5929400737319 /* CGXPickerUIBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3424C5929400737319 /* CGXPickerUIBaseView.m */; };
+		73384E3F24C5929400737319 /* CGXAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3524C5929400737319 /* CGXAddressModel.m */; };
+		73384E4024C5929400737319 /* CGXStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3724C5929400737319 /* CGXStringPickerView.m */; };
+		73384E4124C5929400737319 /* CGXPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3824C5929400737319 /* CGXPickerView.m */; };
 		7338F5C624BE9D87005A96E0 /* MHOpenShopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338F5C524BE9D87005A96E0 /* MHOpenShopView.m */; };
 		7339EC4424BBE4FF006AB6BE /* MHAllCourseListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7339EC4324BBE4FF006AB6BE /* MHAllCourseListView.m */; };
 		7339EC4824BBF715006AB6BE /* MHPopContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7339EC4724BBF715006AB6BE /* MHPopContentView.m */; };
@@ -558,6 +567,23 @@
 		7338015224B6A7CE00D83297 /* testBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testBg.png; sourceTree = "<group>"; };
 		7338016524B6AF2700D83297 /* MHCourseIntroductionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHCourseIntroductionView.h; sourceTree = "<group>"; };
 		7338016624B6AF2700D83297 /* MHCourseIntroductionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHCourseIntroductionView.m; sourceTree = "<group>"; };
+		73384E2824C5929300737319 /* CGXAddressPcikerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXAddressPcikerView.h; sourceTree = "<group>"; };
+		73384E2924C5929300737319 /* CGXPickerViewBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CGXPickerViewBundle.bundle; sourceTree = "<group>"; };
+		73384E2A24C5929300737319 /* CGXDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXDatePickerView.h; sourceTree = "<group>"; };
+		73384E2B24C5929300737319 /* CGXPickerViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPickerViewManager.m; sourceTree = "<group>"; };
+		73384E2C24C5929300737319 /* CGXAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXAddressModel.h; sourceTree = "<group>"; };
+		73384E2D24C5929400737319 /* CGXPickerUIBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPickerUIBaseView.h; sourceTree = "<group>"; };
+		73384E2E24C5929400737319 /* CGXPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPickerView.h; sourceTree = "<group>"; };
+		73384E2F24C5929400737319 /* CGXStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXStringPickerView.h; sourceTree = "<group>"; };
+		73384E3024C5929400737319 /* NSDate+CGXPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CGXPicker.m"; sourceTree = "<group>"; };
+		73384E3124C5929400737319 /* CGXAddressPcikerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXAddressPcikerView.m; sourceTree = "<group>"; };
+		73384E3224C5929400737319 /* CGXPickerViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPickerViewManager.h; sourceTree = "<group>"; };
+		73384E3324C5929400737319 /* CGXDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXDatePickerView.m; sourceTree = "<group>"; };
+		73384E3424C5929400737319 /* CGXPickerUIBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPickerUIBaseView.m; sourceTree = "<group>"; };
+		73384E3524C5929400737319 /* CGXAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXAddressModel.m; sourceTree = "<group>"; };
+		73384E3624C5929400737319 /* NSDate+CGXPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CGXPicker.h"; sourceTree = "<group>"; };
+		73384E3724C5929400737319 /* CGXStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXStringPickerView.m; sourceTree = "<group>"; };
+		73384E3824C5929400737319 /* CGXPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPickerView.m; sourceTree = "<group>"; };
 		7338F5C424BE9D87005A96E0 /* MHOpenShopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHOpenShopView.h; sourceTree = "<group>"; };
 		7338F5C524BE9D87005A96E0 /* MHOpenShopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHOpenShopView.m; sourceTree = "<group>"; };
 		7339EC4224BBE4FF006AB6BE /* MHAllCourseListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHAllCourseListView.h; sourceTree = "<group>"; };
@@ -981,6 +1007,7 @@
 		1517FE2223C18F0B0074D410 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				73384E2724C5929300737319 /* CGXPickerView */,
 				7339EC4524BBF6C3006AB6BE /* MHPopContentView */,
 				733A68E924B575660071A1EE /* MHDrawView */,
 				15D94F1124A9840C009C1422 /* CollectionViewFlowLayout */,
@@ -1782,6 +1809,30 @@
 			path = MHPageView;
 			sourceTree = "<group>";
 		};
+		73384E2724C5929300737319 /* CGXPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				73384E2824C5929300737319 /* CGXAddressPcikerView.h */,
+				73384E2924C5929300737319 /* CGXPickerViewBundle.bundle */,
+				73384E2A24C5929300737319 /* CGXDatePickerView.h */,
+				73384E2B24C5929300737319 /* CGXPickerViewManager.m */,
+				73384E2C24C5929300737319 /* CGXAddressModel.h */,
+				73384E2D24C5929400737319 /* CGXPickerUIBaseView.h */,
+				73384E2E24C5929400737319 /* CGXPickerView.h */,
+				73384E2F24C5929400737319 /* CGXStringPickerView.h */,
+				73384E3024C5929400737319 /* NSDate+CGXPicker.m */,
+				73384E3124C5929400737319 /* CGXAddressPcikerView.m */,
+				73384E3224C5929400737319 /* CGXPickerViewManager.h */,
+				73384E3324C5929400737319 /* CGXDatePickerView.m */,
+				73384E3424C5929400737319 /* CGXPickerUIBaseView.m */,
+				73384E3524C5929400737319 /* CGXAddressModel.m */,
+				73384E3624C5929400737319 /* NSDate+CGXPicker.h */,
+				73384E3724C5929400737319 /* CGXStringPickerView.m */,
+				73384E3824C5929400737319 /* CGXPickerView.m */,
+			);
+			path = CGXPickerView;
+			sourceTree = "<group>";
+		};
 		7339EC4524BBF6C3006AB6BE /* MHPopContentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1996,6 +2047,7 @@
 				1517FEB523C18F0B0074D410 /* icon_shouye1__normal@2x.png in Resources */,
 				1517FEB923C18F0B0074D410 /* icon_shouye3_selected@3x.png in Resources */,
 				1517FEB423C18F0B0074D410 /* icon_shouye1__selected@2x.png in Resources */,
+				73384E3924C5929400737319 /* CGXPickerViewBundle.bundle in Resources */,
 				7338015324B6A7CE00D83297 /* testBg.png in Resources */,
 				1517FEB823C18F0B0074D410 /* icon_shouye3_normal@2x.png in Resources */,
 			);
@@ -2079,6 +2131,7 @@
 				15C32AED244DDE300062618D /* MHPublishQuViewControl.m in Sources */,
 				733D03DD24ADD99A0091A2F7 /* MHSettingModel.m in Sources */,
 				733CD40624B2D23000446BCE /* MHIntergralMallModel.m in Sources */,
+				73384E3E24C5929400737319 /* CGXPickerUIBaseView.m in Sources */,
 				1517009223D0602C0074D410 /* SkObject.m in Sources */,
 				1517FEC623C18F0B0074D410 /* SCFileTool.m in Sources */,
 				733D03DA24ADD93D0091A2F7 /* MHSettingCell.m in Sources */,
@@ -2101,6 +2154,7 @@
 				15D94F0B24A86498009C1422 /* TAPageControl.m in Sources */,
 				15C32AE7244D94DA0062618D /* MHShortVideoUploadManager.m in Sources */,
 				1517FECF23C18F0B0074D410 /* UIColor+HexColor.m in Sources */,
+				73384E3D24C5929400737319 /* CGXDatePickerView.m in Sources */,
 				158C4DC5243EF7390070C9B7 /* SCLoginController.m in Sources */,
 				7305AA0324AC89F6005B3043 /* MHEditInfoModel.m in Sources */,
 				1585EC5224406B4C00D77CF5 /* RSA.m in Sources */,
@@ -2122,6 +2176,7 @@
 				1517FEC323C18F0B0074D410 /* FUProgressHUD.m in Sources */,
 				1517FED223C18F0B0074D410 /* UIButton+FillColor.m in Sources */,
 				1517FEAB23C18F0B0074D410 /* CENavigationController.m in Sources */,
+				73384E4124C5929400737319 /* CGXPickerView.m in Sources */,
 				1517FED623C18F0B0074D410 /* UserNetRequest.m in Sources */,
 				7338016724B6AF2700D83297 /* MHCourseIntroductionView.m in Sources */,
 				1517FECD23C18F0B0074D410 /* UIImage+Tools.m in Sources */,
@@ -2202,6 +2257,7 @@
 				15DF80032487747800A0D098 /* MHPageTitleView.m in Sources */,
 				1555F93324A2E990005CF929 /* UIViewController+CEBase.m in Sources */,
 				15C32AF3244EE5760062618D /* VideoNetRequest.m in Sources */,
+				73384E3A24C5929400737319 /* CGXPickerViewManager.m in Sources */,
 				15D94EF624A84928009C1422 /* MHCourseModel.m in Sources */,
 				15C32ACA244955580062618D /* WXMediaMessage+messageConstruct.mm in Sources */,
 				7343D36E24AEDDBE001EC167 /* UINavigationItem+GKCategory.m in Sources */,
@@ -2225,9 +2281,12 @@
 				15C32AD5244D70150062618D /* MHSVideoApi.m in Sources */,
 				1555F91124A1A49D005CF929 /* MHCourseViewController.m in Sources */,
 				1517FECA23C18F0B0074D410 /* takePhoto.m in Sources */,
+				73384E3F24C5929400737319 /* CGXAddressModel.m in Sources */,
+				73384E4024C5929400737319 /* CGXStringPickerView.m in Sources */,
 				1517008823D0602C0074D410 /* GTMBase64.m in Sources */,
 				7343D36B24AEDDBE001EC167 /* UINavigationController+GKCategory.m in Sources */,
 				734505CE24B30B3500C5ACF2 /* MHMyCourseCell.m in Sources */,
+				73384E3C24C5929400737319 /* CGXAddressPcikerView.m in Sources */,
 				1585EC4D24401D9800D77CF5 /* NSAttributedString+Extension.m in Sources */,
 				15C32ACC244955580062618D /* WXApiRequestHandler.m in Sources */,
 				1517008D23D0602C0074D410 /* UIKit+SK.m in Sources */,
@@ -2263,6 +2322,7 @@
 				7343D37024AEDDBE001EC167 /* UIViewController+GKCategory.m in Sources */,
 				1555F93D24A2F914005CF929 /* MHUserHeadView.m in Sources */,
 				7343D38B24AEE2F2001EC167 /* GKDouyinScrollView.m in Sources */,
+				73384E3B24C5929400737319 /* NSDate+CGXPicker.m in Sources */,
 				1517008B23D0602C0074D410 /* UIDevice-Hardware.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

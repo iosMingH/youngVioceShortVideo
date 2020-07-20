@@ -64,13 +64,12 @@
         make.right.mas_equalTo(-AUTO(50));
     }];
     
-    UIImageView *iconV = [UIImageView hyb_imageViewWithImage:@"" superView:self.contentView constraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(12, 16));
+    UIImageView *iconV = [UIImageView hyb_imageViewWithImage:@"p_arrow" superView:self.contentView constraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(AUTO(6), AUTO(11)));
         make.centerY.equalTo(wkThis.contentView);
         make.right.mas_equalTo(-AUTO(20));
     }];
      
-   iconV.backgroundColor = [UIColor grayColor];
 
 }
 

@@ -22,7 +22,7 @@ static const NSInteger kFavoriteViewLikeAfterTag   = 0x02;
     if(self) {
         _favoriteBefore = [[UIImageView alloc]initWithFrame:frame];
         _favoriteBefore.contentMode = UIViewContentModeCenter;
-        _favoriteBefore.image = [UIImage imageNamed:@"icon_home_like_before"];
+        _favoriteBefore.image = [UIImage imageNamed:@"p_love"];
         _favoriteBefore.userInteractionEnabled = YES;
         _favoriteBefore.tag = kFavoriteViewLikeBeforeTag;
         [_favoriteBefore addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)]];
@@ -30,7 +30,7 @@ static const NSInteger kFavoriteViewLikeAfterTag   = 0x02;
         
         _favoriteAfter = [[UIImageView alloc]initWithFrame:frame];
         _favoriteAfter.contentMode = UIViewContentModeCenter;
-        _favoriteAfter.image = [UIImage imageNamed:@"icon_home_like_after"];
+        _favoriteAfter.image = [UIImage imageNamed:@"p_love_selected"];
         _favoriteAfter.userInteractionEnabled = YES;
         _favoriteAfter.tag = kFavoriteViewLikeAfterTag;
         [_favoriteAfter setHidden:YES];

@@ -447,10 +447,10 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
 //获取更多数据
 - (void)loadMoreVideo {
     
-        if (!self.userToken) {
-            [MBProgressHUD showMessage:NSLocalizedString(@"请先登录", nil) inView:self.view];
-            return;
-        }
+//        if (!self.userToken) {
+//            [MBProgressHUD showMessage:NSLocalizedString(@"请先登录", nil) inView:self.view];
+//            return;
+//        }
        
         if (self.shouldplaySelfVideo) {
             

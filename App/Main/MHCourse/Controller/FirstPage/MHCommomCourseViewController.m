@@ -63,14 +63,14 @@ UITableViewDataSource
 //        [self setupModelOfCell:cell AtIndexPath:indexPath];
 //    }];
     
-    return 100;
+    return AUTO(100);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
 //    return [tableView fd_heightForHeaderFooterViewWithIdentifier:headId configuration:^(id headerFooterView) {
 //        [self setupModelOfHeadView:headerFooterView section:section];
 //    }];
-        return 250;
+        return AUTO(250);
     
 }
 
@@ -117,7 +117,9 @@ UITableViewDataSource
     MHCourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [self setupModelOfCell:cell AtIndexPath:indexPath];
-    
+    cell.titleL.textColor = SK_COLOR_BASE_TITLEMAIN;
+       cell.contentL.textColor = SK_COLOR_BASE_TITLELESS;
+       cell.remarkL.textColor = SK_COLOR_BASE_TEXT_YELLOW;
     return cell;
 }
 - (void)setupModelOfCell:(MHCourseTableViewCell *)cell AtIndexPath:(NSIndexPath *)indexPath{

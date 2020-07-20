@@ -124,32 +124,101 @@
 
 
 //************排序
+//工具栏 热门排序  价钱排序   从新到旧   等
+
+#define KY_MTITLE @"key_title"
+#define KY_MMARK  @"key_mark"
+#define KY_MIMAGE @"key_image"
+
 @interface MHCourseSortView ()
 @property(nonatomic,strong)UILabel *titleL;
+ @property(nonatomic,strong)NSArray* menusData;
 @end
 
 @implementation MHCourseSortView
 
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
-//        self.contentView.backgroundColor = [UIColor redColor];
-//        __weak typeof(self) weakSelf = self;
-        self.titleL = [UILabel hyb_labelWithFont:AUTO(18) superView:self.contentView constraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(15);
-            make.right.mas_equalTo(-15);
-            make.top.mas_equalTo(15);
-            make.height.mas_equalTo(40);
-        }];
-        self.titleL.text = @"排序";
-        self.titleL.font = FONT(20);
-        self.titleL.textColor = [UIColor orangeColor];
-        self.titleL.textAlignment = NSTextAlignmentCenter;
+        self.contentView.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
+        [self initData];
+        [self initView11];
     }
     return self;
 }
 
+- (void)initData{
+    self.menusData = @[
+    @{KY_MTITLE:@"热门排序",
+      KY_MMARK:@"100",
+      KY_MIMAGE:@""},
+    @{KY_MTITLE:@"价钱排序",
+      KY_MMARK:@"200",
+      KY_MIMAGE:@""},
+    @{KY_MTITLE:@"从新到旧",
+    KY_MMARK:@"300",
+    KY_MIMAGE:@""},
+    @{KY_MTITLE:@"价钱排序",
+    KY_MMARK:@"400",
+    KY_MIMAGE:@""}
+    ];
+}
+
+- (void)initView11{
+    __weak typeof(self) weakSelf = self;
+    
+    UIView *toolV = [UIView hyb_viewWithSuperView:self.contentView constraints:^(MASConstraintMaker *make) {
+         make.edges.equalTo(weakSelf.contentView);
+        }];
+        [toolV layoutIfNeeded];
+        CGFloat toolW = DEVICEWIDTH/self.menusData.count;
+   
+    //      NSArray *titleA = @[@"申请开店",@"课程订单",@"邀请好友"];
+            for (int i = 0; i < self.menusData.count; i++) {
+            NSDictionary* item = [self.menusData objectAtIndex:i];
+            UIView *titleV = [UIView hyb_viewWithSuperView:toolV constraints:^(MASConstraintMaker *make) {
+                    make.top.mas_equalTo(0);
+                    make.height.equalTo(toolV);
+                    make.width.mas_equalTo(toolW);
+                    make.left.mas_equalTo(i*toolW);
+                } onTaped:^(UITapGestureRecognizer *sender) {
+                    [self toolAction:sender];
+                    
+                }];
+                titleV.tag = [[item objectForKey:KY_MMARK] integerValue];
+                titleV.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
+              
+                
+                UILabel *titleL = [UILabel hyb_labelWithText:[item objectForKey:KY_MTITLE]  font:AUTO(12) superView:titleV constraints:^(MASConstraintMaker *make) {
+                    make.left.mas_equalTo(AUTO(10));
+                    make.right.mas_equalTo(-AUTO(10));
+                    make.centerY.equalTo(titleV);
+                    make.height.mas_equalTo(AUTO(32));
+                    
+                }];
+                 [titleL layoutIfNeeded];
+                titleL.textColor = [UIColor whiteColor];
+                titleL.layer.backgroundColor = SK_COLOR_BASE_TRANSPARENT.CGColor;
+                titleL.layer.cornerRadius = titleL.height/2;
+//                titleL.layer.masksToBounds = YES;
+                titleL.textAlignment = NSTextAlignmentCenter;
+//                titleL.backgroundColor = SK_COLOR_BASE_TRANSPARENT;
+                
+            }
+        
+}
+
+
 -(void)setModel:(id)model section:(NSInteger )section{
    
+}
+
+- (void)toolAction:(UITapGestureRecognizer *)sender
+{
+    NSInteger tag = [sender view].tag;
+    NoticeModel* model = [[NoticeModel alloc]init:tag msg:nil data:nil];
+    NSString* targer = @"MHMyCourseViewController";
+    [[NSNotificationCenter defaultCenter] postNotificationName:targer object:nil userInfo:[model mj_keyValues]];
+                
 }
 
 @end

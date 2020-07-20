@@ -99,7 +99,7 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
 
       _share = [[UIImageView alloc]init];
        _share.contentMode = UIViewContentModeCenter;
-       _share.image = [UIImage imageNamed:@"icon_home_share"];
+       _share.image = [UIImage imageNamed:@"p_arrow_big"];
        _share.userInteractionEnabled = YES;
      _share.tag = kAwemeListLikeShareTag;
        [_share addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)]];
@@ -114,7 +114,7 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
 
        _comment = [[UIImageView alloc]init];
        _comment.contentMode = UIViewContentModeCenter;
-       _comment.image = [UIImage imageNamed:@"icon_home_comment"];
+       _comment.image = [UIImage imageNamed:@"p_message"];
        _comment.userInteractionEnabled = YES;
        _comment.tag = kAwemeListLikeCommentTag;
        [_comment addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)]];

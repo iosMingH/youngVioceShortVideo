@@ -11,6 +11,8 @@
 #import "takePhoto.h"
 #import "MHEditTipsView.h"
 #import "MHAddAddressModel.h"
+#import "CGXPickerView.h"
+
 #define HEIGHT_HEAD   AUTO(160)
 #define HEIGHT_CELL   AUTO(49)
 #define TABLE_SECETION_HEIGHT AUTO(10)
@@ -25,6 +27,8 @@
 @property(nonatomic,strong)UIImageView *headerI;
 @property(nonatomic,strong)UIButton *photoBtn;
 @property(nonatomic,strong)UITextView *infoT;
+@property (nonatomic, copy) NSString *address;
+
 
 @end
 
@@ -121,12 +125,33 @@
  
     MHAddAddressModel *model = [_dataList objectAtIndex: indexPath.row];
     cell.model = model;
-    if (_isEdit && indexPath.row != 2 && indexPath.row != 3) {
-        cell.contentT.userInteractionEnabled = YES;
-    }else{
-        cell.contentT.userInteractionEnabled = NO;
+    
+    switch (indexPath.row) {
+        case 0:
+        {
+             cell.contentT.userInteractionEnabled = YES;
+        }
+            break;
+        case 1:
+       {
+            cell.contentT.userInteractionEnabled = YES;
+           cell.contentT.keyboardType = UIKeyboardTypeNumberPad;
+       }
+           break;
+        case 2:
+       {
+           cell.contentT.userInteractionEnabled = NO;
+           cell.contentT.text = self.address;
+       }
+           break;
+        case 3:
+       {
+           cell.contentT.userInteractionEnabled = NO;
+       }
+           break;
+        default:
+            break;
     }
-
     
     return cell;
 }
@@ -152,6 +177,13 @@
     if (_isEdit && indexPath.row == 2 ) {
 //        [self initTipsView];
         NSLog(@"弹出省市区");
+        
+        [CGXPickerView showAddressPickerWithTitle:@"请选择你的城市" DefaultSelected:@[@4, @0,@0] IsAutoSelect:NO Manager:nil ResultBlock:^(NSArray *selectAddressArr, NSArray *selectAddressRow) {
+            NSLog(@"%@-%@",selectAddressArr,selectAddressRow);
+            self.address = [NSString stringWithFormat:@"%@%@%@", selectAddressArr[0], selectAddressArr[1],selectAddressArr[2]];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:2 inSection:0], nil] withRowAnimation:UITableViewRowAnimationNone];
+            
+        }];
        }
    
 }

@@ -57,19 +57,17 @@
         make.width.mas_equalTo(AUTO(60));
     }];
     
-    [self.contentT mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(wkThis.titleL.mas_right);
-        make.top.and.bottom.mas_equalTo(0);
-        make.right.mas_equalTo(-AUTO(50));
-    }];
-    
-    UIImageView *iconV = [UIImageView hyb_imageViewWithImage:@"" superView:self.contentView constraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(12, 16));
+    UIImageView *iconV = [UIImageView hyb_imageViewWithImage:@"p_arrow" superView:self.contentView constraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(6, 11));
         make.centerY.equalTo(wkThis.contentView);
         make.right.mas_equalTo(-AUTO(20));
     }];
-     
-   iconV.backgroundColor = [UIColor grayColor];
+    
+    [self.contentT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(wkThis.titleL.mas_right);
+        make.top.and.bottom.mas_equalTo(0);
+        make.right.equalTo(iconV.mas_left).offset(-AUTO(10));
+    }];
 
 }
 

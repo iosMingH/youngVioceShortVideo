@@ -112,17 +112,6 @@
 - (void)initView11{
     __weak typeof(self) weakSelf = self;
     
-//         self.titleL = [UILabel hyb_labelWithFont:AUTO(18) superView:self.contentView constraints:^(MASConstraintMaker *make) {
-//             make.left.mas_equalTo(15);
-//             make.right.mas_equalTo(-15);
-//             make.top.mas_equalTo(15);
-//             make.height.mas_equalTo(40);
-//         }];
-//         self.titleL.text = @"排序";
-//         self.titleL.font = FONT(20);
-//         self.titleL.textColor = [UIColor orangeColor];
-//         self.titleL.textAlignment = NSTextAlignmentCenter;
-    
     UIView *toolV = [UIView hyb_viewWithSuperView:self.contentView constraints:^(MASConstraintMaker *make) {
          make.edges.equalTo(weakSelf.contentView);
         }];
@@ -143,6 +132,7 @@
                 }];
                 titleV.tag = [[item objectForKey:KY_MMARK] integerValue];
                 titleV.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
+              
                 
                 UILabel *titleL = [UILabel hyb_labelWithText:[item objectForKey:KY_MTITLE]  font:AUTO(12) superView:titleV constraints:^(MASConstraintMaker *make) {
                     make.left.mas_equalTo(AUTO(10));
@@ -153,9 +143,11 @@
                 }];
                  [titleL layoutIfNeeded];
                 titleL.textColor = [UIColor whiteColor];
+                titleL.layer.backgroundColor = SK_COLOR_BASE_TRANSPARENT.CGColor;
                 titleL.layer.cornerRadius = titleL.height/2;
+//                titleL.layer.masksToBounds = YES;
                 titleL.textAlignment = NSTextAlignmentCenter;
-                titleL.backgroundColor = SK_COLOR_BASE_TRANSPARENT;
+//                titleL.backgroundColor = SK_COLOR_BASE_TRANSPARENT;
                 
             }
         

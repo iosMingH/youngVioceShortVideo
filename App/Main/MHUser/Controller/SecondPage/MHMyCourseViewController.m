@@ -135,6 +135,48 @@ UITableViewDataSource
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - notice
+- (void)eventNotice:(NSNotification *)info
+{
+    NoticeModel *model = [NoticeModel mj_objectWithKeyValues:[info userInfo]];
+    switch (model.code) {
+//           热门排序
+        case 100:
+        {
+            TOAST(@"热门排序");
+        }
+            break;
+//           价格排序
+        case 200:
+        {
+            TOAST(@" 价格排序");
+        }
+            break;
+            
+//            从新到旧
+        case 300:
+            
+        {
+            
+             TOAST(@"从新到旧");
+        }
+            break;
+//            价格排序
+        case 400:
+                   
+       {
+           
+            TOAST(@"价格排序11");
+       }
+           break;
+            
+        default:
+            break;
+    }
+    
+}
+
+
 -(void)requstData{
   
     for (int idx = 0; idx < 10; idx ++) {

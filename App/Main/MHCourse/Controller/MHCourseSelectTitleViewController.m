@@ -30,14 +30,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-//          self.navigationController.navigationBar.hidden = NO;
-//        //设置导航栏背景图片为一个无图的image，导航栏会加载空imgae，就自然透明掉了
-//        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-//    //    同理透明掉导航栏下划线
-//        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-
-    
 }
 
 
@@ -56,24 +48,15 @@
             [testArray addObject:[NSString stringWithFormat:@"课程分类%d",i]];
         }
 
-         
-
         NSMutableArray *childVcArray = [NSMutableArray array];
         for (int i = 0; i < testArray.count; i++) {
-//            if (i == 0) {
-//                MHCommomCourseViewController *vc = [[MHCommomCourseViewController alloc] init];
-//                [childVcArray addObject:vc];
-//            }else{
-                MHCourseViewController *vc = [[MHCourseViewController alloc] init];
-               [childVcArray addObject:vc];
-//            }
+            MHCourseViewController *vc = [[MHCourseViewController alloc] init];
+           [childVcArray addObject:vc];
         }
-    
-//            [testArray insertObject:@"推荐" atIndex:0];
+
          [testArray insertObject:@"推荐" atIndex:0];
             MHCommomCourseViewController *vc = [[MHCommomCourseViewController alloc] init];
             [childVcArray insertObject:vc atIndex:0];
-    NSLog(@"testArray=%@",testArray);
         
         LSPPageView *pageView = [[LSPPageView alloc] initWithFrame:CGRectMake(0, Height_NavBar+50, self.view.bounds.size.width, self.view.bounds.size.height-50-Height_NavBar) titles:testArray.mutableCopy style:nil childVcs:childVcArray.mutableCopy parentVc:self];
         [pageView setToIndex:0];
@@ -90,3 +73,4 @@
     NSLog(@"第%zd个",index);
 }
 @end
+

@@ -117,7 +117,7 @@ UITableViewDataSource
     [self setupModelOfCell:cell AtIndexPath:indexPath];
     cell.titleL.textColor = SK_COLOR_BASE_TITLEMAIN;
     cell.contentL.textColor = SK_COLOR_BASE_TITLELESS;
-    cell.remarkL.textColor = SK_COLOR_BASE_ORANGE;
+    cell.remarkL.textColor = SK_COLOR_BASE_TEXT_YELLOW;
     
     return cell;
 }

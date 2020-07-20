@@ -95,7 +95,7 @@
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
         self.contentView.backgroundColor = [UIColor whiteColor];
-//        __weak typeof(self) weakSelf = self;
+        __weak typeof(self) weakSelf = self;
         
         UIView *spaceView = [UIView hyb_viewWithSuperView:self.contentView constraints:^(MASConstraintMaker *make) {
             make.left.and.right.mas_equalTo(0);
@@ -123,15 +123,13 @@
         
         
         
-        UIImageView *iconV = [UIImageView hyb_imageViewWithImage:@"" superView:self.contentView constraints:^(MASConstraintMaker *make) {
+        UIImageView *iconV = [UIImageView hyb_imageViewWithImage:@"p_arrow" superView:self.contentView constraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(-AUTO(SK_MARGINLR));
-            make.size.mas_equalTo(CGSizeMake(AUTO(12), AUTO(16)));
-            make.top.mas_equalTo(AUTO(20));
+            make.size.mas_equalTo(CGSizeMake(AUTO(6), AUTO(11)));
+//            make.top.mas_equalTo(AUTO(20));
+            make.centerY.equalTo(weakSelf.contentView.mas_centerY).offset(AUTO(5));
         }];
-         iconV.backgroundColor = [UIColor grayColor];
-        
-
-        
+                
         self.contentBtn = [UIButton hyb_buttonWithSuperView:self.contentView constraints:^(MASConstraintMaker *make) {
             make.right.equalTo(iconV.mas_left).offset(-AUTO(10));
             make.top.mas_equalTo(AUTO(10));
@@ -143,7 +141,6 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:targer object:nil userInfo:[model mj_keyValues]];
         }];
         self.contentBtn.titleLabel.font = FONT(AUTO(13));
-//        [self.contentBtn setTitle:@"查看全部课程" forState:UIControlStateNormal];
         [self.contentBtn setTitleColor:SK_COLOR_BASE_TEXT_GRAY forState:UIControlStateNormal];
         
         
