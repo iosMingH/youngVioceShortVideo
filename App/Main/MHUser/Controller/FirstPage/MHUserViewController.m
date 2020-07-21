@@ -123,7 +123,7 @@ NSString * const kAwemeCollectionCell  = @"AwemeCollectionCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.navigationItem.title = @"测试";
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     
     [self configBaseData];
     [self addNotification];
@@ -233,8 +233,8 @@ NSString * const kAwemeCollectionCell  = @"AwemeCollectionCell";
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if(section == 1) {
-//        return _tabIndex == 0 ? 15 : 5;
-        return _tabIndex == 0 ? self.videoList.count : 5;
+//        return _tabIndex == 0 ? self.videoList.count : 5;
+        return self.videoList.count;
     }
     return 0;
    
@@ -260,8 +260,10 @@ NSString * const kAwemeCollectionCell  = @"AwemeCollectionCell";
     return CGSizeZero;
 }
 
+//切换---作品 转发  赞过
 //OnTabTapDelegate
 - (void)onTabTapAction:(NSInteger)index {
+    
     if(_tabIndex == index){
         return;
     }

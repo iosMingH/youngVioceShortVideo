@@ -24,7 +24,7 @@
     if (_centerBtn == nil) {
         _centerBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 80, 60)];
         [_centerBtn setImage:[UIImage imageNamed:@"tab_add"] forState:UIControlStateNormal];
-        [_centerBtn setImage:[AlivcImage imageNamed:@"alivc_svHome_addClose"] forState:UIControlStateSelected];
+        [_centerBtn setImage:[UIImage imageNamed:@"p_wrong"] forState:UIControlStateSelected];
         [_centerBtn addTarget:self action:@selector(clickCenterBtn:) forControlEvents:UIControlEventTouchUpInside];
         
         self.centerItem = [[UITabBarItem alloc]initWithTabBarSystemItem:UITabBarSystemItemSearch tag:101];

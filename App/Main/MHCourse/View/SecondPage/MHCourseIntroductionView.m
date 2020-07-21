@@ -307,6 +307,20 @@ UITableViewDataSource
     self = [super initWithFrame:frame];
     if (self) {
         [self bgImageView];
+        //        _bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, self.frame.size.width,AUTO(263))];
+        ////        _bgImageView.layer.anchorPoint = CGPointMake(0.5, 1);
+        ////        _bgImageView.image = [UIImage imageNamed:@"testBg"];
+        //        _bgImageView.backgroundColor = [UIColor grayColor];
+        //
+        //        //横向拉伸
+        ////        _bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+        //        [self addSubview:_bgImageView];
+        //    }
+        _bgImageView = [UIImageView hyb_imageViewWithSuperView:self constraints:^(MASConstraintMaker *make) {
+            make.top.and.left.and.right.mas_equalTo(0);
+            make.height.mas_equalTo(AUTO(263));
+        }];
+         _bgImageView.backgroundColor = [UIColor grayColor];
         [self initIntroduceView];
         
     }
@@ -315,8 +329,14 @@ UITableViewDataSource
 
 - (void)initIntroduceView{
     
-    UIView *introduceView = [[UIView alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY(_bgImageView.frame), DEVICEWIDTH, AUTO(131))];
-    [self addSubview:introduceView];
+//    UIView *introduceView = [[UIView alloc]initWithFrame:CGRectMake(0,CGRectGetMaxY(_bgImageView.frame), DEVICEWIDTH, AUTO(131))];
+//    [self addSubview:introduceView];
+    __weak typeof(self) weakSelf = self;
+    UIView *introduceView = [UIView hyb_viewWithSuperView:self constraints:^(MASConstraintMaker *make) {
+        make.left.and.bottom.and.right.mas_equalTo(0);
+        make.top.equalTo(weakSelf.bgImageView.mas_bottom);
+    }];
+    
     introduceView.backgroundColor = [UIColor whiteColor];
     
     UILabel *titleL = [UILabel hyb_labelWithFont:AUTO(15) superView:introduceView constraints:^(MASConstraintMaker *make) {
@@ -357,19 +377,19 @@ UITableViewDataSource
     spaceView.backgroundColor = SK_COLOR_BASE_BACKGROUND;
 }
 
-- (UIImageView *)bgImageView{
-    if (_bgImageView == nil) {
-        _bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, self.frame.size.width,AUTO(263))];
-//        _bgImageView.layer.anchorPoint = CGPointMake(0.5, 1);
-        _bgImageView.image = [UIImage imageNamed:@"testBg"];
-        
-        
-        //横向拉伸
-//        _bgImageView.contentMode = UIViewContentModeScaleAspectFill;
-        [self addSubview:_bgImageView];
-    }
-    return _bgImageView;
-}
+//- (UIImageView *)bgImageView{
+//    if (_bgImageView == nil) {
+//        _bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, self.frame.size.width,AUTO(263))];
+////        _bgImageView.layer.anchorPoint = CGPointMake(0.5, 1);
+////        _bgImageView.image = [UIImage imageNamed:@"testBg"];
+//        _bgImageView.backgroundColor = [UIColor grayColor];
+//
+//        //横向拉伸
+////        _bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+//        [self addSubview:_bgImageView];
+//    }
+//    return _bgImageView;
+//}
 
 - (void)setModel:(id)model section:(NSInteger)section{
     

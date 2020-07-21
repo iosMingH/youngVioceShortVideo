@@ -18,6 +18,8 @@
 #import "MHCourseMultipleViewController.h"
 #import "MHMessageViewController.h"
 #import "MHUserViewController.h"
+#import "UIImage+GKCategory.h"
+
 
 @interface HomeTabViewController ()
 
@@ -52,7 +54,8 @@
     self.tabBar.backgroundImage = [[UIImage alloc] init];
     self.tabBar.shadowImage = [[UIImage alloc] init];
     
-    self.tabBar.backgroundImage = [UIImage imageNamed:@"tab_background"];
+//    self.tabBar.backgroundImage = [UIImage imageNamed:@"tab_background"];
+    self.tabBar.backgroundImage = [UIImage gk_imageWithColor:rgba(0, 0, 0, 0.7)];
 
       [self setupChildVc:[[MHHomeVideoViewController alloc] init] title:@"" image:@"tab_home"  selectedImage:@"tab_home_selected"];
       

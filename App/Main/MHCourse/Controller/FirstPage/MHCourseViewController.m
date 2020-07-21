@@ -33,7 +33,6 @@ UITableViewDataSource
     [super viewDidLoad];
     //    [self updateUI];
     _arrData = [[NSMutableArray alloc]init];
-//    self.view.backgroundColor = [UIColor blackColor];
     
     [self requstData];
 }
@@ -48,7 +47,7 @@ UITableViewDataSource
         _tableview = [UITableView hyb_tableViewWithSuperview:self.view delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(self.view);
         }];
-        _tableview.backgroundColor = [UIColor blackColor];
+        _tableview.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
         [_tableview registerClassNames: @[cellId,headId]];
     }
     return _tableview;

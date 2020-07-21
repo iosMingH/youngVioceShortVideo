@@ -42,6 +42,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    //显示系统的导航栏  ----------- MH
+    self.navigationController.navigationBarHidden = NO;
+    
        //设置导航栏背景图片为一个无图的image，导航栏会加载空imgae，就自然透明掉了
        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
    //    同理透明掉导航栏下划线

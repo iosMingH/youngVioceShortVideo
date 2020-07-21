@@ -31,25 +31,25 @@
         
         _lineViewColor =CGXPickerRGBColor(225, 225, 225, 1);
         
-        _titleLabelColor = CGXPickerRGBColor(252, 96, 134, 1);
+        _titleLabelColor = SK_COLOR_BASE_TEXT_ORANGE;
         _titleSize = 16;
         _titleLabelBGColor = [UIColor whiteColor];
         _rowHeight = 50;
         _rightBtnTitle = @"确定";
-        _rightBtnBGColor =  CGXPickerRGBColor(252, 96, 134, 1);
+        _rightBtnBGColor =  SK_COLOR_BASE_TEXT_ORANGE;
         _rightBtnTitleSize = 16;
         _rightBtnTitleColor = [UIColor whiteColor];
         
-        _rightBtnborderColor = CGXPickerRGBColor(252, 96, 134, 1);
+        _rightBtnborderColor = SK_COLOR_BASE_TEXT_ORANGE;
         _rightBtnCornerRadius = 6;
         _rightBtnBorderWidth = 1;
         
         _leftBtnTitle = @"取消";
-        _leftBtnBGColor =  CGXPickerRGBColor(252, 96, 134, 1);
+        _leftBtnBGColor =  SK_COLOR_BASE_TEXT_ORANGE;
         _leftBtnTitleSize = 16;
         _leftBtnTitleColor = [UIColor whiteColor];
         
-        _leftBtnborderColor = CGXPickerRGBColor(252, 96, 134, 1);
+        _leftBtnborderColor = SK_COLOR_BASE_TEXT_ORANGE;
         _leftBtnCornerRadius = 6;
         _leftBtnBorderWidth = 1;
         _isHaveLimit = NO;

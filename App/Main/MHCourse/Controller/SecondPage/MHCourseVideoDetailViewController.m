@@ -16,6 +16,8 @@
 #import "MHCourseBuyView.h"
 #import "MHPopContentView.h"
 #import "MHCoursePaymentStatusViewController.h"
+
+#define HEIGHT_TOOLVIEW     AUTO(50)
 @interface MHCourseVideoDetailViewController ()<IntroductionDelegate,LectureDelegate>
 @property(nonatomic,retain)ENestScrollPageView *pageView;
 @property(nonatomic,retain)MHCourseVideoDetailHeadView *headView;
@@ -29,11 +31,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blackColor];
+    
+    self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     self.title = @"课程详情";
     [self pageView];
     // Do any additional setup after loading the view.
     [self initToolView];
+    
+    //没导航scrollView不能顶头,适配
+    if (@available(iOS 11.0, *)) {
+        [self.pageView eScrollView].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 //分页控制
@@ -64,8 +74,16 @@
         param.scrollParam.headerHeight = 40;
         
         
-        CGFloat nvBarH = ([UIApplication sharedApplication].statusBarFrame.size.height + 44.0);
-        _pageView = [[ENestScrollPageView alloc] initWithFrame:CGRectMake(0, nvBarH, self.view.frame.size.width, self.view.frame.size.height-nvBarH-AUTO(50)-kBottomHeight) headView:headView subDataViews:vs setParam:param];
+        //这一步 避免试图不置顶
+        CGFloat nvBarH = 0;
+        if ([self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHCourseMultipleViewController")]){
+            nvBarH = Height_NavBar;
+            _pageView = [[ENestScrollPageView alloc] initWithFrame:CGRectMake(0, nvBarH, self.view.frame.size.width, self.view.frame.size.height-nvBarH-HEIGHT_TOOLVIEW-kBottomHeight) headView:headView subDataViews:vs setParam:param];
+        }else{
+             _pageView = [[ENestScrollPageView alloc] initWithFrame:CGRectMake(0, nvBarH, self.view.frame.size.width, self.view.frame.size.height-nvBarH-HEIGHT_TOOLVIEW-kBottomHeight-Height_NavBar) headView:headView subDataViews:vs setParam:param];
+        }
+  
+        
         [self.view addSubview:_pageView];
     }
     return _pageView;
@@ -87,7 +105,7 @@
     _toolView = [MHCourseVideoDetailToolView hyb_viewWithSuperView:self.view constraints:^(MASConstraintMaker *make) {
         make.left.and.right.mas_equalTo(0);
         make.bottom.mas_equalTo(-kBottomHeight);
-        make.height.mas_equalTo(AUTO(50));
+        make.height.mas_equalTo(HEIGHT_TOOLVIEW);
     }];
     _toolView.backgroundColor = [UIColor whiteColor];
 }

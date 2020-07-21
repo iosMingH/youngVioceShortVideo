@@ -32,7 +32,6 @@ UITableViewDataSource
     [super viewDidLoad];
     //    [self updateUI];
     _arrData = [[NSMutableArray alloc]init];
-//    self.view.backgroundColor = [UIColor blackColor];
     _headView = [[MHCourseHeadView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH, AUTO(200))];
     [self requstData];
 }
@@ -46,8 +45,11 @@ UITableViewDataSource
     if (!_tableview) {
         _tableview = [UITableView hyb_tableViewWithSuperview:self.view delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(self.view);
+//            make.edges.insets(UIEdgeInsetsMake(0, 0, 50, 0));
+            make.top.and.left.and.right.mas_equalTo(0);
+            make.bottom.mas_equalTo(-Height_TabBar);
         }];
-        _tableview.backgroundColor = [UIColor blackColor];
+        _tableview.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
         _tableview.tableHeaderView = _headView;
         [_tableview registerClassNames: @[cellId,headId]];
         

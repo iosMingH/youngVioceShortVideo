@@ -44,6 +44,7 @@
     }
     return self;
 }
+
 - (instancetype)initWithFrame:(CGRect)frame headView:(UIView *)headView subDataViews:(NSArray<EScrollPageItemBaseView *> *)dataViews{
     return [self initWithFrame:frame headView:headView subDataViews:dataViews setParam:nil];;
 }

@@ -72,7 +72,7 @@ UITableViewDataSource
     [super viewWillDisappear:animated];
      [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+        self.navigationController.navigationBar.barTintColor = SK_COLOR_BASE_NAV;
 }
 
 -(void)updateUI{

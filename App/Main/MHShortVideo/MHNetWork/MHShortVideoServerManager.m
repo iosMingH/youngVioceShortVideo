@@ -202,7 +202,7 @@
 //    NSString *urlString = @"/app/user/userDelVideo";
      NSString *urlString = @"/video/api/deleteAliVideo";
     NSString *allUrlString = [NSString stringWithFormat:@"%@%@",URL_BASIC,urlString];
-     NSDictionary *paramDic = @{@"token":token,@"videoIds":videId};
+     NSDictionary *paramDic = @{@"videoIds":videId};
     NSString *resultUrlString = [self p_creatUrlGetStringWithOriginalUrlString:allUrlString param:paramDic];
         NSLog(@"resultUrlString=%@",resultUrlString);
     [self daye_getWithUrlString:resultUrlString success:^(id data) {

@@ -21,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
 //    self.J_BaseNavHidden = YES;
     
 //    self.navigationItem.title = @"课程";
@@ -61,7 +61,7 @@
         LSPPageView *pageView = [[LSPPageView alloc] initWithFrame:CGRectMake(0, Height_NavBar+50, self.view.bounds.size.width, self.view.bounds.size.height-50-Height_NavBar) titles:testArray.mutableCopy style:nil childVcs:childVcArray.mutableCopy parentVc:self];
         [pageView setToIndex:0];
         pageView.delegate = self;
-        pageView.backgroundColor = [UIColor blackColor];
+        pageView.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
         [self.view addSubview:pageView];
     
 }

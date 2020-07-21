@@ -7,39 +7,15 @@
 //
 
 #import "MHFollowVideoViewController.h"
-#import "AlivcQuVideoModel.h"
 #import "MBProgressHUD+AlivcHelper.h"
-
-#import "AlivcShortVideoCCell.h"
-#import "AlivcQuHeaderReusableView.h"
-
-#import "AliVideoClientUser.h"
-
 #import "MHShortVideoServerManager.h"
-
 #import "AlivcAlertView.h"
-
 #import "NSString+AlivcHelper.h"
-
 #import "AlivcShortVideoElasticView.h"
-
 #import "AlivcShortVideoRoute.h"
-
 #import "AlivcShortVideoTabBar.h"
-
-#import "AlivcUserInfoViewController.h"
-
 #import "AlivcDefine.h"
-
 #import "MHShortVideoPublishManager.h"
-
-#import "AliyunReachability.h"
-
-#import <MJRefresh/MJRefresh.h>
-
-//#import "AlivcShortVideoPlayViewController.h"
-#import "MHShortVideoLivePlayViewController.h"
-
 #import "AlivcMacro.h"
 #import "AlivcImage.h"
 
@@ -53,11 +29,6 @@
  弹层视图
  */
 @property (nonatomic, strong) AlivcShortVideoElasticView *elasticView;
-/**
- 网络监听
- */
-@property (nonatomic, strong) AliyunReachability *reachability;
-
 
 @end
 
@@ -76,14 +47,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor grayColor];
-    
-    UILabel *label = [UILabel hyb_labelWithFont:18 superView:self.view constraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
-    label.text = self.titleStr;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.font = [UIFont systemFontOfSize:20];
-    label.textColor = [UIColor whiteColor];
+
     
     [self addNotification];
 }
@@ -92,12 +56,6 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterMask) name:AlivcNotificationQuPlay_EnterMask object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(quitMask) name:AlivcNotificationQuPlay_QutiMask object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(publishSuccess) name:AlivcNotificationVideoPublishSuccess object:nil];
-    self.reachability = [AliyunReachability reachabilityForInternetConnection];
-    [self.reachability startNotifier];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reachabilityChanged)
-                                                 name:AliyunSVReachabilityChangedNotification
-                                               object:nil];
 }
 
 - (void)dealloc{
@@ -186,40 +144,5 @@
 - (void)publishSuccess{
     [MBProgressHUD showMessage:NSLocalizedString(@"发布成功，已进入审核通道" , nil) inView:self.view];
 }
-
-//网络状态判定
-- (void)reachabilityChanged{
-    AliyunSVNetworkStatus status = [self.reachability currentReachabilityStatus];
-    switch (status) {
-        case AliyunSVNetworkStatusNotReachable:
-            [MBProgressHUD showMessage:NSLocalizedString(@"请检查网络连接!" , nil) inView:self.view];
-            break;
-        case AliyunSVNetworkStatusReachableViaWiFi:
-           
-            break;
-        case AliyunSVNetworkStatusReachableViaWWAN:
-        {
-            [MBProgressHUD showMessage:NSLocalizedString(@"当前为4G网络,请注意流量消耗!" , nil) inView:self.view];
-            
-        }
-            break;
-        default:
-            break;
-    }
-}
-
-#pragma mark - 旋转
-- (BOOL)shouldAutorotate{
-    return NO;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-    return UIInterfaceOrientationPortrait;
-}
-
 
 @end

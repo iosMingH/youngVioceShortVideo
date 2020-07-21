@@ -20,8 +20,6 @@
 @implementation MHMyCourseCell
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-//        self.contentView.backgroundColor = [UIColor blackColor];
-//        self.contentView.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
          __weak typeof(self) weakSelf = self;
 //        _vwLine = [UIView hyb_addTopLineToView:self.contentView height:0.5 color:kLineColor];
         

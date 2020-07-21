@@ -47,7 +47,7 @@
     NSArray *titlesArr = @[@"关注",@"粉丝"];
     UIView *topB = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH, 44)];
     [self.view addSubview:topB];
-    topB.backgroundColor = [UIColor blackColor];
+    topB.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     MHPageTitleView *titleView = [[MHPageTitleView alloc] initWithFrame:CGRectMake(0, 0, 250, 44) titles:titlesArr index:self.tabIndex];
     titleView.delegate = self;
     [topB addSubview:titleView];

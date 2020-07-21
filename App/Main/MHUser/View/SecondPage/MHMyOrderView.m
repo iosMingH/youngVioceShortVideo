@@ -35,7 +35,7 @@ static NSString *cellId = @"MHCourseTableViewCell";
     _tableview = [UITableView hyb_tableViewWithSuperview:self delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
                       make.edges.insets(UIEdgeInsetsMake(0, 0, 0, 0));
                   }];
-                  _tableview.backgroundColor = [UIColor blackColor];
+                  _tableview.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
                   [_tableview registerClassNames: @[cellId]];
 }
 

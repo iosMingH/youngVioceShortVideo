@@ -87,15 +87,7 @@
 //    label.font = [UIFont systemFontOfSize:20];
 //    label.textColor = [UIColor whiteColor];
     
-    
-    UIButton *btn = [UIButton hyb_buttonWithSuperView:self.view constraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    } touchUp:^(UIButton *sender) {
-        MHCourseVideoDetailViewController *vc = [[MHCourseVideoDetailViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }];
-    btn.backgroundColor = [UIColor yellowColor];
-    
+        
     [self addNotification];
 }
 

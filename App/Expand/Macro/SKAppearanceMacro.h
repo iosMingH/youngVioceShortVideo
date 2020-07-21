@@ -53,8 +53,8 @@
 
 // 基本颜色
 #define SK_COLOR_BASE_BACKGROUND                [UIColor colorWithRed:241.0/255 green:245.0/255 blue:244.0/255 alpha:1]
-#define SK_COLOR_BASE_SEBACKGROUND            [UIColor colorWithRed:0.0/255 green:0.0/255 blue:0.0/255 alpha:1]
-#define SK_COLOR_BASE_NAV                       [UIColor colorWithRed:0/255 green:0/255 blue:0/255 alpha:1]
+#define SK_COLOR_BASE_SEBACKGROUND            [UIColor colorWithRed:40.0/255 green:37.0/255 blue:37.0/255 alpha:1]
+#define SK_COLOR_BASE_NAV                       [UIColor colorWithRed:40.0/255 green:37.0/255 blue:37.0/255 alpha:1]
 #define SK_COLOR_BASE_TABBAR_BACKGROUND         [UIColor colorWithRed:95.0/255 green:95.0/255 blue:95.0/255 alpha:1]
 #define SK_COLOR_BASE_LINE                      [UIColor colorWithRed:238.0/255 green:238.0/255 blue:238.0/255 alpha:1]
 #define SK_COLOR_BASE_TABBAR_BACKGROUND_DEEP    [UIColor colorWithRed:77.0/255 green:222.0/255 blue:255.0/255 alpha:1]

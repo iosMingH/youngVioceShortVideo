@@ -31,6 +31,23 @@
    
      [WXApi registerApp:WXAuthAppID universalLink:@"https://mp.dayezhifu.com/"];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+  
+    
+    #ifndef __IPHONE_11_0
+    #define __IPHONE_11_0 110000
+    #endif
+    #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0
+    // if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11.0")) {
+    if (@available(iOS 11.0, *)) {
+    UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    UITableView.appearance.estimatedRowHeight = 0;
+    UITableView.appearance.estimatedSectionFooterHeight = 0;
+    UITableView.appearance.estimatedSectionHeaderHeight = 0;
+    } else {
+    // Fallback on earlier versions
+    }
+    #endif
+    
     return YES;
 }
 

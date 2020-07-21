@@ -45,7 +45,7 @@
     
     // 设置代理和通知
     // 设置背景色
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     
     // 设置代理
     self.delegate = self.navDelegate;

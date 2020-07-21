@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MHCourseVideoDetailViewController : CEBaseController
+@interface MHCourseVideoDetailViewController : UIViewController
 
 @end
 

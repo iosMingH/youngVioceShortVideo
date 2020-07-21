@@ -36,11 +36,18 @@ UITableViewDataSource
     [super viewDidLoad];
     self.title = @"课程播放";
     //    [self updateUI];
-    self.view.backgroundColor = [UIColor blackColor];
+    self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     _arrData = [[NSMutableArray alloc]init];
     _headView = [[MHCoursePlayView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH, AUTO(270))];
     [_headView setModel:@"" section:0];
     [self requstData];
+    
+    //没导航scrollView不能顶头,适配
+    if (@available(iOS 11.0, *)) {
+        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 -(void)updateUI{
@@ -50,10 +57,20 @@ UITableViewDataSource
 //
 - (UITableView *)tableview{
     if (!_tableview) {
-        _tableview = [UITableView hyb_tableViewWithSuperview:self.view delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
-//            make.edges.mas_equalTo(self.view);
-            make.edges.mas_equalTo(UIEdgeInsetsMake(Height_NavBar, 0, 0, 0));
-        }];
+        
+        //这一步 避免试图不置顶
+        if ([self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHCourseMultipleViewController")]){
+            _tableview = [UITableView hyb_tableViewWithSuperview:self.view delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
+            //            make.edges.mas_equalTo(self.view);
+                        make.edges.mas_equalTo(UIEdgeInsetsMake(Height_NavBar, 0, 0, 0));
+                    }];
+        }else{
+            _tableview = [UITableView hyb_tableViewWithSuperview:self.view delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
+            //            make.edges.mas_equalTo(self.view);
+                        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+                    }];
+        }
+        
         _tableview.backgroundColor = [UIColor whiteColor];
         _tableview.tableHeaderView = _headView;
         [_tableview registerClassNames: @[cellId,headId,listenCellId]];
