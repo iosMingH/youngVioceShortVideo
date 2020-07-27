@@ -36,6 +36,7 @@
 //    [[UIApplication sharedApplication]setStatusBarHidden:NO];
 }
 
+//MH ---- 显示导航栏
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     self.navigationController.navigationBar.hidden = NO;

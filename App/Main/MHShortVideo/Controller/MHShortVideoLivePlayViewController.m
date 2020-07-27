@@ -309,6 +309,10 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
 }
 
 - (void)addNotification {
+    
+    //微信分享
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(actionWX:) name:@"notificationShareWX" object:nil];
+    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterMask) name:AlivcNotificationQuPlay_EnterMask object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(quitMask) name:AlivcNotificationQuPlay_QutiMask object:nil];
     
@@ -359,7 +363,9 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
     //取消喜欢视频
     [[NSNotificationCenter defaultCenter]removeObserver:self name:@"notification_cancelLikeVideo" object:nil];
 
-
+    //微信分享
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"notificationShareWX" object:nil];
 }
 - (void)removeAllNotification {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -1407,7 +1413,16 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
     return _collectionViewDataSource;
 }
 
-
+#pragma mark - notice
+- (void)actionWX:(NSNotification *)notification{
+    
+    NSString *tag = notification.userInfo[@"tag"];
+    if ([tag isEqualToString:@"100"]) {
+        TOAST(@"微信分享");
+    }else{
+        TOAST(@"微信朋友圈分享");
+    }
+}
 @end
 
 

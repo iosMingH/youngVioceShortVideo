@@ -168,7 +168,6 @@
     
     //隐藏系统的导航栏  ----------- MH
     self.navigationController.navigationBarHidden = YES;
-    
 }
 
 

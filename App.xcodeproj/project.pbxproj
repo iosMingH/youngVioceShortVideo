@@ -164,6 +164,7 @@
 		7305A9FD24AC8814005B3043 /* MHEditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7305A9FC24AC8814005B3043 /* MHEditInfoViewController.m */; };
 		7305AA0024AC89A3005B3043 /* MHEditInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7305A9FF24AC89A3005B3043 /* MHEditInfoCell.m */; };
 		7305AA0324AC89F6005B3043 /* MHEditInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7305AA0224AC89F6005B3043 /* MHEditInfoModel.m */; };
+		732846ED24C6D5DD003F0EFA /* MHShareWXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 732846EC24C6D5DD003F0EFA /* MHShareWXView.m */; };
 		73328F1924BD46C200311098 /* MHCourseBuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73328F1824BD46C200311098 /* MHCourseBuyView.m */; };
 		73328F1C24BD580900311098 /* MHCoursePaymentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73328F1B24BD580900311098 /* MHCoursePaymentStatusViewController.m */; };
 		73328F1F24BD612A00311098 /* MHMyOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73328F1E24BD612A00311098 /* MHMyOrderDetailViewController.m */; };
@@ -548,6 +549,8 @@
 		7305A9FF24AC89A3005B3043 /* MHEditInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHEditInfoCell.m; sourceTree = "<group>"; };
 		7305AA0124AC89F6005B3043 /* MHEditInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHEditInfoModel.h; sourceTree = "<group>"; };
 		7305AA0224AC89F6005B3043 /* MHEditInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHEditInfoModel.m; sourceTree = "<group>"; };
+		732846EB24C6D5DD003F0EFA /* MHShareWXView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHShareWXView.h; sourceTree = "<group>"; };
+		732846EC24C6D5DD003F0EFA /* MHShareWXView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHShareWXView.m; sourceTree = "<group>"; };
 		73328F1724BD46C200311098 /* MHCourseBuyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHCourseBuyView.h; sourceTree = "<group>"; };
 		73328F1824BD46C200311098 /* MHCourseBuyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHCourseBuyView.m; sourceTree = "<group>"; };
 		73328F1A24BD580900311098 /* MHCoursePaymentStatusViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHCoursePaymentStatusViewController.h; sourceTree = "<group>"; };
@@ -1580,6 +1583,8 @@
 				158C4D8A243D769C0070C9B7 /* MHShortVideoCoverCell.h */,
 				158C4D89243D769C0070C9B7 /* MHShortVideoCoverCell.m */,
 				158C4DBA243EBD0A0070C9B7 /* MHShortVideoCoverCell.xib */,
+				732846EB24C6D5DD003F0EFA /* MHShareWXView.h */,
+				732846EC24C6D5DD003F0EFA /* MHShareWXView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2293,6 +2298,7 @@
 				1517FEAD23C18F0B0074D410 /* NoticeModel.m in Sources */,
 				158C4DAF243D83500070C9B7 /* Video.m in Sources */,
 				7336327424AC622E00FD67CF /* MHIntegralViewController.m in Sources */,
+				732846ED24C6D5DD003F0EFA /* MHShareWXView.m in Sources */,
 				15C32AE1244D8AB50062618D /* MHShortVideoPublishManager.m in Sources */,
 				1517009423D0602C0074D410 /* SkUser.m in Sources */,
 				73328F2524BD7D7600311098 /* MHMyOrderDetailModel.m in Sources */,

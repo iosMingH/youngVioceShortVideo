@@ -14,6 +14,8 @@
 #import "UIImageView+WebCache.h"
 #import "SharePopView.h"
 #import "CommentsPopView.h"
+#import "MHShareWXView.h"
+#import "MHPopContentView.h"
 #define iconWH 30
 
 static const NSInteger kAwemeListLikeCommentTag = 0x01;
@@ -240,13 +242,15 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
             break;
         }
         case kAwemeListLikeShareTag: {
-//           TOAST(@"分享");
-//            SharePopView *popView = [[SharePopView alloc] init];
-//            [popView show];
-            
-            if (self.delegate && [self.delegate respondsToSelector:@selector(MHShortVideoMenuViewDeleteAction)]) {
-                   [self.delegate MHShortVideoMenuViewDeleteAction];
-           }
+//            if (self.delegate && [self.delegate respondsToSelector:@selector(MHShortVideoMenuViewDeleteAction)]) {
+//                   [self.delegate MHShortVideoMenuViewDeleteAction];
+//           }
+            MHPopContentView *popView = [[MHPopContentView alloc]initWithHeight:AUTO(166) withRoundSize:CGSizeMake(0, 0)];
+
+           MHShareWXView *view = [[MHShareWXView alloc]initWithFrame:CGRectMake(0, -AUTO(30), popView.contentV.width, popView.contentV.height)];
+           [popView.contentV addSubview:view];
+
+           [popView show];
             break;
         }
         default: {

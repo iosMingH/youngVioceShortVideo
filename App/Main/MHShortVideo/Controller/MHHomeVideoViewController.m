@@ -103,5 +103,28 @@
 }
 
 
+#pragma mark - notice
+- (void)eventNotice:(NSNotification *)info
+{
+    NoticeModel *model = [NoticeModel mj_objectWithKeyValues:[info userInfo]];
+    switch (model.code) {
+ //     微信好友分享
+        case 100:
+        {
+            TOAST(@" 微信好友分享");
+        }
+            break;
+//         朋友圈分享
+        case 200:
+        {
+            TOAST(@" 朋友圈");
+        }
+            break;
+        default:
+            break;
+    }
+    
+}
+
 
 @end
