@@ -44,6 +44,7 @@
 #import "AlivcImage.h"
 
 #import "MHCourseVideoDetailViewController.h"
+#import "MHPublishVideoViewControl.h"
 
 @interface MHSameCityViewController ()<UIAlertViewDelegate,AlivcShortVideoElasticViewDelegate>
 /**
@@ -86,7 +87,7 @@
 //    label.textAlignment = NSTextAlignmentCenter;
 //    label.font = [UIFont systemFontOfSize:20];
 //    label.textColor = [UIColor whiteColor];
-    
+
         
     [self addNotification];
 }

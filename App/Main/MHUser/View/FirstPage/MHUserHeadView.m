@@ -205,14 +205,14 @@
     
     self.nickL = nickL;
     
-   UITextField *introductionT = [UITextField hyb_textFieldWithHolder:@"你好没有个人简介，点击此处添加" delegate:self superView:introductionView constraints:^(MASConstraintMaker *make) {
+   UITextField *introductionT = [UITextField hyb_textFieldWithHolder:@"你还没有个人简介，点击此处添加" delegate:self superView:introductionView constraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(AUTO(15));
         make.right.mas_equalTo(-AUTO(15));
         make.top.equalTo(nickL.mas_bottom);
         make.height.equalTo(introductionView).multipliedBy(0.5);
     }];
     introductionT.font = FONT(15);
-    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"你好没有个人简介，点击此处添加" attributes:@{NSForegroundColorAttributeName:SK_COLOR_BASE_TEXT_GRAY,
+    NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:@"你还没有个人简介，点击此处添加" attributes:@{NSForegroundColorAttributeName:SK_COLOR_BASE_TEXT_GRAY,
         NSFontAttributeName:introductionT.font
     }];
      introductionT.attributedPlaceholder = attrString;

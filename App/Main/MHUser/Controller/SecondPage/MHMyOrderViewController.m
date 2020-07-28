@@ -33,7 +33,7 @@
 
 - (EScrollPageView *)pageView{
     if (_pageView == nil) {
-        CGFloat statusBarH = 50;
+        CGFloat statusBarH = AUTO(50);
         //每一项的view子类需要继承EScrollPageItemBaseView实现相关界面
         
         NSArray *titles = @[@"全部",@"待付款",@"待发货",@"待收货",@"待评价"];
@@ -55,7 +55,7 @@
         //底部线颜色
         param.segmentParam.lineColor = SK_COLOR_BASE_TITLEREMARK;
         //背景颜色
-        param.segmentParam.bgColor = 0x000000;
+        param.segmentParam.bgColor = 0x282525;
         //正常字体颜色
         param.segmentParam.textColor = 0xA9A9A9;
         //选中的颜色

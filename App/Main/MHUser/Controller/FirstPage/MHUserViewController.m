@@ -50,7 +50,7 @@
 #import "MHCourseVideoDetailViewController.h"
 #import "MHMyCourseViewController.h"
 #import "MHOpenShopView.h"
-
+#import "MHPublishVideoViewControl.h"
 
 #define kUserInfoHeaderHeight          AUTO(240)
 #define kSlideTabBarHeight             AUTO(40)
@@ -592,7 +592,9 @@ NSString * const kAwemeCollectionCell  = @"AwemeCollectionCell";
                 case 300:
 //                    TOAST(@"获赞");
             {
-
+                MHPublishVideoViewControl *vc = [[MHPublishVideoViewControl alloc]init];
+                     
+                [self.navigationController pushViewController:vc animated:YES];
             }
                 break;
 //            积分

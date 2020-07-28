@@ -184,11 +184,19 @@
 		73384E3F24C5929400737319 /* CGXAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3524C5929400737319 /* CGXAddressModel.m */; };
 		73384E4024C5929400737319 /* CGXStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3724C5929400737319 /* CGXStringPickerView.m */; };
 		73384E4124C5929400737319 /* CGXPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3824C5929400737319 /* CGXPickerView.m */; };
+		7338B9DD24CEA76000403C82 /* MHPublishVideoViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338B9DC24CEA76000403C82 /* MHPublishVideoViewControl.m */; };
+		7338B9E024CEA83600403C82 /* MHPublishVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338B9DF24CEA83600403C82 /* MHPublishVideoCell.m */; };
+		7338B9E624CEB27000403C82 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338B9E524CEB27000403C82 /* NSString+Size.m */; };
+		7338B9E924CEB37C00403C82 /* MHPublishTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338B9E824CEB37C00403C82 /* MHPublishTitleModel.m */; };
+		7338B9ED24CEC4A900403C82 /* CollectionViewSpaceLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338B9EC24CEC4A900403C82 /* CollectionViewSpaceLayout.m */; };
 		7338F5C624BE9D87005A96E0 /* MHOpenShopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338F5C524BE9D87005A96E0 /* MHOpenShopView.m */; };
 		7339EC4424BBE4FF006AB6BE /* MHAllCourseListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7339EC4324BBE4FF006AB6BE /* MHAllCourseListView.m */; };
 		7339EC4824BBF715006AB6BE /* MHPopContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7339EC4724BBF715006AB6BE /* MHPopContentView.m */; };
 		733A68E824B5755C0071A1EE /* MHDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733A68E724B5755C0071A1EE /* MHDrawViewController.m */; };
 		733A68EF24B575D80071A1EE /* UIViewController+MHDrawVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 733A68EE24B575D80071A1EE /* UIViewController+MHDrawVC.m */; };
+		733B2FBA24CFC8BA001719A1 /* MHPublishAddTopicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 733B2FB924CFC8BA001719A1 /* MHPublishAddTopicView.m */; };
+		733B2FBD24CFC8FC001719A1 /* MHPublishAddTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 733B2FBC24CFC8FC001719A1 /* MHPublishAddTopicModel.m */; };
+		733B2FC024CFCA2D001719A1 /* MHPublishAddTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 733B2FBF24CFCA2D001719A1 /* MHPublishAddTopicCell.m */; };
 		733B7F5424B59B8300608A83 /* MHMyOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733B7F5324B59B8300608A83 /* MHMyOrderViewController.m */; };
 		733B7F5724B5A01F00608A83 /* MHCommomCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733B7F5624B5A01F00608A83 /* MHCommomCourseViewController.m */; };
 		733CD40324B2D08600446BCE /* MHIntergralMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733CD40224B2D08600446BCE /* MHIntergralMallViewController.m */; };
@@ -587,6 +595,16 @@
 		73384E3624C5929400737319 /* NSDate+CGXPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CGXPicker.h"; sourceTree = "<group>"; };
 		73384E3724C5929400737319 /* CGXStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXStringPickerView.m; sourceTree = "<group>"; };
 		73384E3824C5929400737319 /* CGXPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPickerView.m; sourceTree = "<group>"; };
+		7338B9DB24CEA76000403C82 /* MHPublishVideoViewControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHPublishVideoViewControl.h; sourceTree = "<group>"; };
+		7338B9DC24CEA76000403C82 /* MHPublishVideoViewControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHPublishVideoViewControl.m; sourceTree = "<group>"; };
+		7338B9DE24CEA83600403C82 /* MHPublishVideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHPublishVideoCell.h; sourceTree = "<group>"; };
+		7338B9DF24CEA83600403C82 /* MHPublishVideoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHPublishVideoCell.m; sourceTree = "<group>"; };
+		7338B9E424CEB27000403C82 /* NSString+Size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
+		7338B9E524CEB27000403C82 /* NSString+Size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
+		7338B9E724CEB37C00403C82 /* MHPublishTitleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHPublishTitleModel.h; sourceTree = "<group>"; };
+		7338B9E824CEB37C00403C82 /* MHPublishTitleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHPublishTitleModel.m; sourceTree = "<group>"; };
+		7338B9EB24CEC4A900403C82 /* CollectionViewSpaceLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewSpaceLayout.h; sourceTree = "<group>"; };
+		7338B9EC24CEC4A900403C82 /* CollectionViewSpaceLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSpaceLayout.m; sourceTree = "<group>"; };
 		7338F5C424BE9D87005A96E0 /* MHOpenShopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHOpenShopView.h; sourceTree = "<group>"; };
 		7338F5C524BE9D87005A96E0 /* MHOpenShopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHOpenShopView.m; sourceTree = "<group>"; };
 		7339EC4224BBE4FF006AB6BE /* MHAllCourseListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHAllCourseListView.h; sourceTree = "<group>"; };
@@ -597,6 +615,12 @@
 		733A68E724B5755C0071A1EE /* MHDrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHDrawViewController.m; sourceTree = "<group>"; };
 		733A68ED24B575D80071A1EE /* UIViewController+MHDrawVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MHDrawVC.h"; sourceTree = "<group>"; };
 		733A68EE24B575D80071A1EE /* UIViewController+MHDrawVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MHDrawVC.m"; sourceTree = "<group>"; };
+		733B2FB824CFC8BA001719A1 /* MHPublishAddTopicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHPublishAddTopicView.h; sourceTree = "<group>"; };
+		733B2FB924CFC8BA001719A1 /* MHPublishAddTopicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHPublishAddTopicView.m; sourceTree = "<group>"; };
+		733B2FBB24CFC8FC001719A1 /* MHPublishAddTopicModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHPublishAddTopicModel.h; sourceTree = "<group>"; };
+		733B2FBC24CFC8FC001719A1 /* MHPublishAddTopicModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHPublishAddTopicModel.m; sourceTree = "<group>"; };
+		733B2FBE24CFCA2D001719A1 /* MHPublishAddTopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHPublishAddTopicCell.h; sourceTree = "<group>"; };
+		733B2FBF24CFCA2D001719A1 /* MHPublishAddTopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHPublishAddTopicCell.m; sourceTree = "<group>"; };
 		733B7F5224B59B8300608A83 /* MHMyOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHMyOrderViewController.h; sourceTree = "<group>"; };
 		733B7F5324B59B8300608A83 /* MHMyOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHMyOrderViewController.m; sourceTree = "<group>"; };
 		733B7F5524B5A01F00608A83 /* MHCommomCourseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHCommomCourseViewController.h; sourceTree = "<group>"; };
@@ -1164,6 +1188,8 @@
 				1517FE5723C18F0B0074D410 /* UIView+Extnesion.m */,
 				1517FE5A23C18F0B0074D410 /* UIColor+HexColor.h */,
 				1517FE5323C18F0B0074D410 /* UIColor+HexColor.m */,
+				7338B9E424CEB27000403C82 /* NSString+Size.h */,
+				7338B9E524CEB27000403C82 /* NSString+Size.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -1563,6 +1589,8 @@
 				15DF7F732484A69700A0D098 /* MHHomeVideoViewController.m */,
 				15DF8007248776FD00A0D098 /* MHFollowVideoViewController.h */,
 				15DF8008248776FD00A0D098 /* MHFollowVideoViewController.m */,
+				7338B9DB24CEA76000403C82 /* MHPublishVideoViewControl.h */,
+				7338B9DC24CEA76000403C82 /* MHPublishVideoViewControl.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1585,6 +1613,13 @@
 				158C4DBA243EBD0A0070C9B7 /* MHShortVideoCoverCell.xib */,
 				732846EB24C6D5DD003F0EFA /* MHShareWXView.h */,
 				732846EC24C6D5DD003F0EFA /* MHShareWXView.m */,
+				7338B9DE24CEA83600403C82 /* MHPublishVideoCell.h */,
+				7338B9DF24CEA83600403C82 /* MHPublishVideoCell.m */,
+				733B2FB824CFC8BA001719A1 /* MHPublishAddTopicView.h */,
+				733B2FB924CFC8BA001719A1 /* MHPublishAddTopicView.m */,
+				733B2FBE24CFCA2D001719A1 /* MHPublishAddTopicCell.h */,
+				733B2FBF24CFCA2D001719A1 /* MHPublishAddTopicCell.m */,
+				7338B9EA24CEC4A900403C82 /* SpaceLayout */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1594,6 +1629,10 @@
 			children = (
 				158C4D8D243D769D0070C9B7 /* MHShortVideoPlayCollectionViewDataSource.h */,
 				158C4D8C243D769D0070C9B7 /* MHShortVideoPlayCollectionViewDataSource.m */,
+				7338B9E724CEB37C00403C82 /* MHPublishTitleModel.h */,
+				7338B9E824CEB37C00403C82 /* MHPublishTitleModel.m */,
+				733B2FBB24CFC8FC001719A1 /* MHPublishAddTopicModel.h */,
+				733B2FBC24CFC8FC001719A1 /* MHPublishAddTopicModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1836,6 +1875,15 @@
 				73384E3824C5929400737319 /* CGXPickerView.m */,
 			);
 			path = CGXPickerView;
+			sourceTree = "<group>";
+		};
+		7338B9EA24CEC4A900403C82 /* SpaceLayout */ = {
+			isa = PBXGroup;
+			children = (
+				7338B9EB24CEC4A900403C82 /* CollectionViewSpaceLayout.h */,
+				7338B9EC24CEC4A900403C82 /* CollectionViewSpaceLayout.m */,
+			);
+			path = SpaceLayout;
 			sourceTree = "<group>";
 		};
 		7339EC4524BBF6C3006AB6BE /* MHPopContentView */ = {
@@ -2191,6 +2239,7 @@
 				7343D38824AEDE5D001EC167 /* GKBaseTransitionAnimation.m in Sources */,
 				73328F1924BD46C200311098 /* MHCourseBuyView.m in Sources */,
 				15D94F0A24A86498009C1422 /* TADotView.m in Sources */,
+				7338B9DD24CEA76000403C82 /* MHPublishVideoViewControl.m in Sources */,
 				15D94F2924AB1362009C1422 /* MHFollowModel.m in Sources */,
 				158C4DB2243D83500070C9B7 /* GroupChat.m in Sources */,
 				73328F1F24BD612A00311098 /* MHMyOrderDetailViewController.m in Sources */,
@@ -2247,6 +2296,7 @@
 				73479CE324AEC49400626B9A /* MHAddAddressCell.m in Sources */,
 				15D94EF324A848BC009C1422 /* MHCourseTableViewCell.m in Sources */,
 				15D94F0824A86498009C1422 /* UIView+SDExtension.m in Sources */,
+				7338B9E624CEB27000403C82 /* NSString+Size.m in Sources */,
 				1555F95724A33C28005CF929 /* HoverPageViewController.m in Sources */,
 				15D94F2624AB125B009C1422 /* MHFollowTableViewCell.m in Sources */,
 				1517008A23D0602C0074D410 /* NSData+AES.m in Sources */,
@@ -2261,6 +2311,8 @@
 				1517009123D0602C0074D410 /* SkPublicConfig.m in Sources */,
 				15DF80032487747800A0D098 /* MHPageTitleView.m in Sources */,
 				1555F93324A2E990005CF929 /* UIViewController+CEBase.m in Sources */,
+				733B2FBD24CFC8FC001719A1 /* MHPublishAddTopicModel.m in Sources */,
+				733B2FC024CFCA2D001719A1 /* MHPublishAddTopicCell.m in Sources */,
 				15C32AF3244EE5760062618D /* VideoNetRequest.m in Sources */,
 				73384E3A24C5929400737319 /* CGXPickerViewManager.m in Sources */,
 				15D94EF624A84928009C1422 /* MHCourseModel.m in Sources */,
@@ -2283,6 +2335,7 @@
 				15C32AC8244955580062618D /* GetMessageFromWXResp+responseWithTextOrMediaMessage.mm in Sources */,
 				158C4DAD243D83500070C9B7 /* Aweme.m in Sources */,
 				15C32AF0244ECC4D0062618D /* NSString+URL.m in Sources */,
+				733B2FBA24CFC8BA001719A1 /* MHPublishAddTopicView.m in Sources */,
 				15C32AD5244D70150062618D /* MHSVideoApi.m in Sources */,
 				1555F91124A1A49D005CF929 /* MHCourseViewController.m in Sources */,
 				1517FECA23C18F0B0074D410 /* takePhoto.m in Sources */,
@@ -2291,6 +2344,7 @@
 				1517008823D0602C0074D410 /* GTMBase64.m in Sources */,
 				7343D36B24AEDDBE001EC167 /* UINavigationController+GKCategory.m in Sources */,
 				734505CE24B30B3500C5ACF2 /* MHMyCourseCell.m in Sources */,
+				7338B9E924CEB37C00403C82 /* MHPublishTitleModel.m in Sources */,
 				73384E3C24C5929400737319 /* CGXAddressPcikerView.m in Sources */,
 				1585EC4D24401D9800D77CF5 /* NSAttributedString+Extension.m in Sources */,
 				15C32ACC244955580062618D /* WXApiRequestHandler.m in Sources */,
@@ -2313,10 +2367,12 @@
 				1517008F23D0602C0074D410 /* SKCmmResponder.m in Sources */,
 				7343D38E24AF17B9001EC167 /* MHCourseVideoDetailViewController.m in Sources */,
 				734505D124B30B5B00C5ACF2 /* MHMyCourseModel.m in Sources */,
+				7338B9ED24CEC4A900403C82 /* CollectionViewSpaceLayout.m in Sources */,
 				1517FEC023C18F0B0074D410 /* CFUserManager.m in Sources */,
 				733B7F5724B5A01F00608A83 /* MHCommomCourseViewController.m in Sources */,
 				15D94F1424A9843F009C1422 /* HoverViewFlowLayout.m in Sources */,
 				733CD40924B2D27500446BCE /* MHIntergralMallCell.m in Sources */,
+				7338B9E024CEA83600403C82 /* MHPublishVideoCell.m in Sources */,
 				15F23CD1242DB02F00C63F4B /* MHShortVideoPersonalViewController.m in Sources */,
 				1517FEBD23C18F0B0074D410 /* CXDatePickerView.m in Sources */,
 				1517FEAA23C18F0B0074D410 /* CENavigationDelegate.m in Sources */,

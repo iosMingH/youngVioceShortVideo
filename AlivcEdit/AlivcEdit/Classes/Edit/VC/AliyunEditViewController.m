@@ -1092,8 +1092,6 @@ AliyunEffectTransitionViewDelegate, AlivcSpecialEffectViewDelegate ,AlivcAudioEf
         
             [self.navigationController pushViewController:controller animated:YES];
         }
-    
-    
     }
 }
 

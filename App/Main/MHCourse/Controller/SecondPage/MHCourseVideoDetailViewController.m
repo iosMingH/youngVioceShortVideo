@@ -44,6 +44,7 @@
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
+    
 }
 
 //分页控制
@@ -162,9 +163,7 @@
                 break;
 //            确认支付
                 case 1000:
-
             {
-
                 MHCoursePaymentStatusViewController *vc = [[MHCoursePaymentStatusViewController alloc]init];
                 [self.navigationController pushViewController:vc animated:YES];
                 [self.popBuyView dismiss];
@@ -177,6 +176,7 @@
     }
             
 }
+
 
 @end
 
