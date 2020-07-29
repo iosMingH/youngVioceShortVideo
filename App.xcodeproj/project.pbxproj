@@ -212,20 +212,6 @@
 		733D4EFF24B5B6E800BE1566 /* MHMyOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 733D4EFE24B5B6E800BE1566 /* MHMyOrderView.m */; };
 		73409EF524B85867005F411A /* MHCoursePlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73409EF424B85867005F411A /* MHCoursePlayView.m */; };
 		7343685E24AED53400922366 /* MHCourseMultipleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343685D24AED53400922366 /* MHCourseMultipleViewController.m */; };
-		7343D36B24AEDDBE001EC167 /* UINavigationController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D35F24AEDDBE001EC167 /* UINavigationController+GKCategory.m */; };
-		7343D36C24AEDDBE001EC167 /* UIBarButtonItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D36124AEDDBE001EC167 /* UIBarButtonItem+GKCategory.m */; };
-		7343D36D24AEDDBE001EC167 /* UIScrollView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D36324AEDDBE001EC167 /* UIScrollView+GKCategory.m */; };
-		7343D36E24AEDDBE001EC167 /* UINavigationItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D36524AEDDBE001EC167 /* UINavigationItem+GKCategory.m */; };
-		7343D36F24AEDDBE001EC167 /* UIImage+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D36724AEDDBE001EC167 /* UIImage+GKCategory.m */; };
-		7343D37024AEDDBE001EC167 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D36A24AEDDBE001EC167 /* UIViewController+GKCategory.m */; };
-		7343D37724AEDDEE001EC167 /* GKNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D37324AEDDEE001EC167 /* GKNavigationBar.m */; };
-		7343D37824AEDDEE001EC167 /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D37624AEDDEE001EC167 /* GKNavigationBarConfigure.m */; };
-		7343D37B24AEDE25001EC167 /* GKNavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D37924AEDE25001EC167 /* GKNavigationBarViewController.m */; };
-		7343D38524AEDE5D001EC167 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D37D24AEDE5C001EC167 /* GKPushTransitionAnimation.m */; };
-		7343D38624AEDE5D001EC167 /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D37E24AEDE5C001EC167 /* GKDelegateHandler.m */; };
-		7343D38724AEDE5D001EC167 /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D37F24AEDE5C001EC167 /* GKPopTransitionAnimation.m */; };
-		7343D38824AEDE5D001EC167 /* GKBaseTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D38024AEDE5C001EC167 /* GKBaseTransitionAnimation.m */; };
-		7343D38B24AEE2F2001EC167 /* GKDouyinScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D38A24AEE2F2001EC167 /* GKDouyinScrollView.m */; };
 		7343D38E24AF17B9001EC167 /* MHCourseVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7343D38D24AF17B9001EC167 /* MHCourseVideoDetailViewController.m */; };
 		73443A8024B809C900469DF7 /* MHCousreShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73443A7F24B809C900469DF7 /* MHCousreShopViewController.m */; };
 		73443A8324B8140800469DF7 /* MHCousrsePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73443A8224B8140800469DF7 /* MHCousrsePlayViewController.m */; };
@@ -238,6 +224,9 @@
 		73479CE624AEC4B700626B9A /* MHAddAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73479CE524AEC4B700626B9A /* MHAddAddressModel.m */; };
 		734ABA4E24B6FC3F00E46A89 /* MHStudentExperienceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 734ABA4D24B6FC3F00E46A89 /* MHStudentExperienceCell.m */; };
 		734ABA5124B6FC9F00E46A89 /* MHStudentExperienceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 734ABA5024B6FC9F00E46A89 /* MHStudentExperienceModel.m */; };
+		734D6DB024D126FF00B379CB /* UIImage+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D6DA224D126FF00B379CB /* UIImage+GKCategory.m */; };
+		734D6DB724D12BB300B379CB /* MHMagicCameraRaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D6DB624D12BB300B379CB /* MHMagicCameraRaceViewController.m */; };
+		73936AFC24CFFC0F00777AAB /* MHRelationCourseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73936AFB24CFFC0F00777AAB /* MHRelationCourseController.m */; };
 		73C56ACC24AC22B800D7D776 /* LSPContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C56AC724AC22B700D7D776 /* LSPContentView.m */; };
 		73C56ACD24AC22B800D7D776 /* LSPTitleStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C56AC824AC22B700D7D776 /* LSPTitleStyle.m */; };
 		73C56ACE24AC22B800D7D776 /* LSPTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C56ACA24AC22B700D7D776 /* LSPTitleView.m */; };
@@ -651,36 +640,6 @@
 		73409EF424B85867005F411A /* MHCoursePlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHCoursePlayView.m; sourceTree = "<group>"; };
 		7343685C24AED53400922366 /* MHCourseMultipleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHCourseMultipleViewController.h; sourceTree = "<group>"; };
 		7343685D24AED53400922366 /* MHCourseMultipleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHCourseMultipleViewController.m; sourceTree = "<group>"; };
-		7343D35E24AEDDBE001EC167 /* UIImage+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GKCategory.h"; sourceTree = "<group>"; };
-		7343D35F24AEDDBE001EC167 /* UINavigationController+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+GKCategory.m"; sourceTree = "<group>"; };
-		7343D36024AEDDBE001EC167 /* UINavigationItem+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+GKCategory.h"; sourceTree = "<group>"; };
-		7343D36124AEDDBE001EC167 /* UIBarButtonItem+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+GKCategory.m"; sourceTree = "<group>"; };
-		7343D36224AEDDBE001EC167 /* UIViewController+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GKCategory.h"; sourceTree = "<group>"; };
-		7343D36324AEDDBE001EC167 /* UIScrollView+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GKCategory.m"; sourceTree = "<group>"; };
-		7343D36424AEDDBE001EC167 /* GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCategory.h; sourceTree = "<group>"; };
-		7343D36524AEDDBE001EC167 /* UINavigationItem+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+GKCategory.m"; sourceTree = "<group>"; };
-		7343D36624AEDDBE001EC167 /* UINavigationController+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+GKCategory.h"; sourceTree = "<group>"; };
-		7343D36724AEDDBE001EC167 /* UIImage+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GKCategory.m"; sourceTree = "<group>"; };
-		7343D36824AEDDBE001EC167 /* UIBarButtonItem+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+GKCategory.h"; sourceTree = "<group>"; };
-		7343D36924AEDDBE001EC167 /* UIScrollView+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKCategory.h"; sourceTree = "<group>"; };
-		7343D36A24AEDDBE001EC167 /* UIViewController+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GKCategory.m"; sourceTree = "<group>"; };
-		7343D37224AEDDEE001EC167 /* GKNavigationBarConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBarConfigure.h; sourceTree = "<group>"; };
-		7343D37324AEDDEE001EC167 /* GKNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBar.m; sourceTree = "<group>"; };
-		7343D37424AEDDEE001EC167 /* GKCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCommon.h; sourceTree = "<group>"; };
-		7343D37524AEDDEE001EC167 /* GKNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBar.h; sourceTree = "<group>"; };
-		7343D37624AEDDEE001EC167 /* GKNavigationBarConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBarConfigure.m; sourceTree = "<group>"; };
-		7343D37924AEDE25001EC167 /* GKNavigationBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBarViewController.m; sourceTree = "<group>"; };
-		7343D37A24AEDE25001EC167 /* GKNavigationBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBarViewController.h; sourceTree = "<group>"; };
-		7343D37D24AEDE5C001EC167 /* GKPushTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPushTransitionAnimation.m; sourceTree = "<group>"; };
-		7343D37E24AEDE5C001EC167 /* GKDelegateHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDelegateHandler.m; sourceTree = "<group>"; };
-		7343D37F24AEDE5C001EC167 /* GKPopTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPopTransitionAnimation.m; sourceTree = "<group>"; };
-		7343D38024AEDE5C001EC167 /* GKBaseTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBaseTransitionAnimation.m; sourceTree = "<group>"; };
-		7343D38124AEDE5C001EC167 /* GKPushTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPushTransitionAnimation.h; sourceTree = "<group>"; };
-		7343D38224AEDE5C001EC167 /* GKDelegateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDelegateHandler.h; sourceTree = "<group>"; };
-		7343D38324AEDE5C001EC167 /* GKPopTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPopTransitionAnimation.h; sourceTree = "<group>"; };
-		7343D38424AEDE5C001EC167 /* GKBaseTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBaseTransitionAnimation.h; sourceTree = "<group>"; };
-		7343D38924AEE2F1001EC167 /* GKDouyinScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDouyinScrollView.h; sourceTree = "<group>"; };
-		7343D38A24AEE2F2001EC167 /* GKDouyinScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDouyinScrollView.m; sourceTree = "<group>"; };
 		7343D38C24AF17B8001EC167 /* MHCourseVideoDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHCourseVideoDetailViewController.h; sourceTree = "<group>"; };
 		7343D38D24AF17B9001EC167 /* MHCourseVideoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHCourseVideoDetailViewController.m; sourceTree = "<group>"; };
 		73443A7E24B809C900469DF7 /* MHCousreShopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHCousreShopViewController.h; sourceTree = "<group>"; };
@@ -705,6 +664,13 @@
 		734ABA4D24B6FC3F00E46A89 /* MHStudentExperienceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHStudentExperienceCell.m; sourceTree = "<group>"; };
 		734ABA4F24B6FC9F00E46A89 /* MHStudentExperienceModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHStudentExperienceModel.h; sourceTree = "<group>"; };
 		734ABA5024B6FC9F00E46A89 /* MHStudentExperienceModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHStudentExperienceModel.m; sourceTree = "<group>"; };
+		734D6D7124D104E000B379CB /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
+		734D6D9924D126FF00B379CB /* UIImage+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GKCategory.h"; sourceTree = "<group>"; };
+		734D6DA224D126FF00B379CB /* UIImage+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GKCategory.m"; sourceTree = "<group>"; };
+		734D6DB524D12BB300B379CB /* MHMagicCameraRaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHMagicCameraRaceViewController.h; sourceTree = "<group>"; };
+		734D6DB624D12BB300B379CB /* MHMagicCameraRaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHMagicCameraRaceViewController.m; sourceTree = "<group>"; };
+		73936AFA24CFFC0F00777AAB /* MHRelationCourseController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHRelationCourseController.h; sourceTree = "<group>"; };
+		73936AFB24CFFC0F00777AAB /* MHRelationCourseController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHRelationCourseController.m; sourceTree = "<group>"; };
 		73C56AC424AC22B700D7D776 /* LSPTitleStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPTitleStyle.h; sourceTree = "<group>"; };
 		73C56AC524AC22B700D7D776 /* LSPTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPTitleView.h; sourceTree = "<group>"; };
 		73C56AC624AC22B700D7D776 /* LSPContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSPContentView.h; sourceTree = "<group>"; };
@@ -880,6 +846,7 @@
 		1517FD5723C18E940074D410 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				734D6D7124D104E000B379CB /* App.entitlements */,
 				15C32AD1244988940062618D /* AppDebug.entitlements */,
 				1517FE0123C18F0B0074D410 /* CEBase */,
 				1517FE2123C18F0B0074D410 /* Expand */,
@@ -1167,6 +1134,8 @@
 		1517FE4E23C18F0B0074D410 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				734D6D9924D126FF00B379CB /* UIImage+GKCategory.h */,
+				734D6DA224D126FF00B379CB /* UIImage+GKCategory.m */,
 				1517FE4F23C18F0B0074D410 /* UIKit */,
 				1517FE5C23C18F0B0074D410 /* Foundation */,
 			);
@@ -1378,13 +1347,6 @@
 		1555F91624A1A524005CF929 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7343D38924AEE2F1001EC167 /* GKDouyinScrollView.h */,
-				7343D38A24AEE2F2001EC167 /* GKDouyinScrollView.m */,
-				7343D37C24AEDE5C001EC167 /* GKTransition */,
-				7343D37A24AEDE25001EC167 /* GKNavigationBarViewController.h */,
-				7343D37924AEDE25001EC167 /* GKNavigationBarViewController.m */,
-				7343D37124AEDDEE001EC167 /* GKConfigure */,
-				7343D35D24AEDDBE001EC167 /* GKCategory */,
 				1555F91D24A1A61C005CF929 /* MHMessageViewController.h */,
 				1555F91E24A1A61C005CF929 /* MHMessageViewController.m */,
 			);
@@ -1585,12 +1547,16 @@
 				1555F8E8249C655A005CF929 /* MHShortVideoTabBar.m */,
 				15C32AEB244DDE300062618D /* MHPublishQuViewControl.h */,
 				15C32AEC244DDE300062618D /* MHPublishQuViewControl.m */,
+				734D6DB524D12BB300B379CB /* MHMagicCameraRaceViewController.h */,
+				734D6DB624D12BB300B379CB /* MHMagicCameraRaceViewController.m */,
 				15DF7F722484A69700A0D098 /* MHHomeVideoViewController.h */,
 				15DF7F732484A69700A0D098 /* MHHomeVideoViewController.m */,
 				15DF8007248776FD00A0D098 /* MHFollowVideoViewController.h */,
 				15DF8008248776FD00A0D098 /* MHFollowVideoViewController.m */,
 				7338B9DB24CEA76000403C82 /* MHPublishVideoViewControl.h */,
 				7338B9DC24CEA76000403C82 /* MHPublishVideoViewControl.m */,
+				73936AFA24CFFC0F00777AAB /* MHRelationCourseController.h */,
+				73936AFB24CFFC0F00777AAB /* MHRelationCourseController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1961,53 +1927,6 @@
 			path = ThirdPage;
 			sourceTree = "<group>";
 		};
-		7343D35D24AEDDBE001EC167 /* GKCategory */ = {
-			isa = PBXGroup;
-			children = (
-				7343D35E24AEDDBE001EC167 /* UIImage+GKCategory.h */,
-				7343D35F24AEDDBE001EC167 /* UINavigationController+GKCategory.m */,
-				7343D36024AEDDBE001EC167 /* UINavigationItem+GKCategory.h */,
-				7343D36124AEDDBE001EC167 /* UIBarButtonItem+GKCategory.m */,
-				7343D36224AEDDBE001EC167 /* UIViewController+GKCategory.h */,
-				7343D36324AEDDBE001EC167 /* UIScrollView+GKCategory.m */,
-				7343D36424AEDDBE001EC167 /* GKCategory.h */,
-				7343D36524AEDDBE001EC167 /* UINavigationItem+GKCategory.m */,
-				7343D36624AEDDBE001EC167 /* UINavigationController+GKCategory.h */,
-				7343D36724AEDDBE001EC167 /* UIImage+GKCategory.m */,
-				7343D36824AEDDBE001EC167 /* UIBarButtonItem+GKCategory.h */,
-				7343D36924AEDDBE001EC167 /* UIScrollView+GKCategory.h */,
-				7343D36A24AEDDBE001EC167 /* UIViewController+GKCategory.m */,
-			);
-			path = GKCategory;
-			sourceTree = "<group>";
-		};
-		7343D37124AEDDEE001EC167 /* GKConfigure */ = {
-			isa = PBXGroup;
-			children = (
-				7343D37224AEDDEE001EC167 /* GKNavigationBarConfigure.h */,
-				7343D37324AEDDEE001EC167 /* GKNavigationBar.m */,
-				7343D37424AEDDEE001EC167 /* GKCommon.h */,
-				7343D37524AEDDEE001EC167 /* GKNavigationBar.h */,
-				7343D37624AEDDEE001EC167 /* GKNavigationBarConfigure.m */,
-			);
-			path = GKConfigure;
-			sourceTree = "<group>";
-		};
-		7343D37C24AEDE5C001EC167 /* GKTransition */ = {
-			isa = PBXGroup;
-			children = (
-				7343D37D24AEDE5C001EC167 /* GKPushTransitionAnimation.m */,
-				7343D37E24AEDE5C001EC167 /* GKDelegateHandler.m */,
-				7343D37F24AEDE5C001EC167 /* GKPopTransitionAnimation.m */,
-				7343D38024AEDE5C001EC167 /* GKBaseTransitionAnimation.m */,
-				7343D38124AEDE5C001EC167 /* GKPushTransitionAnimation.h */,
-				7343D38224AEDE5C001EC167 /* GKDelegateHandler.h */,
-				7343D38324AEDE5C001EC167 /* GKPopTransitionAnimation.h */,
-				7343D38424AEDE5C001EC167 /* GKBaseTransitionAnimation.h */,
-			);
-			path = GKTransition;
-			sourceTree = "<group>";
-		};
 		73443A7D24B809A400469DF7 /* ThirdPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2174,7 +2093,6 @@
 			files = (
 				7339EC4424BBE4FF006AB6BE /* MHAllCourseListView.m in Sources */,
 				1517009323D0602C0074D410 /* SkUserDefaults.m in Sources */,
-				7343D36D24AEDDBE001EC167 /* UIScrollView+GKCategory.m in Sources */,
 				15D94F1024A97FF8009C1422 /* SlideTabBar.m in Sources */,
 				15D94F0C24A86498009C1422 /* TAAnimatedDotView.m in Sources */,
 				73479CE624AEC4B700626B9A /* MHAddAddressModel.m in Sources */,
@@ -2191,6 +2109,7 @@
 				1517FEC923C18F0B0074D410 /* FUQcodeTools.m in Sources */,
 				733A68E824B5755C0071A1EE /* MHDrawViewController.m in Sources */,
 				1555F8FE24A19991005CF929 /* EPageSegmentCT.m in Sources */,
+				734D6DB724D12BB300B379CB /* MHMagicCameraRaceViewController.m in Sources */,
 				1555F90024A19991005CF929 /* EScrollPageView.m in Sources */,
 				1517FED523C18F0B0074D410 /* UserNetResponse.m in Sources */,
 				158C4D8E243D769D0070C9B7 /* MHShortVideoCoverCell.m in Sources */,
@@ -2200,7 +2119,6 @@
 				1517FEA823C18F0B0074D410 /* CEMainTabbarController.m in Sources */,
 				1584EF282410E2C2004A0A29 /* MHTopMenuView.m in Sources */,
 				734ABA4E24B6FC3F00E46A89 /* MHStudentExperienceCell.m in Sources */,
-				7343D38724AEDE5D001EC167 /* GKPopTransitionAnimation.m in Sources */,
 				15D94EF024A84808009C1422 /* MHCourseHeadView.m in Sources */,
 				7338F5C624BE9D87005A96E0 /* MHOpenShopView.m in Sources */,
 				15F23CCE242C769F00C63F4B /* HomeTabViewController.m in Sources */,
@@ -2219,11 +2137,9 @@
 				73C56ACF24AC22B800D7D776 /* LSPPageView.m in Sources */,
 				1517009023D0602C0074D410 /* UIViewController+sk.m in Sources */,
 				733D03CD24AD74330091A2F7 /* MHEditTipsView.m in Sources */,
-				7343D37824AEDDEE001EC167 /* GKNavigationBarConfigure.m in Sources */,
 				158C4D96243D82440070C9B7 /* FocusView.m in Sources */,
 				15D94F0D24A86498009C1422 /* TAAbstractDotView.m in Sources */,
 				73479CE024AEBFC300626B9A /* MHAddAddressViewController.m in Sources */,
-				7343D37724AEDDEE001EC167 /* GKNavigationBar.m in Sources */,
 				158C4DB1243D83500070C9B7 /* BaseModel.m in Sources */,
 				15C32AC5244955580062618D /* PaySignModel.m in Sources */,
 				1517FEC323C18F0B0074D410 /* FUProgressHUD.m in Sources */,
@@ -2236,20 +2152,18 @@
 				15DF7F742484A69700A0D098 /* MHHomeVideoViewController.m in Sources */,
 				7336327724AC627300FD67CF /* MHIntegralCell.m in Sources */,
 				1517FED723C18F0B0074D410 /* SkNetRequest.m in Sources */,
-				7343D38824AEDE5D001EC167 /* GKBaseTransitionAnimation.m in Sources */,
 				73328F1924BD46C200311098 /* MHCourseBuyView.m in Sources */,
 				15D94F0A24A86498009C1422 /* TADotView.m in Sources */,
 				7338B9DD24CEA76000403C82 /* MHPublishVideoViewControl.m in Sources */,
 				15D94F2924AB1362009C1422 /* MHFollowModel.m in Sources */,
 				158C4DB2243D83500070C9B7 /* GroupChat.m in Sources */,
 				73328F1F24BD612A00311098 /* MHMyOrderDetailViewController.m in Sources */,
-				7343D37B24AEDE25001EC167 /* GKNavigationBarViewController.m in Sources */,
 				1555F90D24A1A3BF005CF929 /* MHLoginViewController.m in Sources */,
 				1555F92B24A2E6BE005CF929 /* CEBaseTableView.m in Sources */,
 				158C4DAE243D83500070C9B7 /* PictureInfo.m in Sources */,
+				734D6DB024D126FF00B379CB /* UIImage+GKCategory.m in Sources */,
 				1517FE8D23C18F0B0074D410 /* SCHomeController.m in Sources */,
 				155B38B824441216007CEA7C /* AES.m in Sources */,
-				7343D36C24AEDDBE001EC167 /* UIBarButtonItem+GKCategory.m in Sources */,
 				1517FEAC23C18F0B0074D410 /* CEBaseController.m in Sources */,
 				733B7F5424B59B8300608A83 /* MHMyOrderViewController.m in Sources */,
 				1517008923D0602C0074D410 /* SecurityUtil.m in Sources */,
@@ -2288,7 +2202,6 @@
 				15C32ACD244955580062618D /* WXApiManager.m in Sources */,
 				1517FECC23C18F0B0074D410 /* MMEditView.m in Sources */,
 				1517FEBF23C18F0B0074D410 /* DDDeviceInfo.m in Sources */,
-				7343D38524AEDE5D001EC167 /* GKPushTransitionAnimation.m in Sources */,
 				1585EC442440130000D77CF5 /* SharePopView.m in Sources */,
 				1517FD6B23C18E960074D410 /* main.m in Sources */,
 				15D94F2024AAE47C009C1422 /* MHFollowViewController.m in Sources */,
@@ -2300,7 +2213,6 @@
 				1555F95724A33C28005CF929 /* HoverPageViewController.m in Sources */,
 				15D94F2624AB125B009C1422 /* MHFollowTableViewCell.m in Sources */,
 				1517008A23D0602C0074D410 /* NSData+AES.m in Sources */,
-				7343D38624AEDE5D001EC167 /* GKDelegateHandler.m in Sources */,
 				73328F2224BD7D0F00311098 /* MHMyOrderDetailCell.m in Sources */,
 				73443A8624B844B700469DF7 /* MHCourseListeningSingleModel.m in Sources */,
 				15D94F1724A98929009C1422 /* MHShortVideoCCell.m in Sources */,
@@ -2317,7 +2229,6 @@
 				73384E3A24C5929400737319 /* CGXPickerViewManager.m in Sources */,
 				15D94EF624A84928009C1422 /* MHCourseModel.m in Sources */,
 				15C32ACA244955580062618D /* WXMediaMessage+messageConstruct.mm in Sources */,
-				7343D36E24AEDDBE001EC167 /* UINavigationItem+GKCategory.m in Sources */,
 				734ABA5124B6FC9F00E46A89 /* MHStudentExperienceModel.m in Sources */,
 				158C4DB0243D83500070C9B7 /* User.m in Sources */,
 				1517FEC823C18F0B0074D410 /* UITableView+XXTableViewReloadViewHolder.m in Sources */,
@@ -2342,7 +2253,6 @@
 				73384E3F24C5929400737319 /* CGXAddressModel.m in Sources */,
 				73384E4024C5929400737319 /* CGXStringPickerView.m in Sources */,
 				1517008823D0602C0074D410 /* GTMBase64.m in Sources */,
-				7343D36B24AEDDBE001EC167 /* UINavigationController+GKCategory.m in Sources */,
 				734505CE24B30B3500C5ACF2 /* MHMyCourseCell.m in Sources */,
 				7338B9E924CEB37C00403C82 /* MHPublishTitleModel.m in Sources */,
 				73384E3C24C5929400737319 /* CGXAddressPcikerView.m in Sources */,
@@ -2360,6 +2270,7 @@
 				158C4DBE243EEF4F0070C9B7 /* MHAppserver.m in Sources */,
 				1555F8E5249C5F8B005CF929 /* MHSameCityViewController.m in Sources */,
 				15C32AC6244955580062618D /* MHPayManager.m in Sources */,
+				73936AFC24CFFC0F00777AAB /* MHRelationCourseController.m in Sources */,
 				1517FEC423C18F0B0074D410 /* SCPopTool.m in Sources */,
 				15D94F1A24AAD5F5009C1422 /* MHUserFollowViewController.m in Sources */,
 				733D03E624ADE3300091A2F7 /* MHAddressModel.m in Sources */,
@@ -2379,11 +2290,8 @@
 				15D94F0924A86498009C1422 /* SDCollectionViewCell.m in Sources */,
 				158C4DB3243D83500070C9B7 /* Music.m in Sources */,
 				1517FEA923C18F0B0074D410 /* CEBaseView.m in Sources */,
-				7343D36F24AEDDBE001EC167 /* UIImage+GKCategory.m in Sources */,
 				1517009723D0602C0074D410 /* Reachability.m in Sources */,
-				7343D37024AEDDBE001EC167 /* UIViewController+GKCategory.m in Sources */,
 				1555F93D24A2F914005CF929 /* MHUserHeadView.m in Sources */,
-				7343D38B24AEE2F2001EC167 /* GKDouyinScrollView.m in Sources */,
 				73384E3B24C5929400737319 /* NSDate+CGXPicker.m in Sources */,
 				1517008B23D0602C0074D410 /* UIDevice-Hardware.m in Sources */,
 			);
@@ -2544,6 +2452,7 @@
 			baseConfigurationReference = FF66CE4FDEF3284183718D85 /* Pods-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/App.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;

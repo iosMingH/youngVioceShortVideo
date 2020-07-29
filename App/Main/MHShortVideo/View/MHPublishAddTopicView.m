@@ -62,10 +62,48 @@ UITableViewDataSource
     }];
     _tableview.backgroundColor = [UIColor whiteColor];
     [_tableview registerClassNames: @[cellId]];
+    
+    [self init_UI_bottomView];
 }
 
+//确定
 - (void)init_UI_bottomView{
     
+    CGFloat viewH = AUTO(40);
+    
+    self.bottomV = [UIView hyb_viewWithSuperView:self constraints:^(MASConstraintMaker *make) {
+        make.left.and.right.mas_equalTo(0);
+        make.height.mas_equalTo(viewH);
+        make.bottom.mas_equalTo(0);
+    }];
+    
+    [UIView hyb_addTopLineToView:self.bottomV height:1 color:SK_COLOR_BASE_LINE];
+    
+    [self.bottomV layoutIfNeeded];
+    
+    NSArray *titles = @[@"取消",@"确定"];
+    NSArray *tags = @[@"300",@"400"];
+    CGFloat btnW = self.bottomV.width/titles.count;
+    for (int i = 0; i < titles.count; i++) {
+        
+        UIButton *btn = [UIButton hyb_buttonWithSuperView:self.bottomV constraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(btnW*i);
+            make.top.and.bottom.mas_equalTo(0);
+            make.width.mas_equalTo(btnW);
+        } touchUp:^(UIButton *sender) {
+            [self infoAction:sender];
+        }];
+        [btn setTitle:titles[i] forState:UIControlStateNormal];
+        [btn setTitleColor:SK_COLOR_BASE_TEXT_GRAY forState:UIControlStateNormal];
+        btn.titleLabel.font = FONT(AUTO(14));
+        btn.tag = [tags[i] integerValue];
+        if (i == 1) {
+             [btn setTitleColor:SK_COLOR_BASE_TEXT_ORANGE forState:UIControlStateNormal];
+        }
+        
+    }
+    
+
 }
 
 //设置cell 的行高
@@ -120,18 +158,38 @@ UITableViewDataSource
 //已经选中
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSLog(@"你点击了%ld行",indexPath.row)
+    NSLog(@"你点击了%ld行",indexPath.row);
+    MHPublishAddTopicModel *tModel = _arrData[indexPath.row];
+
+     [[HWPopTool sharedInstance] closeWithBlcok:nil];
+    NSInteger tag = 1000;
+    NoticeModel* model = [[NoticeModel alloc]init:tag msg:nil data:tModel];
+    NSString* targer = @"MHPublishVideoViewControl";
+    [[NSNotificationCenter defaultCenter] postNotificationName:targer object:nil userInfo:[model mj_keyValues]];
 }
 
+#pragma mark - action
+//关注 粉丝 获赞 积分
+- (void)infoAction:(UIButton *)sender
+{
+    NSInteger tag = sender.tag;
+    [[HWPopTool sharedInstance] closeWithBlcok:nil];
+    if (tag == 400) {
+          NoticeModel* model = [[NoticeModel alloc]init:tag msg:nil data:nil];
+          NSString* targer = @"MHPublishVideoViewControl";
+          [[NSNotificationCenter defaultCenter] postNotificationName:targer object:nil userInfo:[model mj_keyValues]];
+    }
+  
+                
+}
 
 #pragma mark - Net
 -(void)requstData{
     for (int idx = 0; idx < 10; idx ++) {
         MHPublishAddTopicModel *model = [[MHPublishAddTopicModel alloc]init];
-        model.title = @"这个是话题名称点了就选中";
+        model.title = [NSString stringWithFormat:@"#话题%d",idx];
         [_arrData addObject:model];
     }
-    
     
     [self.tableview reloadData];
     

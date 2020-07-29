@@ -50,7 +50,6 @@
     titleL.textColor = SK_COLOR_BASE_TEXT_BLACK_DEEP;
     titleL.textAlignment = NSTextAlignmentCenter;
     
-    
     //输入手机号
         UITextField *tellPhoneT = [UITextField hyb_textFieldWithHolder:@"在此输入手机号码" delegate:self superView:self constraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(SK_MARGINLR);

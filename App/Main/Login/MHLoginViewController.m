@@ -224,6 +224,7 @@
             make.centerX.equalTo(self.view);
         } touchUp:^(UIButton *sender) {
             TOAST(@"微信登录");
+             [self Net_Collect];
         }];
 
 //    }
@@ -316,6 +317,39 @@
 }
 
 
+
+- (void)Net_Collect
+{
+      __weak typeof(self )this = self;
+    [[MHPayManager sharedManager] wxAuthLogin:WX_Auth_Scope vc:self respBlock:^(NSInteger resultCode, NSString *resultMsg) {
+        NSLog(@"resultMsg=%@",resultMsg);
+         if (0 == resultCode) {
+        //            [FUPROGRESS_HUD error:@"接口还没添加"];
+                    [this wxOpenUnion:resultMsg];
+                }else{
+                    [FUPROGRESS_HUD error:resultMsg];
+                }
+    }];
+    
+}
+
+
+-(void)wxOpenUnion:(NSString*)openid
+{
+    
+//   __weak typeof(self)this = self;
+    [SkNetApi reqWxUnionId:openid success:^(NSDictionary *resp) {
+         NSLog(@"resp=%@",resp);
+        NSString* unionid = [resp objectForKey:@"unionid"];
+        NSLog(@"unionid=%@",unionid);
+       MHDrawViewController *drawVc = [self loadNavigationController];
+       [self.view.window setRootViewController:drawVc];
+       [FUPROGRESS_HUD success:@"登录成功"];
+    } failure:^(NSError *err) {
+           [FUPROGRESS_HUD info:@"微信授权错误"];
+       }];
+     
+}
 
 
 @end

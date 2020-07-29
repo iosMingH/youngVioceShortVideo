@@ -33,12 +33,7 @@ UITableViewDataSource
     self.view.backgroundColor = [UIColor whiteColor];
     
     //返回按钮
-    UIButton *backButton = [[UIButton alloc]init];
-    [backButton addTarget:self action:@selector(backButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setImage:[UIImage imageNamed:@"p_arrow_left_selected"] forState:UIControlStateNormal];
-    [backButton sizeToFit];
-    backButton.center = CGPointMake(15 + backButton.frame.size.width / 2, SafeTop + 22);
-    [self.view addSubview:backButton];
+     [self addLeftButtonImage:@"p_arrow_left_selected" Action:@selector(backButtonTouched:)];
     
     _arrData = [[NSMutableArray alloc]init];
     _arrOrderData = [[NSMutableArray alloc]init];
@@ -47,7 +42,7 @@ UITableViewDataSource
 
 
 - (void)initView{
-    UIView *superView = self.view;
+    
 
     
 }
@@ -62,10 +57,6 @@ UITableViewDataSource
     
 //    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
   
-//        设置导航栏背景图片为一个无图的image，导航栏会加载空imgae，就自然透明掉了
-        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    //    同理透明掉导航栏下划线
-        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

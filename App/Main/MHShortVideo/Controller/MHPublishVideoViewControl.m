@@ -13,6 +13,8 @@
 #import "MHPublishAddTopicView.h"
 //计算文字的高和宽
 #import "NSString+Size.h"
+#import "MHRelationCourseController.h"
+#import "MHPublishAddTopicModel.h"
 //设置cell和计算统一的字体
 #define kCellFont 14
 
@@ -34,6 +36,7 @@ static NSString *titleId = @"MHPublishTitleHeadView";
     [super viewDidLoad];
 //    self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     self.title = @"发布";
+      _dataArrM = [NSMutableArray array];
     [self collectionView];
     
     //登录按钮
@@ -43,13 +46,19 @@ static NSString *titleId = @"MHPublishTitleHeadView";
            make.bottom.mas_equalTo(-AUTO(20));
            make.height.mas_equalTo(AUTO(44));
         } touchUp:^(UIButton *sender) {
-            TOAST(@"成功成功");
+            TOAST(@"发布成功");
         }];
          btn.titleLabel.font = NFONT;
          btn.layer.cornerRadius = AUTO(25);
          btn.backgroundColor = SK_COLOR_BASE_ORANGE;
         [btn setTitleColor:SK_COLOR_BASE_TITLEMAIN forState:UIControlStateNormal];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+   
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -67,7 +76,9 @@ static NSString *titleId = @"MHPublishTitleHeadView";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MHPublishVideoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellid forIndexPath:indexPath];
-    cell.lblName.text = self.dataArrM[indexPath.item];
+//    cell.lblName.text = self.dataArrM[indexPath.item];
+    MHPublishAddTopicModel *model = self.dataArrM[indexPath.row];
+    [cell setModel:model indexPath:indexPath];
     cell.layer.cornerRadius = 3;
     cell.clipsToBounds = YES;
     
@@ -79,7 +90,9 @@ static NSString *titleId = @"MHPublishTitleHeadView";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1) {
-        NSString *title = self.dataArrM[indexPath.item];
+//        NSString *title = self.dataArrM[indexPath.item];
+         MHPublishAddTopicModel *model = self.dataArrM[indexPath.row];
+        NSString *title = model.title;
         //文字的高和宽
         CGSize size = [title sizeWithFontSize:kCellFont maxSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
         //根据文字高和宽在自己增加些范围，使之较为美观
@@ -124,6 +137,15 @@ static NSString *titleId = @"MHPublishTitleHeadView";
         return [UICollectionReusableView new];
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+      MHPublishAddTopicModel *model = self.dataArrM[indexPath.row];
+        
+    [self.dataArrM removeObject:model];
+    
+    [_collectionView reloadData];
+}
+
  // 弹出话题框
 - (void)initTopicView{
     MHPublishAddTopicView *tipsView = [[MHPublishAddTopicView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH-AUTO(80), AUTO(328))];
@@ -132,10 +154,7 @@ static NSString *titleId = @"MHPublishTitleHeadView";
     [HWPopTool sharedInstance].shadeBackgroundType = ShadeBackgroundTypeGradient;
    [HWPopTool sharedInstance].closeButtonType = ButtonPositionTypeRight;
    [[HWPopTool sharedInstance] showWithPresentView:tipsView animated:YES];
-    
-   
 }
-
 
 #pragma mark - 懒加载创建
 - (UICollectionView *)collectionView
@@ -174,18 +193,31 @@ static NSString *titleId = @"MHPublishTitleHeadView";
 //        选择关联课程
         case 102:
         {
-            TOAST(@"选择关联课程");
+//            TOAST(@"选择关联课程");
+            MHRelationCourseController *vc = [[MHRelationCourseController alloc]init];
+//            [self.navigationController pushViewController:vc animated:YES];
+            vc.modalPresentationStyle = UIModalPresentationFullScreen;
+            [self presentViewController:vc animated:YES completion:nil];
+            
         }
             break;
-            
-        case 300:
+//      添加话题 确定
+        case 400:
             
         {
             
+            TOAST(@"添加话题确定");
+        }
+            break;
+//      添加话题 确定
+        case 1000:
+        {
+            MHPublishAddTopicModel *topic = (MHPublishAddTopicModel *)model.data;
+            [_dataArrM addObject:topic];
+            [_collectionView reloadData];
             
         }
             break;
-            
         default:
             break;
     }
@@ -193,28 +225,6 @@ static NSString *titleId = @"MHPublishTitleHeadView";
 }
 
 
-- (NSMutableArray *)dataArrM
-{
-    if (!_dataArrM) {
-        _dataArrM = [NSMutableArray array];
-        
-        for (int i = 0; i < 10; i ++) {
-            NSInteger num = arc4random()%3;
-            NSString *str;
-            if (num == 0) {
-                str = @"搜索关键字";
-            }else if(num == 1){
-                str = @"关键词";
-            }else if (num == 2){
-                str = @"爱好";
-            }else if (num == 3){
-                str = @"编码风格";
-            }
-            [_dataArrM addObject:str];
-        }
-    }
-    return _dataArrM;
-}
 
 @end
 

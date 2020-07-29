@@ -135,8 +135,9 @@
 {// 返回
     UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setImage:[UIImage imageNamed:path] forState:UIControlStateNormal];
+    btn.contentMode = UIViewContentModeScaleAspectFit;
     [btn setFrame:CGRectMake(0, 0, AUTO(24), AUTO(24))];
-    [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, 0)];
+    [btn setImageEdgeInsets:UIEdgeInsetsMake(0, 10, 0, -10)];
     [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem* BarButton = [[UIBarButtonItem alloc]initWithCustomView:btn];
     self.navigationController.topViewController.navigationItem.leftBarButtonItem = BarButton;
@@ -175,7 +176,7 @@
 {
     UIButton* btn = [[UIButton alloc] init];
     [btn setTitle:str forState:UIControlStateNormal];
-    [btn.titleLabel setFont:[UIFont systemFontOfSize:AUTO(14)]];
+    [btn.titleLabel setFont:[UIFont systemFontOfSize:AUTO(16)]];
      [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, -25, 0, 0)]; 
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [btn sizeToFit];

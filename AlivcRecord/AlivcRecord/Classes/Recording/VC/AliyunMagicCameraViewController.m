@@ -330,13 +330,15 @@ AlivcRecordPasterViewDelegate>
     }
     return _bottomView;
 }
-- (AlivcRecordSliderButtonsView *)sliderButtonsView{
-    if (!_sliderButtonsView) {
-        _sliderButtonsView =[[AlivcRecordSliderButtonsView alloc] initWithFrame:CGRectMake(ScreenWidth - 52 -10, CGRectGetMaxY(self.navigationBar.frame)+40, 52, 350)];
-        _sliderButtonsView.delegate = self;
-    }
-    return _sliderButtonsView;
-}
+
+// 暂时隐藏  MH  --------  
+//- (AlivcRecordSliderButtonsView *)sliderButtonsView{
+//    if (!_sliderButtonsView) {
+//        _sliderButtonsView =[[AlivcRecordSliderButtonsView alloc] initWithFrame:CGRectMake(ScreenWidth - 52 -10, CGRectGetMaxY(self.navigationBar.frame)+40, 52, 350)];
+//        _sliderButtonsView.delegate = self;
+//    }
+//    return _sliderButtonsView;
+//}
 - (UILabel *)timerCountLab{
     if (!_timerCountLab) {
         _timerCountLab =[[AlivcRecordTimerLable alloc]initWithFrame:self.view.bounds];

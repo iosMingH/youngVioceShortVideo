@@ -151,7 +151,8 @@ NSString * const kAwemeCollectionCell  = @"AwemeCollectionCell";
 }
 - (void)viewWillDisappear:(BOOL)animated{
      [super viewWillDisappear:animated];
-    
+    // 关闭滑动切换抽屉
+        self.drawVC.slideEnabled = NO;
 }
 
 - (void)setupUI {

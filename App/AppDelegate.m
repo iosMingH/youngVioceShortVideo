@@ -27,9 +27,9 @@
     [self.window makeKeyAndVisible];
     
            //向微信注册,发起支付必须注册
-//    [WXApi registerApp:WXAuthAppID universalLink:@"https://help.wechat.com/sdksample/"];
+    [WXApi registerApp:WXAuthAppID universalLink:@"https://help.wechat.com/sdksample/"];
    
-     [WXApi registerApp:WXAuthAppID universalLink:@"https://mp.dayezhifu.com/"];
+//     [WXApi registerApp:WXAuthAppID universalLink:@"https://mp.dayezhifu.com/"];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
   
     

@@ -1,20 +1,20 @@
 //
-//  AliyunMagicCameraRaceViewController.m
-//  AliyunVideoClient_Entrance
+//  MHMagicCameraRaceViewController.m
+//  App
 //
-//  Created by 郦立 on 2019/9/27.
-//  Copyright © 2019 Alibaba. All rights reserved.
+//  Created by dayewang on 2020/7/29.
+//  Copyright © 2020 李焕明. All rights reserved.
 //
 
-#import "AliyunMagicCameraRaceViewController.h"
+#import "MHMagicCameraRaceViewController.h"
 #import "AlivcShortVideoRaceManager.h"
 #import "AVC_ShortVideo_Config.h"
 
-@interface AliyunMagicCameraRaceViewController ()
+@interface MHMagicCameraRaceViewController ()
 
 @end
 
-@implementation AliyunMagicCameraRaceViewController
+@implementation MHMagicCameraRaceViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,8 +30,7 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
-    [[UIApplication sharedApplication]setStatusBarHidden:YES];
-
+     [[UIApplication sharedApplication]setStatusBarHidden:YES];
 }
 
 //MH ---- 显示导航栏
@@ -39,8 +38,22 @@
     
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
-    [[UIApplication sharedApplication]setStatusBarHidden:NO];
+     [[UIApplication sharedApplication]setStatusBarHidden:NO];
+
     
+    //ios11返回上一级页面导航栏会出现偏移
+    #ifndef __IPHONE_11_0
+    #define __IPHONE_11_0 110000
+    #endif
+    #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0
+    // if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11.0")) {
+    if (@available(iOS 11.0, *)) {
+       self.navigationController.navigationBar.frame = CGRectMake(0, Height_StatusBar, DEVICEWIDTH, Height_NavBar-Height_StatusBar);
+    } else {
+    // Fallback on earlier versions
+    }
+    #endif
+  
 }
 
 ////MH ---- 显示导航栏
@@ -55,6 +68,7 @@
     [super viewDidAppear:animated];
 
 }
+
 
 
 #if SDK_VERSION == SDK_VERSION_CUSTOM
@@ -89,4 +103,19 @@
 }
 #endif
 
+
+
+// 后面添加  MH
+//- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion{
+//    [super dismissViewControllerAnimated:flag completion:completion];
+//
+//    if (DP_IS_IOS11) {
+//        //执行词句代码，可以消除跳动的问题。但遗憾，没有能够控制隐藏动画时间的接口，所以为了防止突兀，设置了透明度动画。
+//        [self.navigationController setNavigationBarHidden:YES animated:YES];
+//        [UIView animateWithDuration:UINavigationControllerHideShowBarDuration animations:^{
+//            self.navigationController.navigationBar.alpha = 0.0;
+//        }];
+//    }
+//}
 @end
+

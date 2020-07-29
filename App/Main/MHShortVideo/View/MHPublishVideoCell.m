@@ -7,7 +7,7 @@
 //
 
 #import "MHPublishVideoCell.h"
-#import "MHPublishTitleModel.h"
+#import "MHPublishAddTopicModel.h"
 
 
 //**************话题
@@ -33,7 +33,7 @@
     return self;
 }
 -(void)setModel:(id)model indexPath:(NSIndexPath *)indexPath{
-    MHPublishTitleModel *bModel = (MHPublishTitleModel *)model;
+    MHPublishAddTopicModel *bModel = (MHPublishAddTopicModel *)model;
     _lblName.text = bModel.title;
     
 }
@@ -74,6 +74,7 @@
         }];
 //        self.textT.placeholder = @"输入视频描述...";
         self.textT.backgroundColor = [UIColor blackColor];
+        self.textT.textColor = SK_COLOR_BASE_TITLEMAIN;
         NSAttributedString* attributedString = [[NSAttributedString alloc] initWithString:@"输入视频描述..." attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:AUTO(14)],NSForegroundColorAttributeName:[UIColor grayColor]}];
          self.textT.attributedPlaceholder = attributedString;
         

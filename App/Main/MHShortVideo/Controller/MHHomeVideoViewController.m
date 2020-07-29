@@ -37,6 +37,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     // 不需要调整UIScrollView的内边距
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
     [self setupUI];
 }
 
@@ -89,6 +90,7 @@
     pageContentView.delegate = self;
     self.pageContentView = pageContentView;
     [self.view addSubview:pageContentView];
+    
 }
 
 #pragma mark ----- 代理

@@ -139,7 +139,9 @@ static AlivcShortVideoRoute *_instance = nil;
             Class viewControllerClass;
             
             if (self.mediaConfig.beautyType == AlivcBeautyTypeRace) {
-                viewControllerClass = NSClassFromString(@"AliyunMagicCameraRaceViewController");
+//                viewControllerClass = NSClassFromString(@"AliyunMagicCameraRaceViewController");
+                viewControllerClass = NSClassFromString(@"MHMagicCameraRaceViewController");
+                
             }else {
                 viewControllerClass = NSClassFromString(@"AliyunMagicCameraViewController");
             }

@@ -21,14 +21,8 @@
     self.title = @"付款成功";
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self addLeftButtonImage:@"p_arrow_left_selected" Action:@selector(backButtonTouched:)];
     
-    //返回按钮
-    UIButton *backButton = [[UIButton alloc]init];
-    [backButton addTarget:self action:@selector(backButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setImage:[UIImage imageNamed:@"p_arrow_left_selected"] forState:UIControlStateNormal];
-    [backButton sizeToFit];
-    backButton.center = CGPointMake(15 + backButton.frame.size.width / 2, SafeTop + 22);
-    [self.view addSubview:backButton];
 }
 
 
@@ -88,22 +82,37 @@
     
 }
 
+//- (void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+//
+////        设置导航栏背景图片为一个无图的image，导航栏会加载空imgae，就自然透明掉了
+//        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+//    //    同理透明掉导航栏下划线
+//        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:animated];
+//    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+//
+//}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
-  
-//        设置导航栏背景图片为一个无图的image，导航栏会加载空imgae，就自然透明掉了
-        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
-    //    同理透明掉导航栏下划线
-        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+      self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-
+        self.navigationController.navigationBar.barTintColor = SK_COLOR_BASE_NAV;
 }
 
 #pragma mark - aciton

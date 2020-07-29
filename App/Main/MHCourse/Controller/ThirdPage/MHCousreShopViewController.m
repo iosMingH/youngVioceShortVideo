@@ -30,6 +30,7 @@ UITableViewDataSource
     [super viewDidLoad];
     //    [self updateUI];
   self.view.backgroundColor = [UIColor whiteColor];
+    
     _arrData = [[NSMutableArray alloc]init];
 
 //    self.title = @"我的店铺";
@@ -37,9 +38,18 @@ UITableViewDataSource
            NSLog(@"result=%@",result);
        }];
     _searchV.backgroundColor = [UIColor whiteColor];
-    [_searchV mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(Height_NavBar);
-    }];
+
+    
+    //这一步 避免试图不置顶
+     if ([self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHCourseMultipleViewController")]){
+        [_searchV mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(Height_NavBar);
+        }];
+     }else{
+        [_searchV mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(0);
+        }];
+     }
     
     UIButton *leftNavBtn =  [self addNavLeftBtn:@"老炮之家" image:@"p_arrow_left_selected" action:@selector(backButtonTouched:)];
     leftNavBtn.contentMode = UIViewContentModeScaleAspectFit;
@@ -76,9 +86,13 @@ UITableViewDataSource
 //
 - (UITableView *)tableview{
     if (!_tableview) {
+        __weak typeof(self) weakSelf = self;
         _tableview = [UITableView hyb_tableViewWithSuperview:self.view delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
 //            make.edges.mas_equalTo(self.view);
-            make.edges.insets(UIEdgeInsetsMake(50+Height_NavBar, 0, 0, 0));
+//            make.edges.insets(UIEdgeInsetsMake(50+Height_NavBar, 0, 0, 0));
+            
+            make.left.and.right.and.bottom.mas_equalTo(0);
+            make.top.equalTo(weakSelf.searchV.mas_bottom);
         }];
         _tableview.backgroundColor = SK_COLOR_BASE_BACKGROUND;
         _tableview.tableHeaderView = _headView;

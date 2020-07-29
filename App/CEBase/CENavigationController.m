@@ -41,7 +41,7 @@
         [back setTitle:@"返回" forState:UIControlStateNormal];
       
         [back.titleLabel setFont:[UIFont systemFontOfSize:14]];
-        [back setImageEdgeInsets:UIEdgeInsetsMake(0, 25, 0, 0)];
+        [back setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
         [back setTitleEdgeInsets:UIEdgeInsetsMake(0, 50, 0, -5)];
         [back setTitleColor:[UIColor whiteColor]  forState:UIControlStateNormal];
         

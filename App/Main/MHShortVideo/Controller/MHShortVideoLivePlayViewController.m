@@ -192,6 +192,8 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+ 
+    
      self.userToken = [FUCacheManager read:COMMON_USER_TOKEN];
     self.pageNum = 1;
     [self initUI];

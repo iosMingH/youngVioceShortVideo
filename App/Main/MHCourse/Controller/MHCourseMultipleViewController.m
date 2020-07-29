@@ -68,6 +68,7 @@
    //    同理透明掉导航栏下划线
        [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
     
+    self.navigationController.navigationBar.hidden = NO;
     // 关闭滑动切换抽屉
        self.drawVC.slideEnabled = NO;
 }
