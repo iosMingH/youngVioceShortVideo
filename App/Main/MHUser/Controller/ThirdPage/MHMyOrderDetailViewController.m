@@ -32,6 +32,13 @@ UITableViewDataSource
     self.title = @"订单详情";
     self.view.backgroundColor = [UIColor whiteColor];
     
+    //没导航scrollView不能顶头,适配
+    if (@available(iOS 11.0, *)) {
+        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
     //返回按钮
      [self addLeftButtonImage:@"p_arrow_left_selected" Action:@selector(backButtonTouched:)];
     

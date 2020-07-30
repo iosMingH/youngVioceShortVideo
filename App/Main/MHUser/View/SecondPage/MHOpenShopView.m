@@ -14,6 +14,8 @@
 @interface MHOpenShopView ()<UITextFieldDelegate>
 @property(nonatomic,strong)UITextField *tellPhoneT;
 @property(nonatomic,strong)UITextField *verificationCodeT;
+@property(nonatomic,strong)UITextField *nameT;
+@property(nonatomic,strong)UITextField *areaT;
 @property(nonatomic,strong)UIButton *verificationCodeB;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) NSInteger iTime;
@@ -50,18 +52,51 @@
     titleL.textColor = SK_COLOR_BASE_TEXT_BLACK_DEEP;
     titleL.textAlignment = NSTextAlignmentCenter;
     
-    //输入手机号
-        UITextField *tellPhoneT = [UITextField hyb_textFieldWithHolder:@"在此输入手机号码" delegate:self superView:self constraints:^(MASConstraintMaker *make) {
+    //输入姓名
+        UITextField *nameT = [UITextField hyb_textFieldWithHolder:@"在此输入姓名" delegate:self superView:self constraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(SK_MARGINLR);
             make.right.mas_equalTo(-SK_MARGINLR);
             make.top.equalTo(titleL.mas_bottom).offset(AUTO(20));
             make.height.mas_equalTo(AUTO(50));
         }];
+        nameT.textColor = SK_COLOR_BASE_TEXT_BLACK;
+        nameT.backgroundColor = HEXCOLOR(0xF7F7F7);
+        nameT.font = NFONT;
+    
+        UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, AUTO(50))];
+        nameT.leftViewMode = UITextFieldViewModeAlways;
+        nameT.leftView = leftView;
+        self.nameT = nameT;
+    
+    //输入地区
+        UITextField *areaT = [UITextField hyb_textFieldWithHolder:@"在此输入地区" delegate:self superView:self constraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(SK_MARGINLR);
+            make.right.mas_equalTo(-SK_MARGINLR);
+            make.top.equalTo(nameT.mas_bottom).offset(AUTO(20));
+            make.height.mas_equalTo(AUTO(50));
+        }];
+        areaT.textColor = SK_COLOR_BASE_TEXT_BLACK;
+        areaT.backgroundColor = HEXCOLOR(0xF7F7F7);
+        areaT.font = NFONT;
+    
+        leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, AUTO(50))];
+        areaT.leftViewMode = UITextFieldViewModeAlways;
+        areaT.leftView = leftView;
+        self.areaT = areaT;
+    
+    //输入手机号
+        UITextField *tellPhoneT = [UITextField hyb_textFieldWithHolder:@"在此输入手机号码" delegate:self superView:self constraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(SK_MARGINLR);
+            make.right.mas_equalTo(-SK_MARGINLR);
+            make.top.equalTo(areaT.mas_bottom).offset(AUTO(20));
+            make.height.mas_equalTo(AUTO(50));
+        }];
         tellPhoneT.textColor = SK_COLOR_BASE_TEXT_BLACK;
         tellPhoneT.backgroundColor = HEXCOLOR(0xF7F7F7);
         tellPhoneT.font = NFONT;
+        tellPhoneT.keyboardType = UIKeyboardTypeNumberPad;
     
-        UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, AUTO(50))];
+        leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, AUTO(50))];
         tellPhoneT.leftViewMode = UITextFieldViewModeAlways;
         tellPhoneT.leftView = leftView;
         self.tellPhoneT = tellPhoneT;

@@ -190,6 +190,7 @@
 		7338B9E924CEB37C00403C82 /* MHPublishTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338B9E824CEB37C00403C82 /* MHPublishTitleModel.m */; };
 		7338B9ED24CEC4A900403C82 /* CollectionViewSpaceLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338B9EC24CEC4A900403C82 /* CollectionViewSpaceLayout.m */; };
 		7338F5C624BE9D87005A96E0 /* MHOpenShopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338F5C524BE9D87005A96E0 /* MHOpenShopView.m */; };
+		733919E424D29D3600D9C28A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733919E324D29D3600D9C28A /* StoreKit.framework */; };
 		7339EC4424BBE4FF006AB6BE /* MHAllCourseListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7339EC4324BBE4FF006AB6BE /* MHAllCourseListView.m */; };
 		7339EC4824BBF715006AB6BE /* MHPopContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7339EC4724BBF715006AB6BE /* MHPopContentView.m */; };
 		733A68E824B5755C0071A1EE /* MHDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 733A68E724B5755C0071A1EE /* MHDrawViewController.m */; };
@@ -596,6 +597,7 @@
 		7338B9EC24CEC4A900403C82 /* CollectionViewSpaceLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewSpaceLayout.m; sourceTree = "<group>"; };
 		7338F5C424BE9D87005A96E0 /* MHOpenShopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHOpenShopView.h; sourceTree = "<group>"; };
 		7338F5C524BE9D87005A96E0 /* MHOpenShopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHOpenShopView.m; sourceTree = "<group>"; };
+		733919E324D29D3600D9C28A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7339EC4224BBE4FF006AB6BE /* MHAllCourseListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHAllCourseListView.h; sourceTree = "<group>"; };
 		7339EC4324BBE4FF006AB6BE /* MHAllCourseListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHAllCourseListView.m; sourceTree = "<group>"; };
 		7339EC4624BBF715006AB6BE /* MHPopContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHPopContentView.h; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F72F91B67185620971ADD045 /* Pods_App.framework in Frameworks */,
+				733919E424D29D3600D9C28A /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,6 +710,7 @@
 		0D4BA9A8D8FA9DD883BCD661 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				733919E324D29D3600D9C28A /* StoreKit.framework */,
 				4F0BC066E875278E0C1E3AFC /* Pods_App.framework */,
 			);
 			name = Frameworks;

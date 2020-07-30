@@ -53,4 +53,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, weak)id<MHShortVideoMenuViewDelegate> _Nullable delegate;
 @end
 
+
+
+//选择关联课程
+@interface MHChooseRelationCourseView : CEBaseView
+-(void)setValueModel:(id)model;
+@end
 NS_ASSUME_NONNULL_END

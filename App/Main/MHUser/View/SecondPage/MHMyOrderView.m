@@ -47,7 +47,7 @@ static NSString *cellId = @"MHCourseTableViewCell";
 //        [self setupModelOfCell:cell AtIndexPath:indexPath];
 //    }];
     
-    return 100;
+    return AUTO(100);
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -82,6 +82,7 @@ static NSString *cellId = @"MHCourseTableViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MHCourseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.remarkL.font = FONT(15);
     [self setupModelOfCell:cell AtIndexPath:indexPath];
     cell.contentView.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     return cell;

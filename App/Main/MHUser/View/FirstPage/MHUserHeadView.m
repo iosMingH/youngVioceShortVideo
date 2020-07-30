@@ -158,7 +158,7 @@
     }];
     [editB layoutIfNeeded];
     editB.layer.cornerRadius = editB.height/2;
-    editB.backgroundColor = [UIColor grayColor];
+    editB.backgroundColor = SK_COLOR_BASE_TRANSPARENT;
     editB.titleLabel.font = FONT(AUTO(13));
     editB.tag = 1000;
     
@@ -173,7 +173,7 @@
        }];
        [signB layoutIfNeeded];
        signB.layer.cornerRadius = signB.height/2;
-       signB.backgroundColor = [UIColor grayColor];
+    signB.backgroundColor = SK_COLOR_BASE_TRANSPARENT;
        signB.titleLabel.font = FONT(AUTO(13));
         signB.tag = 1100;
                            
@@ -192,7 +192,7 @@
        }];
     introductionView.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     
-    [UIView hyb_addBottomLineToView:introductionView height:0.5 color:SK_COLOR_BASE_TEXT_GRAY];
+    [UIView hyb_addBottomLineToView:introductionView height:0.5 color:SK_COLOR_BASE_LINE];
     
     UILabel *nickL = [UILabel hyb_labelWithFont:AUTO(16) superView:introductionView constraints:^(MASConstraintMaker *make) {
          make.left.mas_equalTo(AUTO(15));

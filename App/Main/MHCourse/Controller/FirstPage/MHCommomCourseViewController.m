@@ -47,7 +47,7 @@ UITableViewDataSource
             make.edges.mas_equalTo(self.view);
 //            make.edges.insets(UIEdgeInsetsMake(0, 0, 50, 0));
             make.top.and.left.and.right.mas_equalTo(0);
-            make.bottom.mas_equalTo(-Height_TabBar);
+            make.bottom.mas_equalTo(0);
         }];
         _tableview.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
         _tableview.tableHeaderView = _headView;

@@ -47,7 +47,7 @@
         //头部高度
         param.headerHeight = HEIGHT_CHOOSETITLE;
         //默认第3个
-        param.segmentParam.startIndex = 0;
+        param.segmentParam.startIndex = 2;
         //排列类型
         param.segmentParam.type = EPageContentLeft;
         //每个宽度，在type == EPageContentLeft，生效

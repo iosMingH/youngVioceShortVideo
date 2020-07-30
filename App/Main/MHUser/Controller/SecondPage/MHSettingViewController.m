@@ -54,7 +54,7 @@ UITableViewDataSource
 }
 
 - (void)initTipsView{
-             MHOpenShopView *tipsView = [[MHOpenShopView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH-AUTO(60), DEVICEWIDTH)];
+             MHOpenShopView *tipsView = [[MHOpenShopView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH-AUTO(60), DEVICEWIDTH+AUTO(40))];
              tipsView.backgroundColor = [UIColor whiteColor];
              
              [HWPopTool sharedInstance].shadeBackgroundType = ShadeBackgroundTypeGradient;
