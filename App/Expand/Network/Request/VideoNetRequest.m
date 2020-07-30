@@ -53,7 +53,7 @@
 {
     self = [super init];
     if (self) {
-        self.method = @"video/api/submitAliVideoPersonAudit";
+        self.method = @"video/submitAliVideoPersonAudit";
         self.httpMethod = @"POST";
     }
     return self;

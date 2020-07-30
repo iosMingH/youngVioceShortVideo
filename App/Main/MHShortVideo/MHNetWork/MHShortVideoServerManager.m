@@ -84,7 +84,7 @@
 
 //获获取播放的sts校验数据  大叶网=========================
 + (void)dayeServerGetSTSWithToken:(NSString *)token success:(void (^)(NSString * _Nonnull, NSString * _Nonnull, NSString * _Nonnull))success failure:(void (^)(NSString * _Nonnull))failure{
-    NSString *urlString = @"/video/api/getAliVideoStsAuth";
+    NSString *urlString = @"/video/getAliVideoStsAuth";
      NSString *allUrlString = [NSString stringWithFormat:@"%@%@?token=%@",URL_BASIC,urlString,token];
     NSLog(@"allUrlString=%@",allUrlString);
     [self daye_getWithUrlString:allUrlString success:^(id data) {
@@ -113,7 +113,7 @@
 //推荐的视频列表  大叶网==================
 + (void)dayeServerGetRecommendVideoListWithToken:(NSString *)token pageIndex:(NSInteger)index pageSize:(NSInteger)count lastEndVideoId:(NSString *)videoId success:(void (^)(NSArray<AlivcQuVideoModel *> * _Nonnull,NSInteger))success failure:(void (^)(NSString * _Nonnull))failure{
 //    NSString *urlString = @"/app/videolist";
-    NSString *urlString = @"/video/api/getAliShortVideoList";
+    NSString *urlString = @"/video/getAliShortVideoList";
     [self dayeServerVideoListWithUrlString:urlString token:token pageIndex:index pageSize:count lastEndVideoId:videoId success:success failure:failure];
 }
 
@@ -200,7 +200,7 @@
 //删除个人视频
 + (void)dayeServerDeletePersonalVideoWithToken:(NSString *)token videoId:(NSString *)videId userId:(NSString *)userId success:(void (^)(void))success failure:(void (^)(NSString * _Nonnull))failure{
 //    NSString *urlString = @"/app/user/userDelVideo";
-     NSString *urlString = @"/video/api/deleteAliVideo";
+     NSString *urlString = @"/video/deleteAliVideo";
     NSString *allUrlString = [NSString stringWithFormat:@"%@%@",URL_BASIC,urlString];
      NSDictionary *paramDic = @{@"videoIds":videId};
     NSString *resultUrlString = [self p_creatUrlGetStringWithOriginalUrlString:allUrlString param:paramDic];

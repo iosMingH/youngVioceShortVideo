@@ -26,17 +26,23 @@
 }
 
 +(void)chooseViewController:(UIViewController *)viewController sharePicture:(sendPictureBlock)block{
+    //iOS 11 必须加这个 否则导航栏变透明
+     [[UINavigationBar appearance] setTranslucent:NO];
+    
+    //适配iOS11 否则照片被导航栏挡住
+    if (@available(iOS 11.0, *)) {
+      UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+      }
     
     takePhoto *tP = [takePhoto sharedModel];
-    
     tP.sPictureBlock =block;
     
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle: nil                                                                             message: nil                                                                       preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIImagePickerController* imagePickerController = [[UIImagePickerController alloc] init];
     imagePickerController.delegate = tP;
+
     imagePickerController.allowsEditing = YES;
-    
     //添加Button
     [alertController addAction: [UIAlertAction actionWithTitle: @"拍照" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         //处理点击拍照
@@ -46,12 +52,12 @@
     [alertController addAction: [UIAlertAction actionWithTitle: @"从相册选取" style: UIAlertActionStyleDefault handler:^(UIAlertAction *action){
         //处理点击从相册选取
         imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+         imagePickerController.navigationBar.translucent=NO;
        imagePickerController.modalPresentationStyle = UIModalPresentationFullScreen;
         [viewController presentViewController:imagePickerController animated:YES completion:NULL];
     }]];
     
     [alertController addAction: [UIAlertAction actionWithTitle: @"取消" style: UIAlertActionStyleCancel handler:nil]];
- 
     [viewController presentViewController: alertController animated: YES completion: nil];
 
 }
@@ -64,11 +70,17 @@
     [picker dismissViewControllerAnimated:YES completion:^{}];
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     [TPhoto sPictureBlock](image);
+    
+    //适配iOS11 否则照片被导航栏挡住
+    if (@available(iOS 11.0, *)) {
+    UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
 }
 
 //实现navigationController的代理
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+     
     //    viewController.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
     //    viewController.navigationItem.rightBarButtonItem.tintColor = [UIColor blackColor];
     

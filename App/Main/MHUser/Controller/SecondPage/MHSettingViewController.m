@@ -35,7 +35,6 @@ UITableViewDataSource
 
 -(void)updateUI{
     
-    
 }
 //
 - (UITableView *)tableview{
@@ -55,7 +54,7 @@ UITableViewDataSource
 }
 
 - (void)initTipsView{
-             MHOpenShopView *tipsView = [[MHOpenShopView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH-AUTO(60), DEVICEWIDTH-AUTO(80))];
+             MHOpenShopView *tipsView = [[MHOpenShopView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH-AUTO(60), DEVICEWIDTH)];
              tipsView.backgroundColor = [UIColor whiteColor];
              
              [HWPopTool sharedInstance].shadeBackgroundType = ShadeBackgroundTypeGradient;

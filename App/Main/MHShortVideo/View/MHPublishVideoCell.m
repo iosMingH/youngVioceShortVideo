@@ -46,7 +46,6 @@
 
 //*************** 视频描述  图片
 @interface MHPublishHeadView ()
-@property(nonatomic,strong)UITextView *textT;
 
 @end
 
@@ -63,8 +62,11 @@
             make.size.mas_equalTo(CGSizeMake(AUTO(98), AUTO(128)));
             make.centerY.equalTo(self);
         }];
-        coverI.backgroundColor = [UIColor grayColor];
+        coverI.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
+        coverI.contentMode = UIViewContentModeScaleAspectFit;
         coverI.layer.cornerRadius = 5;
+        self.coverImage = coverI;
+         
 
         self.textT = [UITextView hyb_viewWithSuperView:self constraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(SK_MARGINLR);
@@ -75,7 +77,7 @@
 //        self.textT.placeholder = @"输入视频描述...";
         self.textT.backgroundColor = [UIColor blackColor];
         self.textT.textColor = SK_COLOR_BASE_TITLEMAIN;
-        NSAttributedString* attributedString = [[NSAttributedString alloc] initWithString:@"输入视频描述..." attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:AUTO(14)],NSForegroundColorAttributeName:[UIColor grayColor]}];
+        NSAttributedString* attributedString = [[NSAttributedString alloc] initWithString:@"输入视频描述..." attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:AUTO(15)],NSForegroundColorAttributeName:[UIColor grayColor]}];
          self.textT.attributedPlaceholder = attributedString;
         
         
@@ -149,3 +151,69 @@
 }
 
 @end
+
+
+
+
+
+#import "MHCourseModel.h"
+//********************选择关联课程
+@interface MHChooseRelationCourseCell ()
+@property(nonatomic,strong)UIImageView *coverI;
+@property(nonatomic,strong)UILabel *titleL;
+@property(nonatomic,strong)UILabel *contentL;
+@property(nonatomic,strong)UILabel *remarkL;
+@end
+
+@implementation MHChooseRelationCourseCell
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        __weak typeof(self) weakSelf = self;
+          _coverI = [UIImageView hyb_viewWithSuperView:self.contentView constraints:^(MASConstraintMaker *make) {
+                  make.left.mas_equalTo(15);
+                  make.top.mas_equalTo(10);
+                  make.width.mas_equalTo(AUTO(120));
+                  make.bottom.mas_equalTo(-10);
+              }];
+              _coverI.backgroundColor = [UIColor grayColor];
+              
+              _titleL = [UILabel hyb_labelWithFont:NSIZE superView:self.contentView constraints:^(MASConstraintMaker *make) {
+                  make.top.equalTo(weakSelf.coverI.mas_top).offset(0);
+                  make.left.equalTo(weakSelf.coverI.mas_right).offset(10);
+                  make.right.mas_equalTo(-10);
+              }];
+              _titleL.numberOfLines = 2;
+              _titleL.textColor = SK_COLOR_BASE_TITLEMAIN;
+              
+              _contentL = [UILabel hyb_labelWithFont:AUTO(12) superView:self.contentView constraints:^(MASConstraintMaker *make) {
+                  make.left.equalTo(weakSelf.coverI.mas_right).offset(10);
+                  make.bottom.mas_equalTo(-15);
+                  make.width.mas_equalTo(AUTO(100));
+              }];
+              _contentL.textColor = SK_COLOR_BASE_TITLELESS;
+              
+              _remarkL = [UILabel hyb_labelWithFont:AUTO(18) superView:self.contentView constraints:^(MASConstraintMaker *make) {
+                         make.right.mas_equalTo(-15);
+                         make.bottom.mas_equalTo(-10);
+                         make.width.mas_equalTo(AUTO(100));
+                     }];
+              _remarkL.textAlignment = NSTextAlignmentRight;
+              _remarkL.textColor = SK_COLOR_BASE_ORANGE;
+              
+    }
+    return self;
+}
+
+
+-(void)setModel:(id)model indexPath:(NSIndexPath *)indexPath{
+    MHCourseModel *messagem = (MHCourseModel *)model;
+    _titleL.text = messagem.title;
+    _contentL.text = messagem.content;
+    _remarkL.text = messagem.remark;
+    
+}
+@end
+
+

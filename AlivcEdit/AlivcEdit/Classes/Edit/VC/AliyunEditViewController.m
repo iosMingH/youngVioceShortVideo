@@ -1056,10 +1056,10 @@ AliyunEffectTransitionViewDelegate, AlivcSpecialEffectViewDelegate ,AlivcAudioEf
     if (productType == AlivcOutputProductTypeSmartVideo) {
          //huan 改
 //        Class AlivcPublishQuViewControl = NSClassFromString(@"AlivcPublishQuViewControl");
-        Class MHPublishQuViewControl = NSClassFromString(@"MHPublishQuViewControl");
+        Class MHPublishVideoViewControl = NSClassFromString(@"MHPublishVideoViewControl");
         
 //        UIViewController *targetVC = [[AlivcPublishQuViewControl alloc]init];
-         UIViewController *targetVC = [[MHPublishQuViewControl alloc]init];
+         UIViewController *targetVC = [[MHPublishVideoViewControl alloc]init];
          //huan 改 -END
         if (!self.coverImage) {
             self.coverImage = [self featchFirstFrame];

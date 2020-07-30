@@ -29,10 +29,10 @@
     
     
 //    NSString *getUrl = @"/app/getImageUploadAuth";
-    NSString *getUrl = @"/video/api/getImageUploadAuth";
+    NSString *getUrl = @"/video/getImageUploadAuth";
     AlivcOutputProductType type = kAlivcProductType;
     if (type == AlivcOutputProductTypeSmartVideo) {
-        getUrl = @"/video/api/getImageUploadAuth";
+        getUrl = @"/video/getImageUploadAuth";
 //        if (tokenString) {
 //            [params addEntriesFromDictionary:@{@"token":tokenString}];
 //        }
@@ -65,7 +65,7 @@
                                        @"fileName":filePath.lastPathComponent
                                        }];
     if (coverURL) {
-        [params addEntriesFromDictionary:@{@"coverURL":coverURL}];
+        [params addEntriesFromDictionary:@{@"coverUrl":coverURL}];
     }
     if (desc) {
         [params addEntriesFromDictionary:@{@"description":desc}];
@@ -75,15 +75,16 @@
     }
    
 //    NSString *getUrl = @"/app/getVideoUploadAuth";
-      NSString *getUrl = @"/video/api/getAliVideoUploadAuth";
-    AlivcOutputProductType type = kAlivcProductType;
-    if (type == AlivcOutputProductTypeSmartVideo) {
-        getUrl = @"/video/api/getAliVideoUploadAuth";
-        if (tokenString) {
-            [params addEntriesFromDictionary:@{@"token":tokenString}];
-        }
-    }
+      NSString *getUrl = @"/video/getAliVideoUploadAuth";
+//    AlivcOutputProductType type = kAlivcProductType;
+//    if (type == AlivcOutputProductTypeSmartVideo) {
+//        getUrl = @"/video/getAliVideoUploadAuth";
+//        if (tokenString) {
+//            [params addEntriesFromDictionary:@{@"token":tokenString}];
+//        }
+//    }
     
+      NSLog(@"============getUrl=%@============",getUrl);
       NSLog(@"============params=%@============",params);
     
     [self dayeGetWithPath:getUrl params:params completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
@@ -114,10 +115,10 @@
     }
     
     
-    NSString *getUrl = @"/video/api/refreshAliVideoUploadAuth";
+    NSString *getUrl = @"/video/refreshAliVideoUploadAuth";
     AlivcOutputProductType type = kAlivcProductType;
     if (type == AlivcOutputProductTypeSmartVideo) {
-        getUrl = @"/vod/refreshVideoUploadAuth";
+        getUrl = @"/video/refreshAliVideoUploadAuth";
         if (tokenString) {
             [params addEntriesFromDictionary:@{@"token":tokenString}];
         }

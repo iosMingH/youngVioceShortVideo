@@ -81,7 +81,7 @@ alpha:1])
 //请求基础地址
 //#define URL_BASIC         @"http://192.168.0.199:8088/video"
 
-#define URL_BASIC         @"http://192.168.0.99:8765"
+#define URL_BASIC         @"http://192.168.0.199:8765/shaoyin"
 /**
  微信
  */

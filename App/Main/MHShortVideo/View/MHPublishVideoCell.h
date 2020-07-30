@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 视频描述  图片
 @interface MHPublishHeadView : UICollectionReusableView
 -(void)setModel:(id)model indexPath:(NSIndexPath *)indexPath;
+@property(nonatomic,strong)UITextView *textT;
+@property (strong, nonatomic) UIImageView *coverImage;
 @end
 
 //标题
@@ -27,5 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)setModel:(id)model indexPath:(NSIndexPath *)indexPath;
 @end
 
+
+//选择关联课程
+@interface MHChooseRelationCourseCell : UICollectionViewCell
+-(void)setModel:(id)model indexPath:(NSIndexPath *)indexPath;
+@end
 
 NS_ASSUME_NONNULL_END

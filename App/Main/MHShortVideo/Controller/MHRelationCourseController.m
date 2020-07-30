@@ -7,7 +7,6 @@
 //
 
 #import "MHRelationCourseController.h"
-#import "MHCourseModel.h"
 #import "MHCourseTableViewCell.h"
 
 static NSString *cellId = @"MHCourseTableViewCell";
@@ -153,20 +152,22 @@ UITableViewDataSource
 //已经选中
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSLog(@"你点击了%ld行",indexPath.row)
-       NSDictionary *back = @{@"test":@"123",@"hello":@"world"};
-          if (self.Block) {
-              self.Block(back);
-          }
-//      [self.navigationController popViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    NSLog(@"你点击了%ld行",indexPath.row);
+//    [self dismissViewControllerAnimated:YES completion:^{}];
+     MHCourseModel *model = _arrData[indexPath.row];
+    [self dismissViewControllerAnimated:YES completion:^{
+        //传值给上一页面
+         [self.delegate passValue:model indexPath:indexPath];
+
+    }];
+    
 }
 
 -(void)requstData{
-  
+   
     for (int idx = 0; idx < 10; idx ++) {
         MHCourseModel *model = [[MHCourseModel alloc]init];
-        model.title = @"六至12岁孩童逻辑思维培养课程";
+        model.title = [NSString stringWithFormat:@"六至12岁孩童逻辑思维培养课程%d",idx];
         model.content = @"课程分类";
         model.remark = @"￥109";
         [_arrData addObject:model];

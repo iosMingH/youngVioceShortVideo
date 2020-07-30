@@ -7,10 +7,18 @@
 //
 
 #import "CEBaseController.h"
-
+#import "MHCourseModel.h"
 NS_ASSUME_NONNULL_BEGIN
+ 
+@protocol PassValueDelegate <NSObject>
+
+-(void)passValue:(id)value indexPath:(NSIndexPath *)indexPath;
+
+@end
 
 @interface MHRelationCourseController : CEBaseController
+
+@property (nonatomic, weak) id<PassValueDelegate> delegate;
 
 @end
 

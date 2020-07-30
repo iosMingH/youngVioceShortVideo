@@ -7,11 +7,23 @@
 //
 
 
+@class AliyunMediaConfig;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MHPublishVideoViewControl : CEBaseController
 
+@interface MHPublishVideoViewControl : CEBaseController
+@property (strong, nonatomic) UIImage *coverImage;
+
+/**
+ 短视频路径
+ */
+@property (nonatomic, strong) NSString *taskPath;
+
+/**
+ 合成信息配置
+ */
+@property (nonatomic, strong) AliyunMediaConfig *config;
 @end
 
 NS_ASSUME_NONNULL_END
