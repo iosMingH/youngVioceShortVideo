@@ -71,14 +71,6 @@ static NSString *courseCellid = @"MHChooseRelationCourseCell";
          btn.layer.cornerRadius = AUTO(25);
          btn.backgroundColor = SK_COLOR_BASE_ORANGE;
         [btn setTitleColor:SK_COLOR_BASE_TITLEMAIN forState:UIControlStateNormal];
-    
-    //没导航scrollView不能顶头,适配
-     if (@available(iOS 11.0, *)) {
-          UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-     } else {
-         self.automaticallyAdjustsScrollViewInsets = NO;
-     }
-     
 }
 
 - (void)viewWillAppear:(BOOL)animated{

@@ -39,6 +39,8 @@
 #import "SCLoginController.h"
 #import "MHHomeVideoViewController.h"
 
+#import "MHCourseVideoDetailViewController.h"
+
 #if __has_include(<AliyunVideoSDKPro/AliyunVideoSDKInfo.h>)
 #import <AliyunVideoSDKPro/AliyunVideoSDKInfo.h>
 #endif
@@ -527,7 +529,10 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
     @param success 成功
     @param failure 失败
     */
-    
+    if (self.pageNum == 1) {
+         [FUPROGRESS_HUD loading:@"加载中..."];
+    }
+   
     [MHShortVideoServerManager dayeServerGetRecommendVideoListWithToken:token
                                                                pageIndex:self.pageNum
                                                                 pageSize:VIDEOPAGESIZE  lastEndVideoId:self.lastVid
@@ -540,7 +545,9 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
            }else{
                weakSelf.reHasMore = YES;
            }
+        [FUPROGRESS_HUD complete];
          } failure:^(NSString * _Nonnull errorString) {
+             [FUPROGRESS_HUD complete];
            weakSelf.isLoading = NO;
            [MBProgressHUD showMessage:errorString inView:weakSelf.view];
            [weakSelf.collectionView.mj_header endRefreshing];
@@ -943,11 +950,20 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
     [AlivcShortVideoProgress showInView:self.view delegate:self];
 }
 
+//删除视频
 -(void)MHShortVideoMenuViewDeleteAction {
     AlivcAlertView *alertView = [[AlivcAlertView alloc]initWithAlivcTitle:nil message:NSLocalizedString(@"确认删除吗?" , nil) delegate:self cancelButtonTitle:NSLocalizedString(@"取消" , nil) confirmButtonTitle:NSLocalizedString(@"确认" , nil)];
     [alertView setStyle:AlivcAlertViewStyleWhite];
     alertView.tag = 106;
     [alertView show];
+}
+
+
+//跳转页面到课程详情
+- (void)MHPushCourseDetailViewControllerWithModel:(id)model{
+    
+    MHCourseVideoDetailViewController *vc = [[MHCourseVideoDetailViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

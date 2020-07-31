@@ -21,8 +21,14 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
 
         __weak typeof(self) weakSelf = self;
-        
-        _remarkL = [UILabel hyb_labelWithFont:KSIZE superView:self.contentView constraints:^(MASConstraintMaker *make) {
+        UIView *bgView = [UIView hyb_viewWithSuperView:self.contentView constraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(SK_MARGINLR);
+            make.right.mas_equalTo(-SK_MARGINLR);
+            make.top.mas_equalTo(AUTO(0));
+            make.bottom.mas_equalTo(-AUTO(0));
+        }];
+        bgView.backgroundColor = HEXCOLOR(0x2e2b2c);
+        _remarkL = [UILabel hyb_labelWithFont:KSIZE superView:bgView constraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(-SK_MARGINLR);
             make.width.mas_equalTo(AUTO(100));
             make.height.equalTo(weakSelf.contentView);
@@ -31,7 +37,7 @@
         _remarkL.textColor = [UIColor yellowColor];
         _remarkL.textAlignment = NSTextAlignmentRight;
         
-        _titleL = [UILabel hyb_labelWithFont:AUTO(15) superView:self.contentView constraints:^(MASConstraintMaker *make) {
+        _titleL = [UILabel hyb_labelWithFont:AUTO(14) superView:bgView constraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(SK_MARGINLR);
             make.right.equalTo(weakSelf.remarkL.mas_left).offset(-AUTO(10));
             make.top.mas_equalTo(AUTO(10));
@@ -39,10 +45,10 @@
         }];
         _titleL.textColor = SK_COLOR_BASE_TITLEMAIN;
         
-        _contentL = [UILabel hyb_labelWithFont:AUTO(15) superView:self.contentView constraints:^(MASConstraintMaker *make) {
+        _contentL = [UILabel hyb_labelWithFont:AUTO(12) superView:bgView constraints:^(MASConstraintMaker *make) {
              make.left.mas_equalTo(SK_MARGINLR);
              make.right.equalTo(weakSelf.remarkL.mas_left).offset(-AUTO(10));
-            make.top.equalTo(weakSelf.titleL.mas_bottom).offset(AUTO(10));
+            make.top.equalTo(weakSelf.titleL.mas_bottom).offset(AUTO(0));
             make.height.mas_equalTo(AUTO(25));
         }];
         _contentL.textColor = SK_COLOR_BASE_TITLELESS;

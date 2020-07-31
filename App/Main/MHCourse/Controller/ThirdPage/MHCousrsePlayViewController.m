@@ -42,12 +42,6 @@ UITableViewDataSource
     [_headView setModel:@"" section:0];
     [self requstData];
     
-    //没导航scrollView不能顶头,适配
-    if (@available(iOS 11.0, *)) {
-        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
 }
 
 -(void)updateUI{
@@ -57,19 +51,11 @@ UITableViewDataSource
 //
 - (UITableView *)tableview{
     if (!_tableview) {
-        
-        //这一步 避免试图不置顶
-        if ([self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHCourseMultipleViewController")]){
-            _tableview = [UITableView hyb_tableViewWithSuperview:self.view delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
-            //            make.edges.mas_equalTo(self.view);
-                        make.edges.mas_equalTo(UIEdgeInsetsMake(Height_NavBar, 0, 0, 0));
-                    }];
-        }else{
+
             _tableview = [UITableView hyb_tableViewWithSuperview:self.view delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
             //            make.edges.mas_equalTo(self.view);
                         make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
                     }];
-        }
         
         _tableview.backgroundColor = [UIColor whiteColor];
         _tableview.tableHeaderView = _headView;

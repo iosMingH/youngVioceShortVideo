@@ -31,7 +31,8 @@ UITableViewDataSource
     _arrData = [[NSMutableArray alloc]init];
 
                                                             
-    UIButton *editBtn = [self addNavRightBtnTitle:@"增加" action:@selector(btnEditAction:)];
+//    UIButton *editBtn = [self addNavRightBtnTitle:@"增加" action:@selector(btnEditAction:)];
+    [self addRightButtonImage:@"p_add_001" Action:@selector(btnEditAction:)];
     [self requstData];
 }
 
@@ -56,7 +57,7 @@ UITableViewDataSource
 //设置cell 的行高
 #pragma mark -UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return AUTO(80);
+    return AUTO(90);
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{

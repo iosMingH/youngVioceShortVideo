@@ -16,6 +16,7 @@
 #import "CommentsPopView.h"
 #import "MHShareWXView.h"
 #import "MHPopContentView.h"
+#import "MHCourseModel.h"
 #define iconWH 30
 
 static const NSInteger kAwemeListLikeCommentTag = 0x01;
@@ -28,17 +29,6 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
  */
 @property (nonatomic, strong) UIImage *type_image;
 
-
-///**
-// 展示视频类型UIImageView
-// */
-//@property (nonatomic, strong) UIImageView *typeImageView;
-//
-///**
-// 用户头像
-// */
-//@property (nonatomic, strong) UIImageView *avatarImageView;
-
 /**
  昵称
  */
@@ -48,11 +38,6 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
  描述label
  */
 @property (nonatomic, strong) UILabel *desLabel;
-
-/**
- 描述label
- */
-//@property (nonatomic, strong) UIImageView *zaidaiImageView;
 
 @property (nonatomic, strong) UITapGestureRecognizer   *singleTapGesture;
 
@@ -95,12 +80,6 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
     self.imageView.userInteractionEnabled = YES;
     self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self addSubview:self.imageView];
-//    [self.imageView addSubview:self.typeImageView];
-//    [self.imageView addSubview:self.zaidaiImageView];
-//    [self.imageView addSubview:self.avatarImageView];
-//    [self.imageView addSubview:self.desLabel];
-//    [self.imageView addSubview:self.nickNameLabel];
-
     
     //大叶网============
     //init music alum view
@@ -161,7 +140,6 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
     
     _courseView = [[MHChooseRelationCourseView alloc]init];
     [self.imageView addSubview:_courseView];
-    [_courseView setValueModel:@"0"];
      [_courseView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnAction:)]];
     
      _infoView = [[UIView alloc]init];
@@ -184,7 +162,6 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-//    self.typeImageView.center = CGPointMake(ScreenWidth - iconWH/2 - 16, iconWH/2 + 8 + SafeTop);
     __weak typeof(self) weakSelf = self;
      CGFloat avatarRadius = 25;
        //大叶网 =====================
@@ -236,12 +213,13 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
     
     [_courseView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(-Height_TabBar);
+        make.bottom.mas_equalTo(-Height_TabBar-AUTO(10));
         make.height.mas_equalTo(AUTO(100));
     }];
     
     [_infoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.and.right.mas_equalTo(0);
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(-AUTO(50));
         make.height.mas_equalTo(AUTO(60));
         make.bottom.equalTo(weakSelf.courseView.mas_top);
     }];
@@ -249,23 +227,17 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
     //描述
         [_desLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(SK_MARGINLR);
-            make.right.mas_equalTo(-AUTO(50));
-    //        make.height.mas_equalTo(AUTO(50));
+            make.right.mas_equalTo(0);
             make.bottom.mas_equalTo(0);
         }];
     
     //昵称
     [_nickNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(SK_MARGINLR);
-        make.right.mas_equalTo(-AUTO(50));
+        make.right.mas_equalTo(0);
         make.bottom.equalTo(weakSelf.desLabel.mas_top);
         make.height.mas_equalTo(AUTO(30));
     }];
-//    _nickNameLabel.backgroundColor = [UIColor redColor];
-    
-
-//     _desLabel.backgroundColor = [UIColor yellowColor];
-    
     
        //大叶网 =====================
 }
@@ -325,7 +297,12 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
 #pragma mark - action
 
 - (void)btnAction:(UIButton *)sender{
-    TOAST(@"跳转课程详情");
+    
+    MHCourseModel *model = [[MHCourseModel alloc]init];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(MHPushCourseDetailViewControllerWithModel:)]) {
+           [self.delegate MHPushCourseDetailViewControllerWithModel:model];
+   }
+    
 }
 
 #pragma mark - setter & getter
@@ -383,39 +360,7 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
         
     }
 
-//    CGFloat beside = 12;
-//    CGFloat cyFirst = ScreenHeight - 120 - SafeAreaBottom;
-//    self.avatarImageView.center = CGPointMake(beside + self.avatarImageView.frame.size.width / 2 ,cyFirst);
-//    //头像
-//    if (model.belongUserAvatarImage) {
-//        self.avatarImageView.hidden = NO;
-//        self.avatarImageView.image = model.belongUserAvatarImage;
-//    }else if (model.belongUserAvatarUrl){
-//        [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:model.belongUserAvatarUrl]];
-//    }else{
-//        self.avatarImageView.hidden = YES;
-//    }
-//    //昵称
-//    if (model.belongUserName) {
-//        self.nickNameLabel.hidden = NO;
-//        self.nickNameLabel.text = model.belongUserName;
-//        [self.nickNameLabel sizeToFit];
-//        self.nickNameLabel.center = CGPointMake(CGRectGetMaxX(self.avatarImageView.frame) + beside + self.nickNameLabel.frame.size.width / 2, self.avatarImageView.center.y);
-//    }else{
-//        self.nickNameLabel.hidden = YES;
-//    }
-//    
-//    //描述
-////    model.videoDescription
-//    if (model.title) {
-//        self.desLabel.hidden = NO;
-//        self.desLabel.text = model.title;
-//        [self.desLabel sizeToFit];
-//        self.desLabel.center = CGPointMake(beside + self.desLabel.frame.size.width / 2, CGRectGetMaxY(self.avatarImageView.frame) + beside + self.desLabel.frame.size.height / 2);
-//    }else{
-//        self.desLabel.hidden = YES;
-//    }
-//    self.zaidaiImageView.hidden = YES;
+
     
     NSString *collection = [NSString stringWithFormat:@"%@",model.collection];
     if ([collection isEqualToString:@"1"]) {
@@ -425,24 +370,11 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
          [_favorite startLikeAnim:NO];
 
     }
-    
     self.desLabel.text = model.title;
+ 
     
-//    if ([model isKindOfClass:[AlivcQuVideoModel class]]) {
-//        AlivcQuVideoModel *quModel = (AlivcQuVideoModel *)model;
-//        if (quModel.narrowTranscodeStatusString && quModel.narrowTranscodeStatusString.length >0) {
-//             self.zaidaiImageView.hidden = NO;
-//        }
-//
-//
-//    }
-//
-//    if ([model isKindOfClass:[AlivcShortVideoLiveVideoModel class]]) {
-//
-//        self.typeImageView.image= [UIImage imageNamed:@"alivc_icon_play_liveOnline"];
-//            return;
-//    }
-    
+//底部课程信息
+      [_courseView setValueModel:@"0"];
 }
 
 - (void)setSelected:(BOOL)selected {
@@ -455,57 +387,6 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
     }
 
 }
-
-
-//- (UIImageView *)avatarImageView{
-//    if (!_avatarImageView) {
-//        _avatarImageView = [[UIImageView alloc]init];
-//        _avatarImageView.frame = CGRectMake(0, 0, 36, 36);
-//        _avatarImageView.layer.cornerRadius = 4;
-//        _avatarImageView.clipsToBounds = YES;
-//        _avatarImageView.contentMode = UIViewContentModeScaleToFill;
-//    }
-//    return _avatarImageView;
-//}
-//
-//- (UILabel *)nickNameLabel{
-//    if (!_nickNameLabel) {
-//        _nickNameLabel = [[UILabel alloc]init];
-//        _nickNameLabel.textColor = [UIColor whiteColor];
-//        _nickNameLabel.frame = CGRectMake(0, 0, 100, 30);
-//    }
-//    return _nickNameLabel;
-//}
-//
-//- (UILabel *)desLabel{
-//    if (!_desLabel) {
-//        _desLabel = [[UILabel alloc]init];
-//        _desLabel.textColor = [UIColor whiteColor];
-//        _desLabel.frame = CGRectMake(0, 0, 150, 30);
-//        _desLabel.font = [UIFont systemFontOfSize:12];
-//    }
-//    return _desLabel;
-//}
-
-//- (UIImageView *)typeImageView {
-//    if (!_typeImageView) {
-//        _typeImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, iconWH, iconWH)];
-//        _typeImageView.backgroundColor = [UIColor clearColor];
-//        _typeImageView.contentMode = UIViewContentModeScaleAspectFit;
-//    }
-//    return _typeImageView;
-//}
-//
-//- (UIImageView *)zaidaiImageView {
-//
-//    if (!_zaidaiImageView) {
-//        _zaidaiImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"alivc_little_icon_narrowband"]];
-//        [_zaidaiImageView sizeToFit];
-//        _zaidaiImageView.center = CGPointMake(15 + _zaidaiImageView.frame.size.width / 2, SafeTop + 22);
-//
-//    }
-//    return _zaidaiImageView;
-//}
 
 @end
 

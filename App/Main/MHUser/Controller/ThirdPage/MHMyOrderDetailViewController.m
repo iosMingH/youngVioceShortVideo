@@ -32,12 +32,6 @@ UITableViewDataSource
     self.title = @"订单详情";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    //没导航scrollView不能顶头,适配
-    if (@available(iOS 11.0, *)) {
-        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
     
     //返回按钮
      [self addLeftButtonImage:@"p_arrow_left_selected" Action:@selector(backButtonTouched:)];
@@ -57,10 +51,9 @@ UITableViewDataSource
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
-
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
-//      self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+      self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     
 //    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
   
@@ -70,6 +63,7 @@ UITableViewDataSource
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    self.navigationController.navigationBar.barTintColor = SK_COLOR_BASE_SEBACKGROUND;
 
 }
 
@@ -83,7 +77,7 @@ UITableViewDataSource
     if (!_tableview) {
         _tableview = [UITableView hyb_tableViewWithSuperview:self.view delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
 //            make.edges.mas_equalTo(self.view);
-            make.edges.mas_equalTo(UIEdgeInsetsMake(Height_NavBar, 0, 0, 0));
+            make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
         }];
         _tableview.backgroundColor = SK_COLOR_BASE_BACKGROUND;
 

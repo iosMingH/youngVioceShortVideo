@@ -86,7 +86,7 @@
             make.top.equalTo(self.label.mas_bottom);
             make.bottom.mas_equalTo(-50-SafeBottom);
         }];
-        commentTableView.backgroundColor = [UIColor yellowColor];
+//        commentTableView.backgroundColor = [UIColor yellowColor];
         
        _textView = [CommentTextView new];
              _textView.delegate = self;

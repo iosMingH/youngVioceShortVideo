@@ -63,6 +63,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+     self.navigationController.navigationBar.translucent = YES;
        //设置导航栏背景图片为一个无图的image，导航栏会加载空imgae，就自然透明掉了
        [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
    //    同理透明掉导航栏下划线
@@ -71,6 +72,12 @@
     self.navigationController.navigationBar.hidden = NO;
     // 关闭滑动切换抽屉
        self.drawVC.slideEnabled = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.translucent = NO;
+    
 }
 
 - (void)setupUI {

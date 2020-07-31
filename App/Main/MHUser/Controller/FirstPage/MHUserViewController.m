@@ -593,9 +593,7 @@ NSString * const kAwemeCollectionCell  = @"AwemeCollectionCell";
                 case 300:
 //                    TOAST(@"获赞");
             {
-                MHPublishVideoViewControl *vc = [[MHPublishVideoViewControl alloc]init];
-                     
-                [self.navigationController pushViewController:vc animated:YES];
+         
             }
                 break;
 //            积分

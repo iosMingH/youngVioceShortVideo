@@ -32,19 +32,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
+//    self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     self.title = @"课程详情";
     [self pageView];
     // Do any additional setup after loading the view.
     [self initToolView];
-    
-    //没导航scrollView不能顶头,适配
-    if (@available(iOS 11.0, *)) {
-        [self.pageView eScrollView].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    
+        
 }
 
 //分页控制
@@ -77,27 +70,10 @@
         
         //这一步 避免试图不置顶
         CGFloat nvBarH = 0;
-        if ([self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHCourseMultipleViewController")]){
-            nvBarH = Height_NavBar;
-            _pageView = [[ENestScrollPageView alloc] initWithFrame:CGRectMake(0, nvBarH, self.view.frame.size.width, self.view.frame.size.height-nvBarH-HEIGHT_TOOLVIEW-kBottomHeight) headView:headView subDataViews:vs setParam:param];
-        }else{
-             _pageView = [[ENestScrollPageView alloc] initWithFrame:CGRectMake(0, nvBarH, self.view.frame.size.width, self.view.frame.size.height-nvBarH-HEIGHT_TOOLVIEW-kBottomHeight-Height_NavBar) headView:headView subDataViews:vs setParam:param];
-        }
-  
-        
+        _pageView = [[ENestScrollPageView alloc] initWithFrame:CGRectMake(0, nvBarH, self.view.frame.size.width, self.view.frame.size.height-nvBarH-HEIGHT_TOOLVIEW-Height_NavBar) headView:headView subDataViews:vs setParam:param];
         [self.view addSubview:_pageView];
     }
     return _pageView;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-
 }
 
 //底部工具栏

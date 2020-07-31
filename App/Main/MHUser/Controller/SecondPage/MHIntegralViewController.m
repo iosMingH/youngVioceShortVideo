@@ -37,7 +37,7 @@ UITableViewDataSource
 
 -(void)updateUI{
     
-    _headView = [[MHTableHeadView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH, AUTO(100))];
+    _headView = [[MHTableHeadView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH, AUTO(120))];
     [_headView setModel: @"92332"];
     
 }
@@ -61,7 +61,7 @@ UITableViewDataSource
 //    return [tableView fd_heightForCellWithIdentifier:cellId cacheByIndexPath:indexPath configuration:^(id cell) {
 //        [self setupModelOfCell:cell AtIndexPath:indexPath];
 //    }];
-    return AUTO(80);
+    return AUTO(70);
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{

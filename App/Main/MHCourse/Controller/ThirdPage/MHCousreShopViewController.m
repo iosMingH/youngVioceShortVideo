@@ -41,15 +41,15 @@ UITableViewDataSource
 
     
     //这一步 避免试图不置顶
-     if ([self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHCourseMultipleViewController")]){
-        [_searchV mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(Height_NavBar);
-        }];
-     }else{
+//     if ([self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHCourseMultipleViewController")]|| [self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHHomeVideoViewController")]){
+//        [_searchV mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.top.mas_equalTo(Height_NavBar);
+//        }];
+//     }else{
         [_searchV mas_updateConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(0);
         }];
-     }
+//     }
     
     UIButton *leftNavBtn =  [self addNavLeftBtn:@"老炮之家" image:@"p_arrow_left_selected" action:@selector(backButtonTouched:)];
     leftNavBtn.contentMode = UIViewContentModeScaleAspectFit;

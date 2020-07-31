@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)MHShortVideoMenuViewDeleteAction;
 
+-(void)MHPushCourseDetailViewControllerWithModel:(id)model;
 @end
 
 @interface MHShortVideoCoverCell : UICollectionViewCell
@@ -56,7 +57,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 //选择关联课程
+
 @interface MHChooseRelationCourseView : CEBaseView
 -(void)setValueModel:(id)model;
+
+
 @end
 NS_ASSUME_NONNULL_END
