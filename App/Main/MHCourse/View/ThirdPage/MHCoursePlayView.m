@@ -21,15 +21,16 @@
 
 - (void)initControl{
     
-    UIView *playView = [UIView hyb_viewWithSuperView:self constraints:^(MASConstraintMaker *make) {
-        make.left.and.right.and.top.mas_equalTo(0);
-        make.height.mas_equalTo(AUTO(210));
-    }];
-    playView.backgroundColor = [UIColor grayColor];
-    _playView = playView;
+//    UIView *playView = [UIView hyb_viewWithSuperView:self constraints:^(MASConstraintMaker *make) {
+//        make.left.and.right.and.top.mas_equalTo(0);
+//        make.height.mas_equalTo(AUTO(210));
+//    }];
+//    playView.backgroundColor = [UIColor grayColor];
+//    _playView = playView;
     
     UIView *infoView = [UIView hyb_viewWithSuperView:self constraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(playView.mas_bottom);
+//        make.top.equalTo(playView.mas_bottom);
+        make.top.mas_equalTo(0);
         make.left.and.right.and.bottom.mas_equalTo(0);
     }];
     infoView.backgroundColor = [UIColor whiteColor];

@@ -59,7 +59,7 @@
             make.left.mas_equalTo(SK_MARGINLR);
             make.top.equalTo(weakSelf.contentL.mas_bottom).offset(5);;
             make.width.mas_equalTo(AUTO(100));
-               }];
+        }];
         _remarkL.textColor = SK_COLOR_BASE_TEXT_GRAY;
     }
     return self;

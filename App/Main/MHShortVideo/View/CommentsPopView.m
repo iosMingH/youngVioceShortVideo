@@ -89,7 +89,7 @@
 //        commentTableView.backgroundColor = [UIColor yellowColor];
         
        _textView = [CommentTextView new];
-             _textView.delegate = self;
+        _textView.delegate = self;
         
     }
     return self;

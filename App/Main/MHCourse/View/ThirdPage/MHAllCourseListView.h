@@ -24,11 +24,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-
-//评论试图
-@interface MHCourseCommentView : CEBaseView
-
-
-@end
-
 NS_ASSUME_NONNULL_END

@@ -13,8 +13,7 @@
 
 static NSString *cellId = @"MHCourseTableViewCell";
 
-@interface MHAllCourseListView ()
-<
+@interface MHAllCourseListView ()<
 UITableViewDelegate,
 UITableViewDataSource
 >
@@ -105,6 +104,14 @@ UITableViewDataSource
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"你点击了%ld行",indexPath.row)
+//
+    
+     MHCourseModel *list = _arrData[indexPath.row];
+    NSInteger tag = 2000;
+    NoticeModel* model = [[NoticeModel alloc]init:tag msg:nil data:list];
+    NSString* targer = @"MHCousrsePlayViewController";
+    [[NSNotificationCenter defaultCenter] postNotificationName:targer object:nil userInfo:[model mj_keyValues]];
+    
 }
 
 
@@ -130,7 +137,7 @@ UITableViewDataSource
 
 
 //***********评论弹出框
-@interface MHPopCourseCommentView ()
+@interface MHPopCourseCommentView ()<UITextViewDelegate>
 
 @property (nonatomic,strong) UIWindow* window;
 @property(nonatomic,strong)UITextView *textView;
@@ -174,11 +181,16 @@ UITableViewDataSource
         make.right.mas_equalTo(-SK_MARGINLR);
         make.height.mas_equalTo(AUTO(170));
     }];
+    
     self.textView.backgroundColor = SK_COLOR_BASE_BACKGROUND;
      self.textView.textContainerInset = UIEdgeInsetsMake(8, 8, 0, 8);
     self.textView.placeholder = @"在此输入你对课程的心得体验";
     self.textView.layer.cornerRadius = AUTO(5);
     self.textView.font = NFONT;
+    self.textView.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     
     UIButton *btn = [UIButton hyb_buttonWithTitle:@"确认发布" superView:self constraints:^(MASConstraintMaker *make) {
@@ -187,7 +199,6 @@ UITableViewDataSource
         make.bottom.mas_equalTo(-SK_MARGINLR);
         make.height.mas_equalTo(AUTO(44));
     } touchUp:^(UIButton *sender) {
-        TOAST(@"确认发布");
         NSInteger tag = sender.tag;
         NoticeModel* model = [[NoticeModel alloc]init:tag msg:nil data:nil];
         NSString* targer = @"MHCousrsePlayViewController";
@@ -203,7 +214,6 @@ UITableViewDataSource
 
 #pragma mark 打开与关闭方法
 -(void)show{
-   
     [self loadUI];
      [self returnKeyHandler];
     [UIView animateWithDuration:0.3 animations:^{
@@ -222,68 +232,48 @@ UITableViewDataSource
 }
 
 
-@end
-
-
-
-
-
-
-//评论试图
-@interface MHCourseCommentView ()
-@property(nonatomic,strong)UITextView *textView;
-
-
-@end
-
-
-@implementation MHCourseCommentView
-
-- (void)returnKeyHandler
-{
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(reKeyBoard)];
-    [self addGestureRecognizer:tap];
-    tap.cancelsTouchesInView = false;
-}
-
-//实现方法//取消textView ,textField的第一响应者即可
-- (void)reKeyBoard
-{
-    [self.textView resignFirstResponder];
-}
-
-
--(void)initControl{
-    [self returnKeyHandler];
-    self.textView = [UITextView hyb_viewWithSuperView:self constraints:^(MASConstraintMaker *make) {
-        make.left.and.top.mas_equalTo(SK_MARGINLR);
-        make.right.mas_equalTo(-SK_MARGINLR);
-        make.height.mas_equalTo(AUTO(170));
-    }];
-    self.textView.backgroundColor = SK_COLOR_BASE_BACKGROUND;
-     self.textView.textContainerInset = UIEdgeInsetsMake(8, 8, 0, 8);
-    self.textView.placeholder = @"在此输入你对课程的心得体验";
-    self.textView.layer.cornerRadius = AUTO(5);
-    self.textView.font = NFONT;
+//keyboard notification
+//键盘弹出了
+- (void)keyboardWillShow:(NSNotification *)notification {
+    ;
+     // 通过通知对象获取键盘frame: [value CGRectValue]
+    NSDictionary *useInfo = [notification userInfo];
+    NSValue *value = [useInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     
+      // <注意>具有约束的控件通过改变约束值进行frame的改变处理
+    if([notification.name isEqualToString:UIKeyboardWillShowNotification]){
+           CGFloat keyboardH = [value CGRectValue].size.height;
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            self.frame = CGRectMake(0, DEVICEHEIGH-AUTO(300)-keyboardH+AUTO(100), DEVICEWIDTH, AUTO(300));
+        }];
+    }
     
-    UIButton *btn = [UIButton hyb_buttonWithTitle:@"确认发布" superView:self constraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(SK_MARGINLR);
-        make.right.mas_equalTo(-SK_MARGINLR);
-        make.bottom.mas_equalTo(-SK_MARGINLR);
-        make.height.mas_equalTo(AUTO(44));
-    } touchUp:^(UIButton *sender) {
-        TOAST(@"确认发布");
-        NSInteger tag = sender.tag;
-        NoticeModel* model = [[NoticeModel alloc]init:tag msg:nil data:nil];
-        NSString* targer = @"MHCousrsePlayViewController";
-        [[NSNotificationCenter defaultCenter] postNotificationName:targer object:nil userInfo:[model mj_keyValues]];
-    }];
-    btn.layer.cornerRadius = AUTO(22);
-    btn.backgroundColor = SK_COLOR_BASE_ORANGE; 
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    btn.titleLabel.font = FONT(AUTO(16));
-    btn.tag = 1000;
+}
+
+// 键盘隐藏了
+- (void)keyboardWillHide:(NSNotification *)notification {
+   
+    [UIView animateWithDuration:0.3 animations:^{
+           self.frame = CGRectMake(0, DEVICEHEIGH-AUTO(300), DEVICEWIDTH, AUTO(300));
+       }];
+}
+
+//textView delegate
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+   
+    return YES;
+}
+
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
+
+
+
+
+
+

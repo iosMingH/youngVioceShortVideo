@@ -27,6 +27,12 @@ UITableViewDataSource
 @property(nonatomic,strong)UITableView *tableview;
 @property(nonatomic,strong)MHCoursePlayView *headView;
 @property(nonatomic,strong) MHPopContentView *commentView;
+@property(nonatomic,strong)UIView *videoPlayView;
+@property(nonatomic,strong) MHPopContentView *popCourseView;
+
+@property(nonatomic,strong)MHPopCourseCommentView *popCommentView;
+
+
 
 @end
 
@@ -38,12 +44,22 @@ UITableViewDataSource
     //    [self updateUI];
     self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     _arrData = [[NSMutableArray alloc]init];
-    _headView = [[MHCoursePlayView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH, AUTO(270))];
-    [_headView setModel:@"" section:0];
+    
     [self requstData];
     
 }
 
+- (void)initView{
+    
+    _videoPlayView = [UIView hyb_viewWithSuperView:self.view constraints:^(MASConstraintMaker *make) {
+        make.left.and.right.and.top.mas_equalTo(0);
+        make.height.mas_equalTo(AUTO(210));
+    }];
+    _videoPlayView.backgroundColor = [UIColor grayColor];
+    
+    _headView = [[MHCoursePlayView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH, AUTO(60))];
+    [_headView setModel:@"" section:0];
+}
 -(void)updateUI{
     
     
@@ -54,7 +70,7 @@ UITableViewDataSource
 
             _tableview = [UITableView hyb_tableViewWithSuperview:self.view delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
             //            make.edges.mas_equalTo(self.view);
-                        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+                        make.edges.mas_equalTo(UIEdgeInsetsMake(AUTO(210), 0, 0, 0));
                     }];
         
         _tableview.backgroundColor = [UIColor whiteColor];
@@ -75,7 +91,7 @@ UITableViewDataSource
     if (indexPath.section == 0) {
         return AUTO(100);
     }else{
-        return AUTO(170);
+        return AUTO(150);
     }
 }
 
@@ -175,36 +191,22 @@ UITableViewDataSource
             {
                 
                 MHPopContentView *popView = [[MHPopContentView alloc]initWithHeight:DEVICEHEIGH*3/4 withRoundSize:CGSizeMake(10.0f, 10.0f)];
-               
                 popView.shouldClickClasses = @[@"MHCourseTableViewCell"];
-
                 popView.titieL.text = @"课程列表";
-                
                 MHAllCourseListView *view = [[MHAllCourseListView alloc]initWithFrame:CGRectMake(0, 0, popView.contentV.width, popView.contentV.height)];
                 [popView.contentV addSubview:view];
-
                 [popView show];
+                self.popCourseView = popView;
                 
             }
                 break;
 //            发布心得
                 case 200:
             {
-               
-//                MHPopContentView *popView = [[MHPopContentView alloc]initWithHeight:AUTO(300) withRoundSize:CGSizeMake(0, 0)];
-//
-//                MHCourseCommentView *view = [[MHCourseCommentView alloc]initWithFrame:CGRectMake(0, AUTO(-20), popView.contentV.width, popView.contentV.height+AUTO(20))];
-//                [popView.contentV addSubview:view];
-//                [popView show];
-//                self.commentView = popView;
-                
+                               
                 MHPopCourseCommentView *popView = [MHPopCourseCommentView new];
                 [popView show];
-                
-
-                
-                
-            
+                self.popCommentView = popView;
             }
                 break;
             
@@ -213,11 +215,20 @@ UITableViewDataSource
             {
                
                
-                [self.commentView dismiss];
+                [self.popCommentView close];
             
             }
                 break;
             
+//            点击弹出的课程列表 选择课程
+                case 2000:
+            {
+               
+//              获取到的数据 留着接口完成后用   model.data
+                [self.popCourseView dismiss];
+                [self.tableview reloadData];
+            }
+                break;
             
                 default:
                     break;
