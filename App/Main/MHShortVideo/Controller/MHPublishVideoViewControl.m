@@ -55,6 +55,14 @@ static NSString *courseCellid = @"MHChooseRelationCourseCell";
     self.title = @"发布";
       _dataArrM = [NSMutableArray array];
      _courseArrM = [NSMutableArray array];
+    
+    //没导航scrollView不能顶头,适配
+    if (@available(iOS 11.0, *)) {
+        UIScrollView.appearance.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
     [self collectionView];
     
     //发布按钮
@@ -206,12 +214,12 @@ static NSString *courseCellid = @"MHChooseRelationCourseCell";
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
 //        layout.sectionInsets = UIEdgeInsetsMake(8, 8, 8, 8);
 
-        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, Height_NavBar, self.view.frame.size.width, self.view.frame.size.height) collectionViewLayout:layout];
-        if ([self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHUserViewController")] ||[self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHMessageViewController")]){
-                CGRect frame = collectionView.frame;
-                 frame.origin.y = 0;
-                collectionView.frame = frame;
-            }
+        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) collectionViewLayout:layout];
+//        if ([self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHUserViewController")] ||[self.navigationController.viewControllers.firstObject isKindOfClass: NSClassFromString(@"MHMessageViewController")]){
+//                CGRect frame = collectionView.frame;
+//                 frame.origin.y = 0;
+//                collectionView.frame = frame;
+//            }
         
         collectionView.delegate = self;
         collectionView.dataSource = self;

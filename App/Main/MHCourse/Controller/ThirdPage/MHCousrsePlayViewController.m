@@ -189,7 +189,6 @@ UITableViewDataSource
 //            查看全部课程
                 case 100:
             {
-                
                 MHPopContentView *popView = [[MHPopContentView alloc]initWithHeight:DEVICEHEIGH*3/4 withRoundSize:CGSizeMake(10.0f, 10.0f)];
                 popView.shouldClickClasses = @[@"MHCourseTableViewCell"];
                 popView.titieL.text = @"课程列表";

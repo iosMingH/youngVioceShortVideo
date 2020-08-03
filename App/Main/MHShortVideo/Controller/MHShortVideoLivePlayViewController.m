@@ -1104,7 +1104,7 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
     request.videoId = self.getVideoID;
     request.videoStatus = @"Normal";
     [SkNetApi request:request success:^(NSDictionary *pDic) {
-        TOAST(@"审核成功");
+//        TOAST(@"审核成功");
     } failure:^(NSError *pError) {
         
     }];
@@ -1163,7 +1163,7 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
             }];
             
         }else{
-            [MBProgressHUD showMessage:[@"缺少必要的参数" localString] inView:self.view];
+//            [MBProgressHUD showMessage:[@"缺少必要的参数" localString] inView:self.view];
         }
     }
 }
@@ -1360,7 +1360,7 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
             }];
                
         }else{
-            [MBProgressHUD showMessage:[@"缺少必要的参数" localString] inView:self.view];
+//            [MBProgressHUD showMessage:[@"缺少必要的参数" localString] inView:self.view];
         }
 }
 
@@ -1386,7 +1386,7 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
               }];
                   
           }else{
-              [MBProgressHUD showMessage:[@"缺少必要的参数" localString] inView:self.view];
+//              [MBProgressHUD showMessage:[@"缺少必要的参数" localString] inView:self.view];
           }
 }
 

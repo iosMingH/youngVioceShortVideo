@@ -92,7 +92,7 @@
         self.label.text = self.titles[i];
         self.label.textAlignment = NSTextAlignmentCenter;
         self.label.font = [UIFont systemFontOfSize:AUTO(17)];
-        self.label.textColor = [UIColor lightGrayColor];
+        self.label.textColor = HEXACOLOR(0xffffff, 0.8);
         self.label.tag = i;
         self.label.frame = CGRectMake((2*padding+labelW) * i, labelY, labelW, labelH);
         [self.scrollView addSubview:self.label];
@@ -100,7 +100,7 @@
         
          //设置默认是第几页开始
         if (i == self.pageIndex) {
-            self.label.textColor = [UIColor whiteColor];
+            self.label.textColor = HEXCOLOR(0xffffff);
         }
         
         self.label.userInteractionEnabled = YES;

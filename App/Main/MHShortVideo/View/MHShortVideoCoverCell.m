@@ -94,9 +94,9 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
        [self.imageView addSubview:_share];
 
        _shareNum = [[UILabel alloc]init];
-       _shareNum.text = @"0";
+       _shareNum.text = @"5323";
        _shareNum.textColor =  [UIColor whiteColor];
-       _shareNum.font = [UIFont systemFontOfSize:12.0];
+       _shareNum.font = [UIFont systemFontOfSize:AUTO(12)];
        [self.imageView addSubview:_shareNum];
 
        _comment = [[UIImageView alloc]init];
@@ -109,9 +109,9 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
        [self.imageView addSubview:_comment];
 
        _commentNum = [[UILabel alloc]init];
-       _commentNum.text = @"0";
+       _commentNum.text = @"1.2W";
        _commentNum.textColor =  [UIColor whiteColor];
-       _commentNum.font = [UIFont systemFontOfSize:12.0];
+       _commentNum.font = [UIFont systemFontOfSize:AUTO(12)];
        [self.imageView addSubview:_commentNum];
 
        _favorite = [FavoriteView new];
@@ -119,13 +119,13 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
        
 
        _favoriteNum = [[UILabel alloc]init];
-       _favoriteNum.text = @"0";
+       _favoriteNum.text = @"50W";
        _favoriteNum.textColor =  [UIColor whiteColor];
-       _favoriteNum.font = [UIFont systemFontOfSize:12.0];
+       _favoriteNum.font = [UIFont systemFontOfSize:AUTO(12)];
        [self.imageView addSubview:_favoriteNum];
 
        //init avatar
-       CGFloat avatarRadius = AUTO(25);
+       CGFloat avatarRadius = AUTO(22);
        _avatar = [[UIImageView alloc] init];
        _avatar.image = [UIImage imageNamed:@"img_find_default"];
        _avatar.layer.cornerRadius = avatarRadius;
@@ -163,43 +163,44 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
 - (void)layoutSubviews {
     [super layoutSubviews];
     __weak typeof(self) weakSelf = self;
-     CGFloat avatarRadius = 25;
+     CGFloat avatarRadius = AUTO(22);
        //大叶网 =====================
 
      [_share mas_makeConstraints:^(MASConstraintMaker *make) {
          make.bottom.equalTo(self).offset(-Height_TabBar-AUTO(120));
-         make.right.equalTo(self).offset(-10);
+         make.right.equalTo(self).offset(-AUTO(10));
          make.width.mas_equalTo(AUTO(50));
          make.height.mas_equalTo(AUTO(45));
      }];
        [_shareNum mas_makeConstraints:^(MASConstraintMaker *make) {
-           make.top.equalTo(self.share.mas_bottom);
+           make.top.equalTo(self.share.mas_bottom).offset(-AUTO(8));
            make.centerX.equalTo(self.share);
        }];
        [_comment mas_makeConstraints:^(MASConstraintMaker *make) {
            make.bottom.equalTo(self.share.mas_top).offset(-AUTO(25));
-           make.right.equalTo(self).offset(-10);
+           make.right.equalTo(self).offset(-AUTO(10));
            make.width.mas_equalTo(AUTO(50));
            make.height.mas_equalTo(AUTO(45));
        }];
        [_commentNum mas_makeConstraints:^(MASConstraintMaker *make) {
-           make.top.equalTo(self.comment.mas_bottom);
+           make.top.equalTo(self.comment.mas_bottom).offset(-AUTO(5));
            make.centerX.equalTo(self.comment);
        }];
        [_favorite mas_makeConstraints:^(MASConstraintMaker *make) {
            make.bottom.equalTo(self.comment.mas_top).offset(-AUTO(25));
-           make.right.equalTo(self).offset(-10);
+           make.right.equalTo(self).offset(-AUTO(9));
            make.width.mas_equalTo(AUTO(50));
            make.height.mas_equalTo(AUTO(45));
        }];
        
        [_favoriteNum mas_makeConstraints:^(MASConstraintMaker *make) {
-           make.top.equalTo(self.favorite.mas_bottom);
+           make.top.equalTo(self.favorite.mas_bottom).offset(-AUTO(5));
            make.centerX.equalTo(self.favorite);
        }];
+    
        [_avatar mas_makeConstraints:^(MASConstraintMaker *make) {
-           make.bottom.equalTo(self.favorite.mas_top).offset(-AUTO(35));
-           make.right.equalTo(self).offset(-10);
+           make.bottom.equalTo(self.favorite.mas_top).offset(-AUTO(25));
+           make.right.equalTo(self).offset(-AUTO(13));
            make.width.height.mas_equalTo(avatarRadius*2);
        }];
     

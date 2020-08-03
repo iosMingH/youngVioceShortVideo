@@ -63,7 +63,7 @@
             make.centerY.equalTo(self);
         }];
         coverI.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
-        coverI.contentMode = UIViewContentModeScaleAspectFit;
+        coverI.contentMode = UIViewContentModeScaleToFill; // UIViewContentModeScaleAspectFit;
         coverI.layer.cornerRadius = 5;
         self.coverImage = coverI;
          

@@ -65,7 +65,7 @@
     // 添加titleView
     NSArray *titlesArr = @[@"同城",@"关注",@"推荐"];
     
-    MHPageTitleView *titleView = [[MHPageTitleView alloc] initWithFrame:CGRectMake(0, 0, AUTO(250), 44) titles:titlesArr index:2];
+    MHPageTitleView *titleView = [[MHPageTitleView alloc] initWithFrame:CGRectMake(0, 0, AUTO(210), 44) titles:titlesArr index:2];
     titleView.delegate = self;
     self.navigationItem.titleView = titleView;
     self.titleView = titleView;
