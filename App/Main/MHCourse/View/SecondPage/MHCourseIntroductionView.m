@@ -43,15 +43,21 @@ UITableViewDataSource
 //    return _tableview;
 //}
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        _arrData = [[NSMutableArray alloc]init];
-        [self requstData];
-        [self initView];
-    }
-    return self;
+//- (instancetype)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//        _arrData = [[NSMutableArray alloc]init];
+//        [self requstData];
+//        [self initView];
+//    }
+//    return self;
+//}
+
+- (void)didAppeared{
+    _arrData = [[NSMutableArray alloc]init];
+    [self requstData];
+    [self initView];
 }
 
 - (void)initView{
@@ -187,16 +193,23 @@ UITableViewDataSource
 
 @implementation MHLectureListView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        _arrData = [[NSMutableArray alloc]init];
-        [self requstData];
-        [self initView];
-    }
-    return self;
+//- (instancetype)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//        _arrData = [[NSMutableArray alloc]init];
+//        [self requstData];
+//        [self initView];
+//    }
+//    return self;
+//}
+
+- (void)didAppeared{
+    _arrData = [[NSMutableArray alloc]init];
+    [self requstData];
+    [self initView];
 }
+
 
 - (void)initView{
     _tableview = [UITableView hyb_tableViewWithSuperview:self delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {
@@ -414,16 +427,23 @@ static NSString *experienceCellId = @"MHStudentExperienceCell";
 
 @implementation MHStudentExperienceView
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        _arrData = [[NSMutableArray alloc]init];
-        [self requstData];
-        [self initView];
-    }
-    return self;
+//- (instancetype)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//        _arrData = [[NSMutableArray alloc]init];
+//        [self requstData];
+//        [self initView];
+//    }
+//    return self;
+//}
+
+- (void)didAppeared{
+    _arrData = [[NSMutableArray alloc]init];
+    [self requstData];
+    [self initView];
 }
+
 
 - (void)initView{
     _tableview = [UITableView hyb_tableViewWithSuperview:self delegate:self style:UITableViewStyleGrouped constraints:^(MASConstraintMaker *make) {

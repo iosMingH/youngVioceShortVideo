@@ -39,9 +39,10 @@
             [titles addObject:(title == nil ? [NSString stringWithFormat:@"%d",i] : title)];
             _dataViews[i].frame = CGRectMake(i*self.scrollView.frame.size.width, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
             [self.scrollView addSubview:_dataViews[i]];
-            if (i == param.segmentParam.startIndex) {
-                [_dataViews[i] didAppeared];
-            }
+//            if (i == param.segmentParam.startIndex) {
+//                [_dataViews[i] didAppeared];
+//            }
+             [_dataViews[i] didAppeared];
         }
         self.scrollView.contentSize = CGSizeMake(_dataViews.count*self.scrollView.frame.size.width, 0);
         [self.segmentCT updataDataArray:titles];

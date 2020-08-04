@@ -71,7 +71,11 @@
         //这一步 避免试图不置顶
         CGFloat nvBarH = 0;
         _pageView = [[ENestScrollPageView alloc] initWithFrame:CGRectMake(0, nvBarH, self.view.frame.size.width, self.view.frame.size.height-nvBarH-HEIGHT_TOOLVIEW-Height_NavBar) headView:headView subDataViews:vs setParam:param];
+        [_pageView eScrollView].bounces = NO;
         [self.view addSubview:_pageView];
+        
+        
+        
     }
     return _pageView;
 }

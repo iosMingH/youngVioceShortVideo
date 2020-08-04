@@ -12,6 +12,7 @@
 #import "MHCourseTableViewCell.h"
 #import "MHCourseHeadView.h"
 #import "MHCourseVideoDetailViewController.h"
+#import "WMZFixVC.h"
 
 static NSString *cellId = @"MHCourseTableViewCell";
 static NSString * headId = @"MHCourseSortView";
@@ -131,6 +132,7 @@ UITableViewDataSource
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"你点击了%ld行",indexPath.row)
     MHCourseVideoDetailViewController *vc = [[MHCourseVideoDetailViewController alloc]init];
+    
     [self.navigationController pushViewController:vc animated:YES];
 }
 
