@@ -107,8 +107,8 @@
         UIView *vLine = [UIView hyb_viewWithSuperView:self.contentView constraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(SK_MARGINLR);
             make.width.mas_equalTo(3);
-            make.top.mas_equalTo(20);
-            make.height.mas_equalTo(15);
+            make.top.mas_equalTo(AUTO(22));
+            make.height.mas_equalTo(AUTO(15));
         }];
         vLine.backgroundColor = [UIColor orangeColor];
         
@@ -208,7 +208,7 @@ static NSString *cellid = @"MHCourseListeningSingleCell";
 #pragma mark collectionview代理
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake((kScreenWidth + AUTO(50))/3,AUTO(80));
+    return CGSizeMake((kScreenWidth + AUTO(50))/3,AUTO(90));
 }
 //每个section中的列间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
@@ -275,6 +275,8 @@ static NSString *cellid = @"MHCourseListeningSingleCell";
 #import "MHCourseListeningSingleModel.h"
 @interface MHCourseListeningSingleCell ()
 @property(nonatomic,strong)UILabel *titleL;
+@property(nonatomic,strong)UIImageView *lockI;
+
 @end
 @implementation MHCourseListeningSingleCell
 - (instancetype)initWithFrame:(CGRect)frame
@@ -287,9 +289,15 @@ static NSString *cellid = @"MHCourseListeningSingleCell";
             make.left.mas_equalTo(10);
             make.right.mas_equalTo(-10);
         }];
-        titleL.numberOfLines = 4;
+        titleL.numberOfLines = 3;
         titleL.textColor = SK_COLOR_BASE_TEXT_BLACK;
         self.titleL = titleL;
+        
+        self.lockI = [UIImageView hyb_imageViewWithImage:@"p_lock" superView:self.contentView constraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(-10);
+            make.bottom.mas_equalTo(-5);
+            make.size.mas_equalTo(CGSizeMake(AUTO(13), AUTO(16)));
+        }];
     }
     return self;
 }
@@ -297,6 +305,9 @@ static NSString *cellid = @"MHCourseListeningSingleCell";
     
     MHCourseListeningSingleModel *messagem = (MHCourseListeningSingleModel *)model;
        _titleL.text = messagem.title;
+    if (indexPath.row == 0) {
+        self.lockI.hidden = YES;
+    }
 }
 
 

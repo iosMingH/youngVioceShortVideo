@@ -10,8 +10,8 @@
 #import "Reachability.h"
 #import "CEMainTabbarController.h"
 #import "WXApiManager.h"
-#import "MHHomeVideoViewController.h"
-
+#import "HomeTabViewController.h"
+#import "MHSettingViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -64,10 +64,12 @@
 //        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[NSClassFromString(@"HomeTabViewController") alloc]init]];
 //             [self.window setRootViewController:nav];
 //    }else{
-        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[NSClassFromString(@"MHLoginViewController") alloc]init]];
-             [self.window setRootViewController:nav];
+//        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[NSClassFromString(@"MHLoginViewController") alloc]init]];
+//             [self.window setRootViewController:nav];
 //    }
 
+    MHDrawViewController *drawVc = [self loadNavigationController];
+   [self.window setRootViewController:drawVc];
 }
 
 
@@ -83,5 +85,18 @@
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray<id<UIUserActivityRestoring>> * _Nullable))restorationHandler{
     return [MHPayManager handleOpenUniversalLink:userActivity];
+}
+
+#pragma mark - 导航控制器/TabBar控制器
+- (MHDrawViewController *)loadNavigationController
+{
+    // 左侧抽屉
+//    UIViewController *leftVC = [UIViewController new];
+    // 右侧抽屉
+    MHSettingViewController *rightVC = [MHSettingViewController new];
+
+    HomeTabViewController *tabBarVC = [HomeTabViewController new];
+    MHDrawViewController *drawVC = [[MHDrawViewController alloc] initWithRootVC:tabBarVC leftVC:nil rightVC:rightVC];
+    return drawVC;
 }
 @end

@@ -65,7 +65,9 @@
     [self initData];
     self.title = @"新建收货地址";
     UIButton *editBtn = [self addNavRightBtnTitle:@"编辑" action:@selector(btnEditAction:)];
+    
     [editBtn setTitle:@"保存" forState:UIControlStateSelected];
+//    [self addNavRightBtn:@"" image:@"" action:@selector(btnEditAction:)];
     self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
 
     self.mFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH, HEIGHT_HEAD)];

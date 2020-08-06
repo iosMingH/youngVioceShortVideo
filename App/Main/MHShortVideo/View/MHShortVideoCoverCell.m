@@ -116,7 +116,6 @@ static const NSInteger kAwemeListLikeShareTag   = 0x02;
 
        _favorite = [FavoriteView new];
        [self.imageView addSubview:_favorite];
-       
 
        _favoriteNum = [[UILabel alloc]init];
        _favoriteNum.text = @"50W";

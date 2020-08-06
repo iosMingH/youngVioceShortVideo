@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-//GET /app/GetSTS 获取STS信息
+//GET /app/GetSTS 获取STS信息 
 @interface SkNetAppGetSTSRequest : VideoNetRequest
 @property (nonatomic, strong) NSString *token;
 @end

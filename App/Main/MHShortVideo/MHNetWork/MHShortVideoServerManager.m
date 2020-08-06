@@ -139,10 +139,11 @@
 
 //个人中心的视频列表
 + (void)dayeServerGetPersonalVideoListWithToken:(NSString *)token pageIndex:(NSInteger)index pageSize:(NSInteger)count lastEndVideoId:(NSString *)videoId success:(void (^)(NSArray<AlivcQuVideoModel *> * _Nullable,NSInteger))success failure:(void (^)(NSString * _Nonnull))failure{
-    if (!token) {
-        failure(@"登录失败");
-        return;
-    }
+//    if (!token) {
+//        failure(@"登录失败");
+//        return;
+//    }
+    
     NSString *urlString = @"/app/user/getUserVideoList";
     [self dayeServerVideoListWithUrlString:urlString token:token pageIndex:index pageSize:count lastEndVideoId:videoId success:success failure:failure];
 }

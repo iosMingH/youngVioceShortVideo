@@ -12,7 +12,6 @@
 #import "MHCourseTableViewCell.h"
 #import "MHCourseHeadView.h"
 #import "MHCourseVideoDetailViewController.h"
-#import "WMZFixVC.h"
 
 static NSString *cellId = @"MHCourseTableViewCell";
 static NSString * headId = @"MHCourseSortView";

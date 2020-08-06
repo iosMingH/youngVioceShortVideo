@@ -1090,6 +1090,7 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
     [FUCacheManager remove:COMMON_VIDEO_FILENAME];
     [FUCacheManager remove:COMMON_VIDEO_FILEID];
     
+    
     kGCDAfter(1, ^{
             [self SkNetSubmitAliVideoPersonAuditRequest];
        });

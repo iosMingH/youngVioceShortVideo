@@ -33,18 +33,6 @@ UITableViewDataSource
     _arrData = [[NSMutableArray alloc]init];
 
     self.title = @"积分商城";
-//    //返回按钮
-//    UIButton *backButton = [[UIButton alloc]init];
-//    [backButton addTarget:self action:@selector(backButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
-//    [backButton setImage:[UIImage imageNamed:@"p_arrow_left_selected"] forState:UIControlStateNormal];
-////    [backButton sizeToFit];
-//    backButton.contentMode = UIViewContentModeScaleAspectFit;
-//     [backButton setImageEdgeInsets:UIEdgeInsetsMake(0, 20, 0, 0)];
-////    backButton.center = CGPointMake(15 + backButton.frame.size.width / 2, SafeTop + 22);
-//    backButton.frame = CGRectMake(0, 0, AUTO(40), AUTO(40));
-//
-//    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
-//    leftItem.imageInsets = UIEdgeInsetsMake(0, 10, 0, -10);
    
     UIButton *leftNavBtn =  [self addLeftButtonImage:@"p_arrow_left_selected" Action:@selector(backButtonTouched:)];
      leftNavBtn.contentMode = UIViewContentModeScaleAspectFit;

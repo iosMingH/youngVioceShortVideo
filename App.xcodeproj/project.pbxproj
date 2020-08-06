@@ -182,15 +182,6 @@
 		73384E3F24C5929400737319 /* CGXAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3524C5929400737319 /* CGXAddressModel.m */; };
 		73384E4024C5929400737319 /* CGXStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3724C5929400737319 /* CGXStringPickerView.m */; };
 		73384E4124C5929400737319 /* CGXPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73384E3824C5929400737319 /* CGXPickerView.m */; };
-		73388B3F24D803AE00D39635 /* WMZPageLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73388B2F24D803AD00D39635 /* WMZPageLoopView.m */; };
-		73388B4024D803AE00D39635 /* WMZPageNaviBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 73388B3024D803AD00D39635 /* WMZPageNaviBtn.m */; };
-		73388B4124D803AE00D39635 /* NSObject+SafeKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 73388B3524D803AD00D39635 /* NSObject+SafeKVO.m */; };
-		73388B4224D803AE00D39635 /* WMZPageParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 73388B3624D803AD00D39635 /* WMZPageParam.m */; };
-		73388B4324D803AE00D39635 /* WMZPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73388B3924D803AD00D39635 /* WMZPageController.m */; };
-		73388B4424D803AE00D39635 /* WMZPageScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 73388B3A24D803AD00D39635 /* WMZPageScroller.m */; };
-		73388B4524D803AE00D39635 /* UIView+PageRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 73388B3D24D803AD00D39635 /* UIView+PageRect.m */; };
-		73388B4624D803AE00D39635 /* PageController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 73388B3E24D803AD00D39635 /* PageController.bundle */; };
-		73388B4924D804BF00D39635 /* WMZFixVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73388B4824D804BF00D39635 /* WMZFixVC.m */; };
 		7338B9DD24CEA76000403C82 /* MHPublishVideoViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338B9DC24CEA76000403C82 /* MHPublishVideoViewControl.m */; };
 		7338B9E024CEA83600403C82 /* MHPublishVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338B9DF24CEA83600403C82 /* MHPublishVideoCell.m */; };
 		7338B9E624CEB27000403C82 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 7338B9E524CEB27000403C82 /* NSString+Size.m */; };
@@ -588,25 +579,6 @@
 		73384E3624C5929400737319 /* NSDate+CGXPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CGXPicker.h"; sourceTree = "<group>"; };
 		73384E3724C5929400737319 /* CGXStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXStringPickerView.m; sourceTree = "<group>"; };
 		73384E3824C5929400737319 /* CGXPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPickerView.m; sourceTree = "<group>"; };
-		73388B2D24D803AD00D39635 /* WMZPageLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageLoopView.h; sourceTree = "<group>"; };
-		73388B2E24D803AD00D39635 /* WMZPageNaviBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageNaviBtn.h; sourceTree = "<group>"; };
-		73388B2F24D803AD00D39635 /* WMZPageLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageLoopView.m; sourceTree = "<group>"; };
-		73388B3024D803AD00D39635 /* WMZPageNaviBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageNaviBtn.m; sourceTree = "<group>"; };
-		73388B3224D803AD00D39635 /* WMZPageScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageScroller.h; sourceTree = "<group>"; };
-		73388B3324D803AD00D39635 /* WMZPageConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageConfig.h; sourceTree = "<group>"; };
-		73388B3424D803AD00D39635 /* WMZPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageController.h; sourceTree = "<group>"; };
-		73388B3524D803AD00D39635 /* NSObject+SafeKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SafeKVO.m"; sourceTree = "<group>"; };
-		73388B3624D803AD00D39635 /* WMZPageParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageParam.m; sourceTree = "<group>"; };
-		73388B3724D803AD00D39635 /* WMZPageProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageProtocol.h; sourceTree = "<group>"; };
-		73388B3824D803AD00D39635 /* UIView+PageRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PageRect.h"; sourceTree = "<group>"; };
-		73388B3924D803AD00D39635 /* WMZPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageController.m; sourceTree = "<group>"; };
-		73388B3A24D803AD00D39635 /* WMZPageScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZPageScroller.m; sourceTree = "<group>"; };
-		73388B3B24D803AD00D39635 /* NSObject+SafeKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SafeKVO.h"; sourceTree = "<group>"; };
-		73388B3C24D803AD00D39635 /* WMZPageParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZPageParam.h; sourceTree = "<group>"; };
-		73388B3D24D803AD00D39635 /* UIView+PageRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PageRect.m"; sourceTree = "<group>"; };
-		73388B3E24D803AD00D39635 /* PageController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PageController.bundle; sourceTree = "<group>"; };
-		73388B4724D804BE00D39635 /* WMZFixVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMZFixVC.h; sourceTree = "<group>"; };
-		73388B4824D804BF00D39635 /* WMZFixVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMZFixVC.m; sourceTree = "<group>"; };
 		7338B9DB24CEA76000403C82 /* MHPublishVideoViewControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHPublishVideoViewControl.h; sourceTree = "<group>"; };
 		7338B9DC24CEA76000403C82 /* MHPublishVideoViewControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHPublishVideoViewControl.m; sourceTree = "<group>"; };
 		7338B9DE24CEA83600403C82 /* MHPublishVideoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHPublishVideoCell.h; sourceTree = "<group>"; };
@@ -907,9 +879,6 @@
 		1517FDA723C18F0A0074D410 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				73388B4724D804BE00D39635 /* WMZFixVC.h */,
-				73388B4824D804BF00D39635 /* WMZFixVC.m */,
-				73388B2B24D803AD00D39635 /* WMZPageController */,
 				1517FDA823C18F0B0074D410 /* Controller */,
 				1517FDAB23C18F0B0074D410 /* Model */,
 				1517FDAC23C18F0B0074D410 /* Views */,
@@ -1852,46 +1821,6 @@
 			path = CGXPickerView;
 			sourceTree = "<group>";
 		};
-		73388B2B24D803AD00D39635 /* WMZPageController */ = {
-			isa = PBXGroup;
-			children = (
-				73388B2C24D803AD00D39635 /* Navi */,
-				73388B3124D803AD00D39635 /* Controller */,
-				73388B3E24D803AD00D39635 /* PageController.bundle */,
-			);
-			path = WMZPageController;
-			sourceTree = "<group>";
-		};
-		73388B2C24D803AD00D39635 /* Navi */ = {
-			isa = PBXGroup;
-			children = (
-				73388B2D24D803AD00D39635 /* WMZPageLoopView.h */,
-				73388B2F24D803AD00D39635 /* WMZPageLoopView.m */,
-				73388B2E24D803AD00D39635 /* WMZPageNaviBtn.h */,
-				73388B3024D803AD00D39635 /* WMZPageNaviBtn.m */,
-			);
-			path = Navi;
-			sourceTree = "<group>";
-		};
-		73388B3124D803AD00D39635 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				73388B3424D803AD00D39635 /* WMZPageController.h */,
-				73388B3924D803AD00D39635 /* WMZPageController.m */,
-				73388B3224D803AD00D39635 /* WMZPageScroller.h */,
-				73388B3A24D803AD00D39635 /* WMZPageScroller.m */,
-				73388B3C24D803AD00D39635 /* WMZPageParam.h */,
-				73388B3624D803AD00D39635 /* WMZPageParam.m */,
-				73388B3724D803AD00D39635 /* WMZPageProtocol.h */,
-				73388B3324D803AD00D39635 /* WMZPageConfig.h */,
-				73388B3B24D803AD00D39635 /* NSObject+SafeKVO.h */,
-				73388B3524D803AD00D39635 /* NSObject+SafeKVO.m */,
-				73388B3824D803AD00D39635 /* UIView+PageRect.h */,
-				73388B3D24D803AD00D39635 /* UIView+PageRect.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		7338B9EA24CEC4A900403C82 /* SpaceLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -2058,7 +1987,6 @@
 				1517FEAF23C18F0B0074D410 /* icon_shouye2_normal@3x.png in Resources */,
 				1517FEB123C18F0B0074D410 /* icon_shouye2_normal@2x.png in Resources */,
 				1517FEB323C18F0B0074D410 /* icon_shouye2_selected@3x.png in Resources */,
-				73388B4624D803AE00D39635 /* PageController.bundle in Resources */,
 				1517FEB223C18F0B0074D410 /* icon_shouye1_normal@3x.png in Resources */,
 				1517FEB623C18F0B0074D410 /* icon_shouye2_selected@2x.png in Resources */,
 				1517009623D0602C0074D410 /* pics.plist in Resources */,
@@ -2217,7 +2145,6 @@
 				733B7F5424B59B8300608A83 /* MHMyOrderViewController.m in Sources */,
 				1517008923D0602C0074D410 /* SecurityUtil.m in Sources */,
 				15F23CCB242C575A00C63F4B /* MHShortVideoLivePlayViewController.m in Sources */,
-				73388B4324D803AE00D39635 /* WMZPageController.m in Sources */,
 				1517FEC523C18F0B0074D410 /* HWPopTool.m in Sources */,
 				7343685E24AED53400922366 /* MHCourseMultipleViewController.m in Sources */,
 				1517FED823C18F0B0074D410 /* SkNetApi.m in Sources */,
@@ -2254,18 +2181,15 @@
 				1585EC442440130000D77CF5 /* SharePopView.m in Sources */,
 				1517FD6B23C18E960074D410 /* main.m in Sources */,
 				15D94F2024AAE47C009C1422 /* MHFollowViewController.m in Sources */,
-				73388B4924D804BF00D39635 /* WMZFixVC.m in Sources */,
 				734505CB24B30B0900C5ACF2 /* MHMyCourseViewController.m in Sources */,
 				73479CE324AEC49400626B9A /* MHAddAddressCell.m in Sources */,
 				15D94EF324A848BC009C1422 /* MHCourseTableViewCell.m in Sources */,
-				73388B4124D803AE00D39635 /* NSObject+SafeKVO.m in Sources */,
 				15D94F0824A86498009C1422 /* UIView+SDExtension.m in Sources */,
 				7338B9E624CEB27000403C82 /* NSString+Size.m in Sources */,
 				1555F95724A33C28005CF929 /* HoverPageViewController.m in Sources */,
 				15D94F2624AB125B009C1422 /* MHFollowTableViewCell.m in Sources */,
 				1517008A23D0602C0074D410 /* NSData+AES.m in Sources */,
 				73328F2224BD7D0F00311098 /* MHMyOrderDetailCell.m in Sources */,
-				73388B4024D803AE00D39635 /* WMZPageNaviBtn.m in Sources */,
 				73443A8624B844B700469DF7 /* MHCourseListeningSingleModel.m in Sources */,
 				15D94F1724A98929009C1422 /* MHShortVideoCCell.m in Sources */,
 				1517FEC123C18F0B0074D410 /* NSString+Tools.m in Sources */,
@@ -2281,14 +2205,12 @@
 				73384E3A24C5929400737319 /* CGXPickerViewManager.m in Sources */,
 				15D94EF624A84928009C1422 /* MHCourseModel.m in Sources */,
 				15C32ACA244955580062618D /* WXMediaMessage+messageConstruct.mm in Sources */,
-				73388B4524D803AE00D39635 /* UIView+PageRect.m in Sources */,
 				734ABA5124B6FC9F00E46A89 /* MHStudentExperienceModel.m in Sources */,
 				158C4DB0243D83500070C9B7 /* User.m in Sources */,
 				1517FEC823C18F0B0074D410 /* UITableView+XXTableViewReloadViewHolder.m in Sources */,
 				1517FED023C18F0B0074D410 /* UIView+Frame.m in Sources */,
 				15D94EED24A8366F009C1422 /* MHCourseSelectTitleViewController.m in Sources */,
 				733D4EFF24B5B6E800BE1566 /* MHMyOrderView.m in Sources */,
-				73388B3F24D803AE00D39635 /* WMZPageLoopView.m in Sources */,
 				733A68EF24B575D80071A1EE /* UIViewController+MHDrawVC.m in Sources */,
 				158C4DB4243D83500070C9B7 /* Comment.m in Sources */,
 				1517FED423C18F0B0074D410 /* NSObject+Addtion.m in Sources */,
@@ -2306,7 +2228,6 @@
 				1517FECA23C18F0B0074D410 /* takePhoto.m in Sources */,
 				73384E3F24C5929400737319 /* CGXAddressModel.m in Sources */,
 				73384E4024C5929400737319 /* CGXStringPickerView.m in Sources */,
-				73388B4424D803AE00D39635 /* WMZPageScroller.m in Sources */,
 				1517008823D0602C0074D410 /* GTMBase64.m in Sources */,
 				734505CE24B30B3500C5ACF2 /* MHMyCourseCell.m in Sources */,
 				7338B9E924CEB37C00403C82 /* MHPublishTitleModel.m in Sources */,
@@ -2331,7 +2252,6 @@
 				733D03E624ADE3300091A2F7 /* MHAddressModel.m in Sources */,
 				7339EC4824BBF715006AB6BE /* MHPopContentView.m in Sources */,
 				1517008F23D0602C0074D410 /* SKCmmResponder.m in Sources */,
-				73388B4224D803AE00D39635 /* WMZPageParam.m in Sources */,
 				7343D38E24AF17B9001EC167 /* MHCourseVideoDetailViewController.m in Sources */,
 				734505D124B30B5B00C5ACF2 /* MHMyCourseModel.m in Sources */,
 				7338B9ED24CEC4A900403C82 /* CollectionViewSpaceLayout.m in Sources */,

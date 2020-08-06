@@ -54,16 +54,16 @@ UITableViewDataSource
 }
 
 - (void)initTipsView{
-             MHOpenShopView *tipsView = [[MHOpenShopView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH-AUTO(60), DEVICEWIDTH+AUTO(40))];
-             tipsView.backgroundColor = [UIColor whiteColor];
-             
-             [HWPopTool sharedInstance].shadeBackgroundType = ShadeBackgroundTypeGradient;
-            [HWPopTool sharedInstance].closeButtonType = ButtonPositionTypeRight;
-            [[HWPopTool sharedInstance] showWithPresentView:tipsView animated:YES];
+     MHOpenShopView *tipsView = [[MHOpenShopView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH-AUTO(60), DEVICEWIDTH+AUTO(40))];
+     tipsView.backgroundColor = [UIColor whiteColor];
+     
+    [HWPopTool sharedInstance].shadeBackgroundType = ShadeBackgroundTypeGradient;
+    [HWPopTool sharedInstance].closeButtonType = ButtonPositionTypeRight;
+    [[HWPopTool sharedInstance] showWithPresentView:tipsView animated:YES];
 }
 
 - (void)pushOtherControllerWithIndex:(NSInteger )index{
-      MHSettingModel *model = _arrData[index];
+    MHSettingModel *model = _arrData[index];
     [self.drawVC showRootVCAnimated:YES];
      id vc = self.drawVC.rootVC;
     HomeTabViewController *tabBarVC = (HomeTabViewController *)vc;
@@ -131,7 +131,6 @@ UITableViewDataSource
 //已经选中
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     switch (indexPath.row) {
 //申请开店
         case 0:

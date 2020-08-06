@@ -16,15 +16,15 @@
 @implementation FocusView
 
 - (instancetype)init {
-    return [self initWithFrame:CGRectMake(0, 0, 24, 24)];
+    return [self initWithFrame:CGRectMake(0, 0, 22, 22)];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self) {
         self.layer.cornerRadius = frame.size.width/2;
-        self.layer.backgroundColor = rgba(241.0, 47.0, 84.0, 1.0).CGColor;
-        self.image = [UIImage imageNamed:@"icon_personal_add_little"];
+//        self.layer.backgroundColor = rgba(241.0, 47.0, 84.0, 1.0).CGColor;
+        self.image = [UIImage imageNamed:@"p_addred"];
         self.contentMode = UIViewContentModeCenter;
         self.userInteractionEnabled = YES;
         [self addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(beginAnimation)]];
@@ -74,7 +74,7 @@
 - (void)animationDidStart:(CAAnimation *)anim {
     self.userInteractionEnabled = NO;
     self.contentMode = UIViewContentModeScaleAspectFill;
-    self.layer.backgroundColor = rgba(241.0, 47.0, 84.0, 1.0).CGColor;
+//    self.layer.backgroundColor = rgba(241.0, 47.0, 84.0, 1.0).CGColor;
     self.image = [UIImage imageNamed:@"iconSignDone"];
 }
 
@@ -87,7 +87,7 @@
 
 
 - (void)resetView {
-    self.layer.backgroundColor = rgba(241.0, 47.0, 84.0, 1.0).CGColor;
+//    self.layer.backgroundColor = rgba(241.0, 47.0, 84.0, 1.0).CGColor;
     self.image = [UIImage imageNamed:@"icon_personal_add_little"];
     [self.layer removeAllAnimations];
     [self setHidden:NO];

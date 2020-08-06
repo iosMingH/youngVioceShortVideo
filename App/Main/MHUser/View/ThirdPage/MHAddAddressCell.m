@@ -61,10 +61,10 @@
     [self.contentT mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(wkThis.titleL.mas_right);
         make.top.and.bottom.mas_equalTo(0);
-        make.right.mas_equalTo(-AUTO(50));
+        make.right.mas_equalTo(-AUTO(30));
     }];
     
-    UIImageView *iconV = [UIImageView hyb_imageViewWithImage:@"p_arrow" superView:self.contentView constraints:^(MASConstraintMaker *make) {
+     [UIImageView hyb_imageViewWithImage:@"p_arrow" superView:self.contentView constraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(AUTO(6), AUTO(11)));
         make.centerY.equalTo(wkThis.contentView);
         make.right.mas_equalTo(-AUTO(20));

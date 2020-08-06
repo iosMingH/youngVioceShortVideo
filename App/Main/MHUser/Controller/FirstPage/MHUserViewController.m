@@ -206,6 +206,7 @@ NSString * const kAwemeCollectionCell  = @"AwemeCollectionCell";
 - (void)initIntergralTipsView{
     MHSignInView *tipsView = [[MHSignInView alloc]initWithFrame:CGRectMake(0, 0, DEVICEWIDTH-AUTO(100), DEVICEWIDTH-AUTO(80))];
     tipsView.backgroundColor = [UIColor whiteColor];
+    tipsView.layer.cornerRadius = AUTO(7);
     
     [HWPopTool sharedInstance].shadeBackgroundType = ShadeBackgroundTypeGradient;
    [HWPopTool sharedInstance].closeButtonType = ButtonPositionTypeRight;
