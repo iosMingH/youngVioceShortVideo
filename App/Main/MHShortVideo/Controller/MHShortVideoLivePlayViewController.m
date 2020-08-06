@@ -40,6 +40,7 @@
 #import "MHHomeVideoViewController.h"
 
 #import "MHCourseVideoDetailViewController.h"
+#import "MHVideoServerManager.h"
 
 #if __has_include(<AliyunVideoSDKPro/AliyunVideoSDKInfo.h>)
 #import <AliyunVideoSDKPro/AliyunVideoSDKInfo.h>
@@ -491,22 +492,34 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
     */
       __weak typeof(self) weakSelf = self;
 
+
+//    [MHShortVideoServerManager dayeServerGetSTSWithToken:self.userToken
+//                                               success:^(NSString * _Nonnull accessKeyId,
+//                                                         NSString * _Nonnull accessKeySecret,
+//                                                         NSString * _Nonnull securityToken) {
+//                                                   weakSelf.accessKeyId = accessKeyId;
+//                                                   weakSelf.accessKeySecret = accessKeySecret;
+//                                                   weakSelf.securityToken = securityToken;
+//                                                   weakSelf.region = @"cn-shanghai";
+//
+//                                                      [weakSelf loadNewVideo];
+//
+//                                               } failure:^(NSString * _Nonnull errorString) {
+//                                                   [MBProgressHUD showMessage:errorString inView:weakSelf.view];
+//                                                   [weakSelf.collectionView.mj_header endRefreshing];
+//                                               }];
     
-    [MHShortVideoServerManager dayeServerGetSTSWithToken:self.userToken
-                                               success:^(NSString * _Nonnull accessKeyId,
-                                                         NSString * _Nonnull accessKeySecret,
-                                                         NSString * _Nonnull securityToken) {
-                                                   weakSelf.accessKeyId = accessKeyId;
-                                                   weakSelf.accessKeySecret = accessKeySecret;
-                                                   weakSelf.securityToken = securityToken;
-                                                   weakSelf.region = @"cn-shanghai";
-        
-                                                      [weakSelf loadNewVideo];
-                                        
-                                               } failure:^(NSString * _Nonnull errorString) {
-                                                   [MBProgressHUD showMessage:errorString inView:weakSelf.view];
-                                                   [weakSelf.collectionView.mj_header endRefreshing];
-                                               }];
+    [MHVideoServerManager dayeServerGetSTSSuccess:^(NSString * _Nonnull accessKeyId, NSString * _Nonnull accessKeySecret, NSString * _Nonnull securityToken) {
+        weakSelf.accessKeyId = accessKeyId;
+        weakSelf.accessKeySecret = accessKeySecret;
+        weakSelf.securityToken = securityToken;
+        weakSelf.region = @"cn-shanghai";
+        NSLog(@"weakSelf.accessKeyId=%@,weakSelf.accessKeyId=%@,weakSelf.accessKeyId=%@",weakSelf.accessKeyId,weakSelf.accessKeyId,weakSelf.accessKeyId);
+        [weakSelf loadNewVideo];
+    } failure:^(NSString * _Nonnull errorString) {
+        [MBProgressHUD showMessage:errorString inView:weakSelf.view];
+        [weakSelf.collectionView.mj_header endRefreshing];
+    }];
     
    
 }
@@ -533,12 +546,27 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
          [FUPROGRESS_HUD loading:@"加载中..."];
     }
    
-    [MHShortVideoServerManager dayeServerGetRecommendVideoListWithToken:token
-                                                               pageIndex:self.pageNum
-                                                                pageSize:VIDEOPAGESIZE  lastEndVideoId:self.lastVid
-                                                                 success:^(NSArray<AlivcQuVideoModel *> * _Nonnull videoList,
-                                                                           NSInteger allVideoCount) {
-        NSLog(@"videoList=%@",videoList);
+//    [MHShortVideoServerManager dayeServerGetRecommendVideoListWithToken:token
+//                                                               pageIndex:self.pageNum
+//                                                                pageSize:VIDEOPAGESIZE  lastEndVideoId:self.lastVid
+//                                                                 success:^(NSArray<AlivcQuVideoModel *> * _Nonnull videoList,
+//                                                                           NSInteger allVideoCount) {
+//        NSLog(@"videoList=%@",videoList);
+//           [weakSelf dealWithData:videoList countNum:allVideoCount lastVideoId:weakSelf.lastVid];
+//           if (self.pageNum*VIDEOPAGESIZE > allVideoCount) {
+//               weakSelf.reHasMore = NO;
+//           }else{
+//               weakSelf.reHasMore = YES;
+//           }
+//        [FUPROGRESS_HUD complete];
+//         } failure:^(NSString * _Nonnull errorString) {
+//             [FUPROGRESS_HUD complete];
+//           weakSelf.isLoading = NO;
+//           [MBProgressHUD showMessage:errorString inView:weakSelf.view];
+//           [weakSelf.collectionView.mj_header endRefreshing];
+//        }];
+    
+    [MHVideoServerManager dayeServerGetAliShortVideoListWithPageNumber:self.pageNum pageSize:VIDEOPAGESIZE videoStatus:@"Normal" startTime:@"" endTime:@"" success:^(NSArray<AlivcQuVideoModel *> * _Nonnull videoList, NSInteger allVideoCount) {
            [weakSelf dealWithData:videoList countNum:allVideoCount lastVideoId:weakSelf.lastVid];
            if (self.pageNum*VIDEOPAGESIZE > allVideoCount) {
                weakSelf.reHasMore = NO;
@@ -546,12 +574,12 @@ static NSString *CELLID = @"MHShortVideoCoverCell";
                weakSelf.reHasMore = YES;
            }
         [FUPROGRESS_HUD complete];
-         } failure:^(NSString * _Nonnull errorString) {
-             [FUPROGRESS_HUD complete];
-           weakSelf.isLoading = NO;
-           [MBProgressHUD showMessage:errorString inView:weakSelf.view];
-           [weakSelf.collectionView.mj_header endRefreshing];
-        }];
+    } failure:^(NSString * _Nonnull errorString) {
+        [FUPROGRESS_HUD complete];
+        weakSelf.isLoading = NO;
+        [MBProgressHUD showMessage:errorString inView:weakSelf.view];
+        [weakSelf.collectionView.mj_header endRefreshing];
+    }];
 }
 
 - (void)fetchSelfVideos:(NSString *)token {

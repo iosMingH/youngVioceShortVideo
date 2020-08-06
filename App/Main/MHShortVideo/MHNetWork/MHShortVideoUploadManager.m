@@ -13,6 +13,7 @@
 #import "AliVideoClientUser.h"
 #import <sys/utsname.h>
 #import <VODUpload/VODUploadClient.h>
+#import "MHVideoServerManager.h"
 
 @interface MHShortVideoUploadManager () <AliyunIVodUploadCallback>
 
@@ -174,14 +175,22 @@ static AliyunVodPublishManager *_uploadManager = nil;
 上传封面图         大叶网==============
 */
 - (void)dayeStartUploadImage{
-    [MHSVideoApi dayeGetImageUploadAuthWithToken:[FUCacheManager read:COMMON_USER_TOKEN] title:@"DefaultTitle" filePath:self.coverImagePath tags:@"DefaultTags" handler:^(NSString * _Nullable uploadAddress, NSString * _Nullable uploadAuth, NSString * _Nullable imageURL, NSString * _Nullable imageId, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"error获取封面凭证:%@", error.description);
-            [self handleUploadFailed];
-            return;
-        }
+//    [MHSVideoApi dayeGetImageUploadAuthWithToken:[FUCacheManager read:COMMON_USER_TOKEN] title:@"DefaultTitle" filePath:self.coverImagePath tags:@"DefaultTags" handler:^(NSString * _Nullable uploadAddress, NSString * _Nullable uploadAuth, NSString * _Nullable imageURL, NSString * _Nullable imageId, NSError * _Nullable error) {
+//        if (error) {
+//            NSLog(@"error获取封面凭证:%@", error.description);
+//            [self handleUploadFailed];
+//            return;
+//        }
+//        self.coverImageUrl = imageURL;
+//        [_uploadManager uploadImageWithPath:self.coverImagePath uploadAddress:uploadAddress uploadAuth:uploadAuth];
+//    }];
+    
+    [MHVideoServerManager dayeGetImageUploadAuthHandler:^(NSString * _Nullable uploadAddress, NSString * _Nullable uploadAuth, NSString * _Nullable imageURL, NSString * _Nullable imageId) {
         self.coverImageUrl = imageURL;
         [_uploadManager uploadImageWithPath:self.coverImagePath uploadAddress:uploadAddress uploadAuth:uploadAuth];
+    } failure:^(NSString * _Nonnull errorString) {
+        NSLog(@"error获取封面凭证:%@",errorString);
+        [self handleUploadFailed];
     }];
     
 }
@@ -195,15 +204,24 @@ static AliyunVodPublishManager *_uploadManager = nil;
 - (void)dayeStartUploadVideo{
     _newStatus = AlivcUploadStatusUploading;
     __weak typeof(self)weakSelf = self;
-    [MHSVideoApi dayeGetVideoUploadAuthWithWithToken:[FUCacheManager read:COMMON_USER_TOKEN] title:_videoInfo.title filePath:self.videoPath coverURL:self.coverImageUrl desc:_videoInfo.desc tags:_videoInfo.tags handler:^(NSString * _Nullable uploadAddress, NSString * _Nullable uploadAuth, NSString * _Nullable videoId, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"error:获取视频凭证%@", error.description);
-            weakSelf.newStatus = AlivcUploadStatusFailure;
-            [self handleUploadFailed];
-            return;
-        }
+//    [MHSVideoApi dayeGetVideoUploadAuthWithWithToken:[FUCacheManager read:COMMON_USER_TOKEN] title:_videoInfo.title filePath:self.videoPath coverURL:self.coverImageUrl desc:_videoInfo.desc tags:_videoInfo.tags handler:^(NSString * _Nullable uploadAddress, NSString * _Nullable uploadAuth, NSString * _Nullable videoId, NSError * _Nullable error) {
+//        if (error) {
+//            NSLog(@"error:获取视频凭证%@", error.description);
+//            weakSelf.newStatus = AlivcUploadStatusFailure;
+//            [self handleUploadFailed];
+//            return;
+//        }
+//        self.videoId = videoId;
+//        [_uploadManager uploadVideoWithPath:self.videoPath uploadAddress:uploadAddress uploadAuth:uploadAuth];
+//    }];
+    
+    [MHVideoServerManager dayeGetVideoUploadAuthWithWithTitle:_videoInfo.title filePath:self.videoPath coverURL:self.coverImageUrl desc:_videoInfo.desc tags:_videoInfo.tags handler:^(NSString * _Nullable uploadAddress, NSString * _Nullable uploadAuth, NSString * _Nullable videoId) {
         self.videoId = videoId;
         [_uploadManager uploadVideoWithPath:self.videoPath uploadAddress:uploadAddress uploadAuth:uploadAuth];
+    } failure:^(NSString * _Nonnull errorString) {
+        NSLog(@"error:获取视频凭证%@",errorString);
+        weakSelf.newStatus = AlivcUploadStatusFailure;
+        [self handleUploadFailed];
     }];
 }
 
@@ -211,13 +229,20 @@ static AliyunVodPublishManager *_uploadManager = nil;
 
 
 - (void)refreshVideo{
-    [MHSVideoApi refreshVideoUploadAuthWithToken:[FUCacheManager read:COMMON_USER_TOKEN] videoId:self.videoId handler:^(NSString * _Nullable uploadAddress, NSString * _Nullable uploadAuth, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"error:%@", error.description);
-            [self handleUploadFailed];
-            return;
-        }
+//    [MHSVideoApi refreshVideoUploadAuthWithToken:[FUCacheManager read:COMMON_USER_TOKEN] videoId:self.videoId handler:^(NSString * _Nullable uploadAddress, NSString * _Nullable uploadAuth, NSError * _Nullable error) {
+//        if (error) {
+//            NSLog(@"error:%@", error.description);
+//            [self handleUploadFailed];
+//            return;
+//        }
+//        [_uploadManager refreshWithUploadAuth:uploadAuth];
+//    }];
+    
+    [MHVideoServerManager refreshVideoUploadAuthWithVideoId:self.videoId handler:^(NSString * _Nullable uploadAddress, NSString * _Nullable uploadAuth) {
         [_uploadManager refreshWithUploadAuth:uploadAuth];
+    } failure:^(NSString * _Nonnull errorString) {
+        NSLog(@"error:%@", errorString);
+        [self handleUploadFailed];
     }];
 }
 

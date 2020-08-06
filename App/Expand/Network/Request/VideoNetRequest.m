@@ -20,31 +20,84 @@
 }
 @end
 
-//GET /app/GetSTS 获取STS信息
+//POST /shaoyin/video/getAliVideoStsAuth 获取STS信息
 @implementation SkNetAppGetSTSRequest
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.method = @"app/GetSTS";
+        self.method = @"video/getAliVideoStsAuth";
     }
     return self;
 }
 
 @end
 
-//GET /app/videolist 推荐视频列表
+//POST /video/getAliShortVideoList 获取阿里短视频列表
 @implementation SkNetAppVideolistRequest
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        self.method = @"app/videolist";
+        self.method = @"video/getAliShortVideoList";
     }
     return self;
 }
 
 @end
+
+//POST  shaoyin/video/deleteAliVideo  删除阿里视频
+@implementation SkNetVideoDeleteAliVideoRequest
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.method = @"video/deleteAliVideo";
+    }
+    return self;
+}
+
+@end
+
+//POST  /shaoyin/video/getAliVideoUploadAuth 获取阿里视频上传凭证
+@implementation SkNetVideoGetAliVideoUploadAuthRequest
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.method = @"video/getAliVideoUploadAuth";
+    }
+    return self;
+}
+
+@end
+
+
+//POST /shaoyin/video/getImageUploadAuth  获取图片上传地址和凭证
+@implementation SkNetVideoGetImageUploadAuthRequest
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.method = @"video/getImageUploadAuth";
+    }
+    return self;
+}
+@end
+
+//POST /shaoyin/video/refreshAliVideoUploadAuth   刷新视频上传凭证
+@implementation SkNetVideoRefreshAliVideoUploadAuthRequest
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.method = @"video/refreshAliVideoUploadAuth";
+    }
+    return self;
+}
+@end
+
+
 
 //Post   /video/api/submitAliVideoPersonAudit  审核视频
 
@@ -54,7 +107,6 @@
     self = [super init];
     if (self) {
         self.method = @"video/submitAliVideoPersonAudit";
-        self.httpMethod = @"POST";
     }
     return self;
 }

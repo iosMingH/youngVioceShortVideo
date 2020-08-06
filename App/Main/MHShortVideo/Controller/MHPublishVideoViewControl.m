@@ -53,6 +53,7 @@ static NSString *courseCellid = @"MHChooseRelationCourseCell";
     [super viewDidLoad];
     self.view.backgroundColor = SK_COLOR_BASE_SEBACKGROUND;
     self.title = @"发布";
+    self.describeStr = @"";
       _dataArrM = [NSMutableArray array];
      _courseArrM = [NSMutableArray array];
     
@@ -73,7 +74,12 @@ static NSString *courseCellid = @"MHChooseRelationCourseCell";
            make.height.mas_equalTo(AUTO(44));
         } touchUp:^(UIButton *sender) {
 //            TOAST(@"发布成功");
-            [self publish];
+            if (self.describeStr.length > 0) {
+                 [self publish];
+            }else{
+                TOAST(@"请输入视频描述");
+            }
+           
         }];
          btn.titleLabel.font = NFONT;
          btn.layer.cornerRadius = AUTO(25);

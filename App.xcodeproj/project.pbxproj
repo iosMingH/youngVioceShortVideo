@@ -218,6 +218,7 @@
 		734505CB24B30B0900C5ACF2 /* MHMyCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 734505CA24B30B0900C5ACF2 /* MHMyCourseViewController.m */; };
 		734505CE24B30B3500C5ACF2 /* MHMyCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 734505CD24B30B3500C5ACF2 /* MHMyCourseCell.m */; };
 		734505D124B30B5B00C5ACF2 /* MHMyCourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 734505D024B30B5B00C5ACF2 /* MHMyCourseModel.m */; };
+		73453A8824DBD7510082A27E /* MHVideoServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73453A8724DBD7510082A27E /* MHVideoServerManager.m */; };
 		73479CE024AEBFC300626B9A /* MHAddAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73479CDF24AEBFC300626B9A /* MHAddAddressViewController.m */; };
 		73479CE324AEC49400626B9A /* MHAddAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73479CE224AEC49400626B9A /* MHAddAddressCell.m */; };
 		73479CE624AEC4B700626B9A /* MHAddAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73479CE524AEC4B700626B9A /* MHAddAddressModel.m */; };
@@ -650,6 +651,8 @@
 		734505CD24B30B3500C5ACF2 /* MHMyCourseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHMyCourseCell.m; sourceTree = "<group>"; };
 		734505CF24B30B5B00C5ACF2 /* MHMyCourseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHMyCourseModel.h; sourceTree = "<group>"; };
 		734505D024B30B5B00C5ACF2 /* MHMyCourseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHMyCourseModel.m; sourceTree = "<group>"; };
+		73453A8624DBD7500082A27E /* MHVideoServerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHVideoServerManager.h; sourceTree = "<group>"; };
+		73453A8724DBD7510082A27E /* MHVideoServerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHVideoServerManager.m; sourceTree = "<group>"; };
 		73479CDE24AEBFC300626B9A /* MHAddAddressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHAddAddressViewController.h; sourceTree = "<group>"; };
 		73479CDF24AEBFC300626B9A /* MHAddAddressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHAddAddressViewController.m; sourceTree = "<group>"; };
 		73479CE124AEC49400626B9A /* MHAddAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHAddAddressCell.h; sourceTree = "<group>"; };
@@ -1511,6 +1514,8 @@
 				15C32AE5244D94DA0062618D /* MHShortVideoUploadManager.m */,
 				15C32AE0244D8AB50062618D /* MHShortVideoPublishManager.h */,
 				15C32ADF244D8AB50062618D /* MHShortVideoPublishManager.m */,
+				73453A8624DBD7500082A27E /* MHVideoServerManager.h */,
+				73453A8724DBD7510082A27E /* MHVideoServerManager.m */,
 			);
 			path = MHNetWork;
 			sourceTree = "<group>";
@@ -2134,6 +2139,7 @@
 				7338B9DD24CEA76000403C82 /* MHPublishVideoViewControl.m in Sources */,
 				15D94F2924AB1362009C1422 /* MHFollowModel.m in Sources */,
 				158C4DB2243D83500070C9B7 /* GroupChat.m in Sources */,
+				73453A8824DBD7510082A27E /* MHVideoServerManager.m in Sources */,
 				73328F1F24BD612A00311098 /* MHMyOrderDetailViewController.m in Sources */,
 				1555F90D24A1A3BF005CF929 /* MHLoginViewController.m in Sources */,
 				1555F92B24A2E6BE005CF929 /* CEBaseTableView.m in Sources */,

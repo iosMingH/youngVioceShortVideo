@@ -16,7 +16,7 @@
     if (self) {
         self.httpUrl = @"";
         self.method = @"";
-        self.httpMethod = @"GET";
+        self.httpMethod = @"POST";
     }
     return self;
 }

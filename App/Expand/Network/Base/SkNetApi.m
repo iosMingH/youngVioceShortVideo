@@ -12,6 +12,35 @@
 #import "GTMBase64.h"
 @implementation SkNetApi
 
++ (AFHTTPSessionManager*) manager
+{
+    static dispatch_once_t onceToken;
+    static AFHTTPSessionManager *manager = nil;
+    dispatch_once(&onceToken, ^{
+         // 1、创建请求管理者
+        manager = [AFHTTPSessionManager manager];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json", @"text/javascript",@"text/html",@"text/plain",nil];
+         // 2、数据反序列化（因为在进行请求服务器之前会对参数进行一次参数序列化）
+        manager.requestSerializer=[AFHTTPRequestSerializer serializer];
+        manager.requestSerializer.timeoutInterval = 10;
+        manager.securityPolicy = [self returnCustomSecurityPolicy];
+         [self AFNetworkReachabilityManagerStatus];
+        
+        NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
+        NSString *app_Name = [appInfo objectForKey:@"CFBundleDisplayName"];
+        NSString *app_Version = [appInfo objectForKey:@"CFBundleShortVersionString"];
+        app_Version = [app_Version stringByReplacingOccurrencesOfString:@"." withString:@""];
+        NSString *bundleId = BundleID;
+        [manager.requestSerializer setValue:app_Name forHTTPHeaderField:@"appName"];
+        [manager.requestSerializer setValue:app_Version forHTTPHeaderField:@"appVersionCode"];
+        [manager.requestSerializer setValue:bundleId forHTTPHeaderField:@"bundleId"];
+        
+        
+    });
+    
+    return manager;
+}
+
 + (void)request:(SkNetRequest *)param success:(void (^)(NSDictionary *))success failure:(void (^)(NSError *))failue
 {
     SkNetRequest *request = [[SkNetRequest alloc]init];
@@ -37,14 +66,44 @@
 }
 
 
++(AFSecurityPolicy *)returnCustomSecurityPolicy{
+    //设置请求头
+    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"ce" ofType:@"cer"];//证书的路径
+    NSData *certData = [NSData dataWithContentsOfFile:cerPath];
+    
+    // AFSSLPinningModeCertificate 使用证书验证模式
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone]; //代表无条件信任服务器的证书
+    //是否允许无效证书（也就是自建的证书）
+    securityPolicy.allowInvalidCertificates = YES;
+    
+    securityPolicy.validatesDomainName = NO;
+    
+    securityPolicy.pinnedCertificates = [[NSSet alloc] initWithObjects:certData,nil,nil];
+    
+    return securityPolicy;
+}
+
++(void)AFNetworkReachabilityManagerStatus {
+    AFNetworkReachabilityManager *manger = [AFNetworkReachabilityManager sharedManager];
+    //1、监听网络状态的变化
+    [manger setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+            [MMEditView creatAltViewWithTitle:@"警告" detail:@"无法连接到因特网，请检查数据流量或WiFi是否开启，或是否允许“少音”使用数据流量" arrTitles:@[@"检查设置",@"OK"] block:^(NSUInteger index, UIButton *sender, NSString *stfstring) {
+                if (index == 0) {
+                    NSURL * url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                    if([[UIApplication sharedApplication] canOpenURL:url]) {
+                        [[UIApplication sharedApplication] openURL:url];
+                    }
+                }
+            }];
+        }
+    }];
+    //2、开启监听网络
+    [manger startMonitoring];
+}
+
 + (void)GET_request:(SkNetRequest *)request success:(void (^)(NSDictionary *))success failure:(void (^)(NSError *))failue
 {
-    // 1、创建请求管理者
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    // 2、数据反序列化（因为在进行请求服务器之前会对参数进行一次参数序列化）
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.requestSerializer.timeoutInterval = 5;
-    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     NSString *httpUrl = request.httpUrl.length > 0 ? request.httpUrl:URL_BASIC;
     NSString *URLString = [NSString stringWithFormat:@"%@/%@", httpUrl , request.method];
     NSLog(@"request.params=%@",request.params);
@@ -52,15 +111,15 @@
     //    SkNetRequest *obj = request.params;
     
     //jessionID ==================
-    NSString *jessionId = [NSString stringWithFormat:@"%@",[FUCacheManager read:COMMON_USER_JSESSIONID]];
-
-    NSString *jsessionIdAll = [NSString stringWithFormat:@"JSESSIONID=%@",jessionId];
-    [manager.requestSerializer setValue:jsessionIdAll forHTTPHeaderField:@"Cookie"];
+//    NSString *jessionId = [NSString stringWithFormat:@"%@",[FUCacheManager read:COMMON_USER_JSESSIONID]];
+//
+//    NSString *jsessionIdAll = [NSString stringWithFormat:@"JSESSIONID=%@",jessionId];
+//    [[self manager].requestSerializer setValue:jsessionIdAll forHTTPHeaderField:@"Cookie"];
     // =========================
     
-    [FUPROGRESS_HUD loading:@"加载中..."];
+//    [FUPROGRESS_HUD loading:@"加载中..."];
     // 3、开始请求
-    [manager GET:URLString parameters:request.params progress:^(NSProgress *_Nonnull uploadProgress) {
+    [[self manager] GET:URLString parameters:request.params progress:^(NSProgress *_Nonnull uploadProgress) {
         // 上传进度
     } success:^(NSURLSessionDataTask *_Nonnull task, id _Nullable responseObject) {
         //解析数据
@@ -79,12 +138,6 @@
 
 + (void)POST_request:(SkNetRequest *)request success:(void (^)(NSDictionary *))success failure:(void (^)(NSError *))failue
 {
-    // 1、创建请求管理者
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    // 2、数据反序列化（因为在进行请求服务器之前会对参数进行一次参数序列化）
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    manager.requestSerializer.timeoutInterval = 5;
-    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];   // text/plian
     NSString *httpUrl = request.httpUrl.length > 0 ? request.httpUrl:URL_BASIC;
     NSString *URLString = [NSString stringWithFormat:@"%@/%@", httpUrl , request.method];
     NSLog(@"urlSTRING=%@",URLString);
@@ -97,15 +150,20 @@
     
     
     //    // 3、开始请求
-    [FUPROGRESS_HUD loading:@"加载中..."];
-    [manager POST:URLString parameters:request.params progress:^(NSProgress *_Nonnull uploadProgress) {
+//    [FUPROGRESS_HUD loading:@"加载中..."];
+    [[self manager] POST:URLString parameters:request.params progress:^(NSProgress *_Nonnull uploadProgress) {
         // 上传进度
     } success:^(NSURLSessionDataTask *_Nonnull task, id _Nullable responseObject) {
         //        //解析数据
+        NSLog(@"responseObject=%@",responseObject);
         [FUPROGRESS_HUD complete];
-                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        if (success) success(json);
-        
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                   NSDictionary *resultDic = (NSDictionary *)responseObject;
+                   if (success) success(resultDic);
+               }else{
+                  NSDictionary *json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+                   if (success) success(json);
+               }
     } failure:^(NSURLSessionDataTask *_Nullable task, NSError *_Nonnull error) {
         [FUPROGRESS_HUD complete];
         if (failue) failue(error);
